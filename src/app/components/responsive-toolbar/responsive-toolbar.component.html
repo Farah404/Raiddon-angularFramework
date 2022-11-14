@@ -1,5 +1,5 @@
-<mat-toolbar fxLayout="row" color="primary">
-  <span fxFlex>Responsive Toolbar Demo</span>
+<mat-toolbar fxLayout="row">
+  <span fxFlex>Welcome to Raiddon</span>
   <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
       [fxShow.sm]="item.showOnTablet">
       <mat-icon class="mr">{{item.icon}}</mat-icon>

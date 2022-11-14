@@ -1,103 +1,52 @@
-.filters {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding-left: 20px;
-  }
-  
-  ::ng-deep {
-    .mat-form-field-infix {
-      background-color: #3f51b5;
-    }
-  
-    .mat-select-value,
-    .mat-select-arrow,
-    .mat-form-field-hide-placeholder .mat-select-placeholder,
-    .mat-form-field-appearance-legacy .mat-form-field-label {
-      color: #fff !important;
-      opacity: 1;
-    }
-  
-    .mat-form-field-infix {
-      border-color: #fff !important;
-      border-top: none;
-      padding-left: 5px !important;
-    }
-  
-    .mat-form-field-appearance-legacy .mat-form-field-label {
-      padding-left: 5px;
-    }
-  
-    .mat-form-field-appearance-legacy .mat-form-field-underline {
-      background-color: #fff !important;
-    }
-  }
-
-  .games {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 20px auto;
-  }
-
-
-  .game {
-  width: 280px;
-  margin: 10px;
-  height: 330px;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: #202020;
-  box-shadow: 4px 3px 8px 0px rgb(200 152 44 / 22%);
-  transition-duration: 0.3s;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 4px 3px 11px 6px rgb(200 152 44 / 46%);
-    transform: translateY(-3px);
-  }
-
-  &-thumb-container {
-    background-color: #000;
-    position: relative;
-    height: 172px;
-    color: #fff;
-    text-align: center;
-  }
-
-  &-thumbnail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    height: 172px;
-  }
-
-  &-description {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 157px;
-  }
-
-  &-name {
-    color: #fff;
-    font-weight: 700;
-    font-size: 22px;
-    margin-bottom: 20px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  &-platforms {
-    display: flex;
-  }
-
-  &-platform {
-    width: 20px;
-    margin-right: 10px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+.section-one {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url(https://images7.alphacoders.com/123/1230595.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness();
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.container {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 4rem;
+  font-weight: 400;
+  
+}
+
+p {
+  font-size: 1.15rem;
+  letter-spacing: 3px;
+  margin: 20px 0 40px;
+}
+
+.home-button {
+  color: white;
+  text-decoration: none;
+  border: 2px white solid;
+  padding: 10px 15px;
+}
+
+.home-button:hover,
+.home-button:focus {
+  background: hsl(0, 100%, 100%, .2);
+  outline: none;
+}
+
