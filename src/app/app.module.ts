@@ -28,6 +28,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
+import { LoginupComponent } from './loginup/loginup.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
     HeaderComponent,
     FooterComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    LoginupComponent
   ],
   imports: [
     BrowserModule,
