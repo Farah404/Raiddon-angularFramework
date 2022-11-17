@@ -29,6 +29,18 @@ import { HomeComponent } from './home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { LoginupComponent } from './loginup/loginup.component';
+import { GuildsComponent } from './guilds/guilds.component';
+import { RaidsComponent } from './raids/raids.component';
+import { PlayersComponent } from './players/players.component';
+import { GameDataComponent } from './game-data/game-data.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { GuildDetailsComponent } from './guild-details/guild-details.component';
+import { RaidDetailsComponent } from './raid-details/raid-details.component';
+import { PlayerDetailsComponent } from './player-details/player-details.component';
+import { NavbarConnectedComponent } from './navbar-connected/navbar-connected.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +49,19 @@ import { LoginupComponent } from './loginup/loginup.component';
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    LoginupComponent
+    LoginupComponent,
+    GuildsComponent,
+    RaidsComponent,
+    PlayersComponent,
+    GameDataComponent,
+    UserProfileComponent,
+    GuildDetailsComponent,
+    RaidDetailsComponent,
+    PlayerDetailsComponent,
+    NavbarConnectedComponent,
+    AboutComponent,
+    ContactComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
