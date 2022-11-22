@@ -41,6 +41,8 @@ import { NavbarConnectedComponent } from './navbar-connected/navbar-connected.co
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
+import { ContactPlayerModalComponent } from './contact-player-modal/contact-player-modal.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component'
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { FaqComponent } from './faq/faq.component';
     NavbarConnectedComponent,
     AboutComponent,
     ContactComponent,
-    FaqComponent
+    FaqComponent,
+    ContactPlayerModalComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,

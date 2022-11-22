@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  raiddon_bnet_api_express_port:'http://localhost:3000'
 };
 
 /*

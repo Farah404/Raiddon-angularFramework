@@ -13,6 +13,7 @@ import { PlayerDetailsComponent } from './player-details/player-details.componen
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path:'contact',
     component: ContactComponent,
+  },
+  {
+    path:'user-profile-update',
+    component: UpdateProfileComponent,
   },
 ];
 

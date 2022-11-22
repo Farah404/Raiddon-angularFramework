@@ -2,7 +2,13 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
 
-
+<div class="video-container">
+  <video id="myVideo" autoplay muted loop onloadedmetadata="this.muted = true"
+  playsinline
+  >
+      <source src="../../assets/videos/wow.mp4" type="video/mp4" />
+  </video>
+</div>
 <main class="my-5">
 <div class="container">
   <div class="row mb-5">
@@ -35,7 +41,7 @@
       <a href="about"> <button type="button"  class="btn btn-outline-primary"><i class="fas fa-question-circle me-2"></i>About us</button></a>
     </div>
   </div>
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-md-4">
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
