@@ -19,7 +19,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
   public login(user: User): Observable<HttpResponse<User>> {
-    return this.http.post<User>(`${this.springUrl}/user/login`, user, { observe: 'response' }); // the 2nd arguement is the request body; the meta data, namely the 3rd argument here is to ask for the whole reponse, including the header which contains the jwt token, otherwise without the last argument, by default it will only return a response body.
+    return this.http.post<User>(`${this.springUrl}/user/login`, user, { observe: 'response' }); 
   }
 
   public register(user: User): Observable<User> {
