@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  raiddon_bnet_api_express_port:'https://raiddon-bnet-api.herokuapp.com/'
+  raiddon_bnet_api_express_port:'https://raiddon-bnet-api.herokuapp.com/',
+  raiddon_wclog_api_express_port:'https://raiddon-wclog-api.herokuapp.com/html/index.html',
+  raiddon_client_management_spring_port:'http://localhost:8080'
 };

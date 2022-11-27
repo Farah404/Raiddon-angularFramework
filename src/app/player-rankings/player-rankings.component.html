@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<div
+  class="main bg-image grayscale"
+  style="
+    background-image: url('https://images3.alphacoders.com/200/200959.jpg');
+    height: 50vh;
+  "
+>
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="text-white">
+      <h1 class="mb-3 typewriter">Want to know who parsed the most?</h1>
+      <h5 class="mb-4">
+        By using our players rankings page you may review latest rankings !
+      </h5>
+    </div>
+  </div>
+</div>
+
+<h2></h2>
+
+<table
+class="animate-bottom table table-striped table-hover align-middle"
+style="width: 80%; margin: 0 auto; text-align: center"
+>
+  <thead class="bg-light table-dark">
+    <tr>
+      <th scope="col">Encounter Name</th>
+      <th scope="col">Chatacter Name</th>
+      <th scope="col">Character Class</th>
+      <th scope="col">Character Specialisation</th>
+      <th scope="col">Character ilvl</th>
+      <th scope="col">Character Parse %</th>
+      <th scope="col">Character Ranking</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let data of playersRankingsData">
+    <tr>
+      <td>{{data.encounterName}}</td>
+      <td>{{data.characterName}}</td>
+      <td>{{data.class}}</td>
+      <td>{{data.spec}}</td>
+      <td>{{data.ilvlKeyOrPatch}}</td>
+      <td>{{data.percentile}}</td>
+      <td>{{data.rank}}</td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+
+
+<h2></h2>
+<app-footer> </app-footer>

@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<div class="main animate-opacity">
+  <form autocomplete="off" class=" form animate-opacity">
+    <div class="control">
+      <h1>Sign Up</h1>
+    </div>
+    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm.value)">
+    <div class="control block-cube block-input animate-right">
+      <input name="lastname" placeholder="Lastname" type="text" required
+      ngModel lastNameInput="ngModel"/>
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+    </div>
+    <div class="control block-cube block-input animate-left">
+      <input name="firstname" placeholder="Firstbame" type="text" required
+      ngModel firstNameInput="ngModel"/>
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+    </div>
+    <div class="control block-cube block-input animate-right">
+      <input name="username" placeholder="Username" type="text" required ngModel
+      #emailInput="ngModel"/>
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+    </div>
+    <div class="control block-cube block-input animate-left">
+      <input name="password" placeholder="Email" required ngModel
+      #emailInput="ngModel"/>
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+    </div>
+    <button class="btn block-cube block-cube-hover animate-zoom" type="submit">
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="text">Register</div>
+    </button>
+  </form>
+    <div class='register animate-zoom'>
+      Already have an account yet? 
+      <p><a href='login'>
+        Login here!
+      </a></p>
+    </div>
+  </form>
+  <h2></h2>
+</div>
