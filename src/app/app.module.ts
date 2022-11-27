@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiService } from './api/api.service';
 
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -26,9 +27,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
-import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
-import { LoginupComponent } from './loginup/loginup.component';
 import { GuildsComponent } from './guilds/guilds.component';
 import { RaidsComponent } from './raids/raids.component';
 import { PlayersComponent } from './players/players.component';
@@ -42,7 +40,17 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactPlayerModalComponent } from './contact-player-modal/contact-player-modal.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component'
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ApplyToGuildComponent } from './apply-to-guild-modal/apply-to-guild.component';
+import { CreateRaidModalComponent } from './create-raid-modal/create-raid-modal.component';
+import { AuctionHouseComponent } from './auction-house/auction-house.component';
+import { RaidReportsComponent } from './raid-reports/raid-reports.component';
+import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule }   from '@angular/forms';
+import { NotifierService, NotifierModule } from 'angular-notifier';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './api/authentication.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +59,6 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     FooterComponent,
     NavbarComponent,
     HomeComponent,
-    LoginupComponent,
     GuildsComponent,
     RaidsComponent,
     PlayersComponent,
@@ -65,7 +72,14 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     ContactComponent,
     FaqComponent,
     ContactPlayerModalComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    ApplyToGuildComponent,
+    CreateRaidModalComponent,
+    AuctionHouseComponent,
+    RaidReportsComponent,
+    PlayerRankingsComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,20 +100,12 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
     MdbTooltipModule,
     MdbValidationModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    NotifierModule,
+    
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpHeadersInterceptor,
-      multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorsInterceptor,
-      multi: true,
-    },
-  ],
+  providers: [ApiService, NotifierService, AuthenticationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

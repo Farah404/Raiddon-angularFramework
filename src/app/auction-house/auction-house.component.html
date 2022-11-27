@@ -1,0 +1,137 @@
+<app-navbar></app-navbar>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+/>
+<div
+  class="main bg-image grayscale"
+  style="
+    background-image: url('https://img.game-news24.com/2022/07/Blizzard-to-make-certain-items-from-the-WoW-Auction-House-region-wide-in-the-upcoming-patch.jpeg');
+    height: 50vh;
+  "
+>
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="text-white">
+      <h1 class="mb-3 typewriter">Want to make an in-game purchase?</h1>
+      <h5 class="mb-4">
+        By using our auction house page you may find the best deal !
+      </h5>
+    </div>
+  </div>
+</div>
+
+
+<h2></h2>
+<div class="tabs">
+  <input type="radio" id="tab1" name="tab-control" checked />
+  <input type="radio" id="tab2" name="tab-control" />
+  <input type="radio" id="tab3" name="tab-control" />
+  <input type="radio" id="tab4" name="tab-control" />
+  <ul>
+    <li title="Features">
+      <label for="tab1" role="button"
+        ><br /><span>Auction House FAQ</span></label
+      >
+    </li>
+    <li title="Delivery Contents">
+      <label for="tab2" role="button"><br /><span>Connected Auction Houses</span></label>
+    </li>
+    <li title="Shipping">
+      <label for="tab3" role="button"
+        ><br /><span>Alliance Auction House</span></label
+      >
+    </li>
+    <li title="Returns">
+      <label for="tab4" role="button"
+        ><br /><span>Horde Auction House</span></label
+      >
+    </li>
+  </ul>
+
+  <div class="slider"><div class="indicator"></div></div>
+  <div class="content">
+    <section>
+      <h5>What is the auction house page?</h5>
+      <p>At its core, the auction house page is a tool to search the WoW auction house online. You can also compare prices of different realms by navigating to an item and switching the realm. We will update the prices for you.</p>
+        <p>But we are just at the beginning. We will be providing you with a lot more features in the future. So be sure to check back regulary!</p>
+
+        <h5>Do you support all realms?</h5>
+        <p>We support all realms on the eu and us regions. You can pick your realm with the button under the search bar. Be sure to pick your region before picking your realm!</p>
+        
+        <h5>Which realms do you support?</h5>
+
+        <p>We support all realms on the eu and us regions.</p>
+        
+        <p> You can pick your realm with the button under the search bar. Be sure to pick your region before picking your realm!
+        <h5>How often do you update your data?</h5>
+        
+        <p>We usually update all auction information every hour. We get this information directly from Blizzard through their API. Still, we can unfortunately not 100% guarantee the correctness of the information.</p>
+    
+      </section>
+
+    <section>
+      
+      <div class="games">  
+        <img class="center" src="../../assets/wow-images/dala.jpg" style="width: 130vh;"/>
+        <ng-container *ngFor="let data of auctionHousesIndexData">
+          <div class="game">
+            <div class="game-description">
+              <p class="game-name">{{ data.name }}</p>
+            </div>
+          </div>
+        </ng-container> 
+      </div>
+    </section>
+    <section>
+      <img class="center" src="../../assets/wow-images/sw1.jpg" style="width: 130vh;"/>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Bid</th>
+            <th scope="col">Buy-out</th>
+            <th scope="col">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let data of allianceAuctionHouseData">
+          <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.bid}}</td>
+            <td>{{data.buyout}}</td>
+            <td>{{data.quantity}}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </section>
+    <section>
+        <img class="center" src="../../assets/wow-images/orgri.jpg" style="width: 130vh;"/>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Bid</th>
+              <th scope="col">Buy-out</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let data of hordeAuctionHouseData">
+            <tr>
+              <td>{{data.id}}</td>
+              <td>{{data.bid}}</td>
+              <td>{{data.buyout}}</td>
+              <td>{{data.quantity}}</td>
+            </tr>
+          </ng-container>
+          </tbody>
+        </table>
+    </section>
+  </div>
+</div>
+
+<h2></h2>
+<app-footer> </app-footer>

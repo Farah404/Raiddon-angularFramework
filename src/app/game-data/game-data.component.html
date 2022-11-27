@@ -6,24 +6,128 @@
   crossorigin="anonymous"
 />
 <div
-  class="main bg-image "
+  class="main bg-image"
   style="
     background-image: url('https://i.pinimg.com/originals/83/b0/54/83b054919580af2ac3aafecd9a3b5688.gif');
     height: 50vh;
   "
 >
-
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
-      <h1 class="mb-3">Want to know more about WoW?</h1>
-      <h5 class="mb-4">By using our game data page you may find all your answers !</h5>
+      <h1 class="mb-3 typewriter">Want to know more about WoW?</h1>
+      <h5 class="mb-4">
+        By using our game data page you may find all your answers !
+      </h5>
     </div>
   </div>
-
-
 </div>
 
+<h2></h2>
+<div class="tabs">
+  <input type="radio" id="tab1" name="tab-control" checked />
+  <input type="radio" id="tab2" name="tab-control" />
+  <input type="radio" id="tab3" name="tab-control" />
+  <input type="radio" id="tab4" name="tab-control" />
+  <ul>
+    <li title="Features">
+      <label for="tab1" role="button"
+        ><br /><span>Playable Characters</span></label
+      >
+    </li>
+    <li title="Delivery Contents">
+      <label for="tab2" role="button"><br /><span>Professions</span></label>
+    </li>
+    <li title="Shipping">
+      <label for="tab3" role="button"
+        ><br /><span>Connected Realms</span></label
+      >
+    </li>
+    <li title="Returns">
+      <label for="tab4" role="button"
+        ><br /><span>Reputation Factions</span></label
+      >
+    </li>
+  </ul>
+
+  <div class="slider"><div class="indicator"></div></div>
+  <div class="content">
+    <section>
+      <img class="center" src="../../assets/wow-images/a.png" style="width: 130vh;"/>
+      <mdb-tabs>
+        <mdb-tab title="Races"><div class="games">  
+          <ng-container *ngFor="let data of playableRacesData">
+            <div class="game">
+              <div class="game-description">
+                <p class="game-name">{{ data.name }}</p>
+              </div>
+            </div>
+          </ng-container> 
+          
+        </div></mdb-tab>
+        <mdb-tab title="Classes"> <div class="games">  
+          <ng-container *ngFor="let data of playableClassesData">
+            <div class="game">
+              <div class="game-description">
+                <p class="game-name">{{ data.name }}</p>
+              </div>
+            </div>
+          </ng-container> 
+        </div></mdb-tab>
+        <mdb-tab title="Talents">      <div class="games">  
+          <ng-container *ngFor="let data of classTalentsData">
+            <div class="game">
+              <div class="game-description">
+                <p class="game-name">{{ data.name }}</p>
+              </div>
+            </div>
+          </ng-container> 
+        </div></mdb-tab>
+      </mdb-tabs>
+      
+     
 
 
 
+    </section>
+
+    <section>
+      <img class="center" src="../../assets/wow-images/982478.jpg" style="width: 130vh;"/>
+      <div class="games">  
+        <ng-container *ngFor="let data of professionsData">
+          <div class="game">
+            <div class="game-description">
+              <p class="game-name">{{ data.name }}</p>
+            </div>
+          </div>
+        </ng-container> 
+      </div>
+    </section>
+    <section>
+      <img class="center" src="../../assets/wow-images/banner.jpg" style="width: 130vh;"/>
+      <div class="games">  
+        <ng-container *ngFor="let data of connectedRealmsData">
+          <div class="game">
+            <div class="game-description">
+              <p class="game-name">{{ data.name }}</p>
+            </div>
+          </div>
+        </ng-container> 
+      </div>
+    </section>
+    <section>
+      <div class="games">  
+        <img class="center" src="../../assets/wow-images/warcraft-movie-banner-01-copy.jpg" style="width: 130vh;"/>
+        <ng-container *ngFor="let data of reputationFactionsData">
+          <div class="game">
+            <div class="game-description">
+              <p class="game-name">{{ data.name }}</p>
+            </div>
+          </div>
+        </ng-container> 
+      </div>
+    </section>
+  </div>
+</div>
+
+<h2></h2>
 <app-footer> </app-footer>

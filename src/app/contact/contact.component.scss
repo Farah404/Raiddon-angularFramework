@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +18,7 @@
   background: #b1bead;
   overflow: hidden;
 }
+
 .contact-us:before {
   position: absolute;
   content: "";
@@ -27,6 +29,7 @@
   background: #556b22;
   transform: rotate(25deg);
 }
+
 .contact-us:after {
   position: absolute;
   content: "";
@@ -45,6 +48,7 @@
   top: 120px;
   left: -40px;
 }
+
 .contact-header h1 {
   font-size: 1.5rem;
 }
@@ -56,9 +60,11 @@
   z-index: 1;
   width: 100px;
 }
+
 .social-bar ul {
   list-style-type: none;
 }
+
 .social-bar ul li {
   display: inline-block;
   color: white;
@@ -75,24 +81,34 @@
   padding: 20px 0;
   color: #444;
 }
+
 .header h1 {
   font-weight: normal;
 }
+
 .header h2 {
   margin-top: 10px;
   font-weight: 300;
 }
 
-.address, .email, .phone {
+.address,
+.email,
+.phone {
   text-align: center;
   padding: 20px 0;
   color: #444;
 }
-.address h3, .email h3, .phone h3 {
+
+.address h3,
+.email h3,
+.phone h3 {
   font-size: 1rem;
   font-weight: 300;
 }
-.address i, .email i, .phone i {
+
+.address i,
+.email i,
+.phone i {
   color: #4a5f2f;
   font-size: 1.7rem;
   margin-bottom: 20px;
@@ -106,13 +122,16 @@ form {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background: white;
 }
-form input, form textarea {
+
+form input,
+form textarea {
   background: white;
   display: block;
   margin: 20px auto;
   width: 100%;
   border: 0;
 }
+
 form input {
   height: 40px;
   line-height: 40px;
@@ -121,6 +140,7 @@ form input {
   font-size: 1rem;
   color: rgba(68, 68, 68, 0.8);
 }
+
 form textarea {
   border-bottom: 1px solid rgba(68, 68, 68, 0.3);
   resize: none;
@@ -129,6 +149,7 @@ form textarea {
   font-family: lato;
   color: rgba(68, 68, 68, 0.8);
 }
+
 form button {
   position: absolute;
   display: block;
@@ -150,18 +171,18 @@ form button {
 }
 
 /* Layout */
-.main{
-    background: url("https://i.etsystatic.com/37712799/r/il/35f53a/4221663065/il_fullxfull.4221663065_x9ma.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: grid;
-    justify-items: center;
-    align-items: center;
+.main {
+  background: url("../../assets/wow-images/WoW-Stormwind-City-Unreal-Engine-4.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .contact-form-container {
