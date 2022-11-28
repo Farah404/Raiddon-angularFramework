@@ -58,7 +58,7 @@ export class AuthenticationService {
   public isUserLoggedIn(): boolean {
     this.loadToken();
     if (this.token != null || '') {
-      if (this.jwtHelper.decodeToken(this.token).sub != null || '' && !this.jwtHelper.isTokenExpired(this.token)) { // this might need review
+      if (this.jwtHelper.decodeToken(this.token).sub != null || '' && !this.jwtHelper.isTokenExpired(this.token)) {
         this.loggedInUserName = this.jwtHelper.decodeToken(this.token).sub;
         return true;
       }
