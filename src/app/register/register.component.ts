@@ -1,56 +1,39 @@
-import { Component, OnInit, OnDestroy  } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthenticationService } from '../api/authentication.service';
-import { Subscription } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
-import { NotificationType } from 'src/model/notification-type.enum';
-import { NotificationService } from '../api/notification.service';
-import { User } from 'src/model/user';
-
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit, OnDestroy  {
-  public showLoading: boolean;
-  private subscriptions: Subscription[] = [];
+export class RegisterComponent implements OnInit {
+  form: any = {
+    username: null,
+    email: null,
+    password: null
+  };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  constructor(
-    private router: Router,
-    private authenticationService: AuthenticationService,
-    private notificationService: NotificationService) { }
+  constructor(private authService: AuthService) { }
 
-    ngOnInit(): void {
-      if (this.authenticationService.isUserLoggedIn()) {
-        this.router.navigateByUrl('/user/management');
-      } 
-    }
+  ngOnInit(): void {
+  }
 
-    ngOnDestroy(): void {
-      this.subscriptions.forEach(sub => sub.unsubscribe());
-    }
+  onSubmit(): void {
+    const { username, email, password } = this.form;
 
-    public onRegister(user: User): void {
-      this.subscriptions.push(
-        this.authenticationService.register(user).subscribe(
-          (response:User) => {
-            this.sendNotification(NotificationType.SUCCESS, `A new account was created for ${response.firstName}. Please check your email (spam box) for password to log in.`)
-          },
-          (errorResponse: HttpErrorResponse) => {
-            this.sendNotification(NotificationType.ERROR, errorResponse.error.message)
-          }
-        )
-      );
-    }
-
-    private sendNotification(notificationType: NotificationType, message: string): void {
-      if (message) {
-        this.notificationService.notify(notificationType, message);
-      } else {
-        this.notificationService.notify(notificationType, 'An error occured. Please try again.');
+    this.authService.register(username, email, password).subscribe({
+      next: data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
       }
-    }
-
+    });
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api/api.service';
+import { ApiService } from '../_services/api.service';
+
 
 @Component({
   selector: 'app-game-data',

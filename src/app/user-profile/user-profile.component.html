@@ -1,275 +1,190 @@
-<app-navbar></app-navbar>
+<app-navbar-connected></app-navbar-connected>
+<div
+  class="main bg-image"
+  style="
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/031/727/501/original/rui-goncalves-balrogvsglorfindel-2.gif?1604425325');
+    height: 30vh;
+  "
+>
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="text-white">
+      <h1 class="mb-3 typewriter">Your adventure begins here !</h1>
+    </div>
+  </div>
+</div>
+<section class="section about-section gray-bg" id="about" style="background-color: #282828;">
+  <div class="container">
+    <div class="counter">
+      <div class="row align-items-center flex-row-reverse">
+        <div class="col">
+          <div class="about-text go-to">
+            <h3 class="dark-color">Battle Tag</h3>
+            <div class="row about-list">
+              <div class="col-md-6">
+                <div class="media" *ngIf="currentUser;">
+                    <label>{{ currentUser.username }}</label>
+                    <p>xxxxx</p>
+                </div>
+                <div class="media">
+                    <label>Realm</label>
+                    <p>xxxx</p>
+                </div>
+                <div class="media">
+                    <label>Faction</label>
+                    <p>xxxx</p>
+                </div>
+                <div class="media">
+                    <label>Race</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>Class</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>Specialisations</label>
+                    <p>xxx</p>
+                </div>
+               
+                
+              </div>
+              <div class="col-md-6">
+                <div class="media">
+                    <label>Professions</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>Guild</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>Guild Rank</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>iLvl</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>Level</label>
+                    <p>xxx</p>
+                </div>
+                <div class="media">
+                    <label>Actions</label>
+                    <a href="/user-profile-update"><p>Update Profile</p></a>
+                    <a href="/guilds/guild-details"><p>Go to Guild Page</p></a>
+                    <a href="/user-profile/user-setup"><p>Manage Profile</p></a>
 
-<section class="section about-section gray-bg" id="about">
-    <div class="container">
-        <div class="row align-items-center flex-row-reverse">
-            <div class="col-lg-6">
-                <div class="about-text go-to">
-                    <h3 class="dark-color">Player's Name</h3>
-                    <div class="row about-list">
-                        <div class="col-md-6">
-                            <div class="media">
-                                <label>User Name</label>
-                                <p>xxxxx</p>
-                            </div>
-                            <div class="media">
-                                <label>Main Character</label>
-                                <p>xxxx</p>
-                            </div>
-                            <div class="media">
-                                <label>Main Specialisation</label>
-                                <p>xxxx</p>
-                            </div>
-                            <div class="media">
-                                <label>Guild</label>
-                                <p>xxxA</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="media">
-                                <label>E-mail</label>
-                                <p>info@Raiddon.com</p>
-                            </div>
-                            <div class="media">
-                                <label>Logs Link</label>
-                                <p>820-885-3321</p>
-                            </div>
-                            <div class="media">
-                                <label>Battle Tag</label>
-                                <p>skype.0404</p>
-                            </div>
-                            <div class="media">
-                                <label>Actions</label>
-                                <div class="linkToPlayerProfile"><a href="/user-profile-update"><button class="btn btn-primary">Update Profile</button></a></div>
-                                <div class="linkToPlayerProfile"><a href="/guilds/guild-details"><button class="btn btn-primary mt-1">Go to Guild Page</button></a></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+              </div>
             </div>
-            <div class="col-lg-6">
-                <div class="about-avatar">
-                    <img src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg" title="" alt="">
-                </div>
-            </div>
+          </div>
         </div>
-        <h2></h2>
-        <div class="counter">
-            <div class="row">
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="500" data-speed="500">500</h6>
-                        <p class="m-0px font-w-600">Raid Reports</p>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="150" data-speed="150">150</h6>
-                        <p class="m-0px font-w-600">Encounters</p>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="850" data-speed="850">850</h6>
-                        <p class="m-0px font-w-600">iLvl</p>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="190" data-speed="190">190</h6>
-                        <p class="m-0px font-w-600">Playable Characters</p>
-                    </div>
-                </div>
-            </div>
+        <div class="col">
+          <div class="about-avatar">
+            <img
+              src="../../assets/profile-pictures/e2RfjfV3qqusNSGC92ezzbB5rPIoMqK3lo3T6_0OIho.webp"
+              height="500vh"
+              style="
+                border-radius: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+              "
+            />
+          </div>
         </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-6 col-lg-3">
+          <div class="count-data text-center">
+            <h6 class="count h2" data-to="500" data-speed="500">500</h6>
+            <p class="m-0px font-w-600">Raid Reports</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="count-data text-center">
+            <h6 class="count h2" data-to="150" data-speed="150">150</h6>
+            <p class="m-0px font-w-600">Encounters</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="count-data text-center">
+            <h6 class="count h2" data-to="850" data-speed="850">850</h6>
+            <p class="m-0px font-w-600">Best Performance</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="count-data text-center">
+            <h6 class="count h2" data-to="190" data-speed="190">190</h6>
+            <p class="m-0px font-w-600">Playable Characters</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2></h2>
+    <div class="counter">
+        <div class="row">
+            <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
         <h2></h2>
-        <div class="counter">
-            <div class="row">
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="500" data-speed="500">500</h6>
-                        <p class="m-0px font-w-600">Raid Reports</p>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="150" data-speed="150">150</h6>
-                        <p class="m-0px font-w-600">Encounters</p>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="850" data-speed="850">850</h6>
-                        <p class="m-0px font-w-600">iLvl</p>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <div class="count-data text-center">
-                        <h6 class="count h2" data-to="190" data-speed="190">190</h6>
-                        <p class="m-0px font-w-600">Playable Characters</p>
-                    </div>
-                </div>
+        <div class="card ms-5" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/guilds/2770be9fba8f43ae8b5f0f5c6bffdcdc.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Guild Name</h5>
+              <p class="card-text">Guild Slogan</p>
+              <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
             </div>
+          </div>
         </div>
     </div>
+    <h2></h2>
+    <div class="counter">
+        <div class="row">
+            <h3 class="dark-color">Your raid hisroty</h3>
+<h2></h2>
+        <table
+  class="table align-middle"
+  style="width: 80%; margin: 0 auto; text-align: center"
+>
+  <thead class="bg-light table-dark">
+    <tr>
+      <th>Name</th>
+      <th>xxx</th>
+      <th>xxx</th>
+      <th>xxx</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg"
+            alt=""
+            style="width: 45px; height: 45px"
+            class="rounded-circle"
+          />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Antisocial</p>
+          </div>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-link btn-sm btn-rounded">
+          View
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </div>
+  </div>
 </section>
 
-        <table class=" table align-middle" style="width: 80%; margin: 0 auto; text-align:center">
-            <thead class="bg-light table-dark">
-                <tr>
-                    <th>Name</th>
-                    <th>xxx</th>
-                    <th>xxx</th>
-                    <th>xxx</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg" alt=""
-                                style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Antisocial</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/17205553.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Alex Ray</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/index.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Kate Hunington</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/17205553.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Alex Ray</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/17205553.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Alex Ray</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/17205553.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Alex Ray</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/17205553.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Alex Ray</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/17205553.jpg" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Alex Ray</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" mdbRipple rippleColor="dark">
-                            View
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
 
 
