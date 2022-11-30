@@ -1,55 +1,107 @@
 <app-navbar></app-navbar>
-
 <div class="main animate-opacity">
-
-  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)" autocomplete="off" class="form animate-opacity">
+  <form
+    *ngIf="!isLoggedIn"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate
+    class="form animate-opacity"
+  >
     <div class="control">
       <h1>Sign In</h1>
     </div>
-    <div class="control block-cube block-input animate-left">
-      <input name="username" placeholder="Username" type="text" ngModel="Username"
-      #usernameInput="ngModel" required/>
-      <div class="bg-top">
-        <div class="bg-inner"></div>
+
+    <div class="form-group">
+      <div class="control block-cube block-input animate-left">
+        <input
+          placeholder="Username"
+          type="text"
+          class="form-control"
+          name="username"
+          [(ngModel)]="form.username"
+          required
+          #username="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+        />
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
       </div>
-      <div class="bg-right">
-        <div class="bg-inner"></div>
-      </div>
-      <div class="bg">
-        <div class="bg-inner"></div>
+      <div *ngIf="username.errors && f.submitted" class="invalid-feedback">
+        Username is required!
       </div>
     </div>
-    <div class="control block-cube block-input animate-right">
-      <input name="password" placeholder="Password" type="password" ngModel="IK23QFUB0M"
-      #passwordInput="ngModel" required/>
-      <div class="bg-top">
-        <div class="bg-inner"></div>
-      </div>
-      <div class="bg-right">
-        <div class="bg-inner"></div>
-      </div>
-      <div class="bg">
-        <div class="bg-inner"></div>
+
+    <div class="form-group">
+      <div class="control block-cube block-input animate-right">
+        <input
+          placeholder="Password"
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+        />
+        <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
       </div>
     </div>
-    <button class="btn block-cube block-cube-hover animate-zoom" type="submit">
-      <div class="bg-top">
-        <div class="bg-inner"></div>
+
+    <div class="form-group">
+      <button
+        class="btn block-cube block-cube-hover animate-zoom"
+        type="submit"
+      >
+        <div class="bg-top">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg-right">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="bg">
+          <div class="bg-inner"></div>
+        </div>
+        <div class="text">Log In</div>
+      </button>
+    </div>
+
+    <div class="register animate-zoom">
+      Don't have an account yet?
+      <p><a href="register"> Register here! </a></p>
+    </div>
+    <div class="form-group">
+      <div
+        *ngIf="f.submitted && isLoginFailed"
+        class="alert alert-danger"
+        role="alert"
+      >
+        Login failed: {{ errorMessage }}
       </div>
-      <div class="bg-right">
-        <div class="bg-inner"></div>
-      </div>
-      <div class="bg">
-        <div class="bg-inner"></div>
-      </div>
-      <div class="text">Log In</div>
-    </button>
-    <div class='register animate-zoom'>
-      Don't have an account yet? 
-      <p><a href='register'>
-        Register here!
-      </a></p>
     </div>
   </form>
+
   <h2></h2>
 </div>

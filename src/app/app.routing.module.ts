@@ -18,6 +18,7 @@ import { RaidReportsComponent } from './raid-reports/raid-reports.component';
 import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { UserSetupComponent } from './user-setup/user-setup.component';
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
   {
     path:'user-profile',
     component: UserProfileComponent,
+    
   },
   {
     path:'guilds/guild-details',
@@ -92,6 +94,10 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent,
+  },
+  {
+    path:'user-profile/user-setup',
+    component: UserSetupComponent,
   },
 ];
 

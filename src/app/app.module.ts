@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ApiService } from './api/api.service';
 
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -48,9 +47,14 @@ import { RaidReportsComponent } from './raid-reports/raid-reports.component';
 import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule }   from '@angular/forms';
-import { NotifierService, NotifierModule } from 'angular-notifier';
 import { LoginComponent } from './login/login.component';
-import { AuthenticationService } from './api/authentication.service';
+import { UserSetupComponent } from './user-setup/user-setup.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { ApiService } from './_services/api.service';
+import { httpInterceptorProviders } from './_helpers/http.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -80,6 +84,10 @@ import { AuthenticationService } from './api/authentication.service';
     PlayerRankingsComponent,
     RegisterComponent,
     LoginComponent,
+    UserSetupComponent,
+    BoardUserComponent,
+    BoardModeratorComponent,
+    BoardAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -102,10 +110,9 @@ import { AuthenticationService } from './api/authentication.service';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NotifierModule,
     
   ],
-  providers: [ApiService, NotifierService, AuthenticationService],
+  providers: [ApiService, httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
