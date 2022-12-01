@@ -12,19 +12,21 @@ import { PlayerDetailsComponent } from './player-details/player-details.componen
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { AuctionHouseComponent } from './auction-house/auction-house.component';
 import { RaidReportsComponent } from './raid-reports/raid-reports.component';
 import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { UserSetupComponent } from './user-setup/user-setup.component';
 
 const routes: Routes = [
   {
     path:'',
-    component: HomeComponent,
+    redirectTo: 'home', pathMatch: 'full',
 
+  },
+  {
+    path:'home',
+    component: HomeComponent,
   },
   {
     path:'raids',
@@ -72,10 +74,6 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path:'user-profile-update',
-    component: UpdateProfileComponent,
-  },
-  {
     path:'auction-house',
     component: AuctionHouseComponent,
   },
@@ -94,10 +92,6 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent,
-  },
-  {
-    path:'user-profile/user-setup',
-    component: UserSetupComponent,
   },
 ];
 

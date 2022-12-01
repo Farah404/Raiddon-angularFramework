@@ -44,10 +44,6 @@ export class GameDataComponent implements OnInit {
       this.reputationFactionsData = data;
     })
 
-    this.api.getRacesPictures().subscribe((data) => {
-      this.racePicturesData = data;
-    })
-
   }
 
 

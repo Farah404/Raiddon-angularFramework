@@ -56,7 +56,7 @@
       </ul>
       <!-- Left links -->
 
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" *ngIf="!isLoggedIn">
         <a href="/register"><button type="button" class="btn btn-link px-3 me-2">
           Sign up
         </button></a>
@@ -70,6 +70,24 @@
           ><i class="fab fa-github"></i
         ></a>
       </div>
+
+            <!-- Left links -->
+
+            <div class="d-flex align-items-center" *ngIf="isLoggedIn">
+              <a href="/user-profile"><button type="button" class="btn btn-link px-3 me-2">
+                My Profile
+              </button></a>
+              <button (click)="logout()" type="submit" class="btn btn-primary me-3">
+                Log Out  <i class="fa-solid fa-right-from-bracket"></i>
+              </button>
+              <a
+                class="btn btn-dark px-3"
+                href="https://github.com/Farah404"
+                role="button"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+
     </div>
     <!-- Collapsible wrapper -->
   </div>

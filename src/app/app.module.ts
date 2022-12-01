@@ -34,12 +34,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { GuildDetailsComponent } from './guild-details/guild-details.component';
 import { RaidDetailsComponent } from './raid-details/raid-details.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
-import { NavbarConnectedComponent } from './navbar-connected/navbar-connected.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactPlayerModalComponent } from './contact-player-modal/contact-player-modal.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ApplyToGuildComponent } from './apply-to-guild-modal/apply-to-guild.component';
 import { CreateRaidModalComponent } from './create-raid-modal/create-raid-modal.component';
 import { AuctionHouseComponent } from './auction-house/auction-house.component';
@@ -48,12 +46,11 @@ import { PlayerRankingsComponent } from './player-rankings/player-rankings.compo
 import { RegisterComponent } from './register/register.component';
 import { FormsModule }   from '@angular/forms';
 import { LoginComponent } from './login/login.component';
-import { UserSetupComponent } from './user-setup/user-setup.component';
-import { BoardUserComponent } from './board-user/board-user.component';
-import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { ApiService } from './_services/api.service';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { CreacteCharacterModalComponent } from './creacte-character-modal/creacte-character-modal.component';
+import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
+import { UpdateProfileModalComponent } from './update-profile-modal/update-profile-modal.component';
 
 
 @NgModule({
@@ -71,12 +68,10 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     GuildDetailsComponent,
     RaidDetailsComponent,
     PlayerDetailsComponent,
-    NavbarConnectedComponent,
     AboutComponent,
     ContactComponent,
     FaqComponent,
     ContactPlayerModalComponent,
-    UpdateProfileComponent,
     ApplyToGuildComponent,
     CreateRaidModalComponent,
     AuctionHouseComponent,
@@ -84,10 +79,9 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     PlayerRankingsComponent,
     RegisterComponent,
     LoginComponent,
-    UserSetupComponent,
-    BoardUserComponent,
-    BoardModeratorComponent,
-    BoardAdminComponent
+    CreacteCharacterModalComponent,
+    PreferencesModalComponent,
+    UpdateProfileModalComponent,
   ],
   imports: [
     BrowserModule,
