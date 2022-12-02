@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <div class="main bg-image" style="
+    background-image: url('../../assets/wow-images/sw5.jpg');
+    height: 20vh;
+  ">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="ms-3 mb-3">Tell Us More about yourself</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-body" style="width:100%">
+
+  <section class="section about-section gray-bg" id="about">
+    <div class="container">
+      <div class="counter">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col">
+            <div class="row">
+              <div class="col" aria-describedby="imghelp">
+                <div class="form-group mb-3">
+                  <label for="ilvl">Battle Tag</label>
+                  <input type="text" class="form-control" id="battleTag" name="battleTag" [(ngModel)]="currentUser.battleTag"/>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="ilvl">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" [(ngModel)]="currentUser.username"/>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="ilvl">Profile picture</label><br />
+                  <input id="imageUpload" type="file" 
+                  name="profile_photo" placeholder="Photo" required="" capture>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Cancel
+  </button>
+  <button type="submit" class="btn btn-primary" (click)="updateUser()">Update</button>
+</div>

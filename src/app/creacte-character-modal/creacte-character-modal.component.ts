@@ -1,31 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
-
-import { Playablecharacter } from 'src/model/playable-character';
+import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { ApiService } from '../_services/api.service';
+import { StorageService } from '../_services/storage.service';
+import { Charac } from 'src/model/character';
 
+import { User } from 'src/model/user';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-setup',
-  templateUrl: './user-setup.component.html',
-  styleUrls: ['./user-setup.component.scss']
+  selector: 'app-creacte-character-modal',
+  templateUrl: './creacte-character-modal.component.html',
+  styleUrls: ['./creacte-character-modal.component.scss']
 })
-export class UserSetupComponent implements OnInit {
+export class CreacteCharacterModalComponent implements OnInit {
   playableRacesData = null;
   playableClassesData = null;
   classTalentsData = null;
   professionsData = null;
   connectedRealmsData = null;
   reputationFactionsData = null;
-  racePicturesData = null;
-  private subscriptions: Subscription[] = [];
-  public profileImage: File;
-  public playableCharacter: Playablecharacter;
-  public fileName: string;
+ 
+
+ 
+
+  constructor(
+    private storageService: StorageService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private api: ApiService,
+    public modalRef: MdbModalRef<CreacteCharacterModalComponent>) { }
 
 
-  constructor(private api: ApiService) { }
 
   ngOnInit() {
 
@@ -52,8 +57,7 @@ export class UserSetupComponent implements OnInit {
     this.api.getReputationFactions().subscribe((data) => {
       this.reputationFactionsData = data;
     })
-
-
   }
+
 
 }

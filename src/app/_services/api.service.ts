@@ -109,10 +109,6 @@ export class ApiService {
     return this.http.get(this.bnetURL + 'api/weapons');
   }
 
-  getRacesPictures() {
-    return this.http.get(this.wclogURL + 'api/racePictures');
-  }
-
   getReports() {
     return this.http.get(this.wclogURL + 'api/reports');
   }
