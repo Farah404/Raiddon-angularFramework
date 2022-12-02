@@ -1,8 +1,8 @@
-export class User{
-    public username: string;
-    public email: string;
-    public password: string;
-    public battleTag: string;
-    public profilePictureLink: string;
-    public playableCharacters: string[];
+export class User {
+    id?: any;
+    username?: string;
+    email?: string;
+    password?: string;
+    battleTag?: string;
+    profilePictureLink?: string;
 }

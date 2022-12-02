@@ -5,7 +5,7 @@
   ">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-        <h1 class="mb-3">Tell Us More about yourself</h1>
+        <h1 class="ms-3 mb-3">Tell Us More about yourself</h1>
       </div>
     </div>
   </div>
@@ -21,16 +21,18 @@
               <div class="col" aria-describedby="imghelp">
                 <div class="form-group mb-3">
                   <label for="ilvl">Battle Tag</label>
-                  <input type="text" class="form-control" id="ilvl" name="ilvl" />
+                  <input type="text" class="form-control" id="battleTag" name="battleTag" [(ngModel)]="currentUser.battleTag"/>
                 </div>
                 <div class="form-group mb-3">
                   <label for="ilvl">Username</label>
-                  <input type="text" class="form-control" id="ilvl" name="ilvl" />
+                  <input type="text" class="form-control" id="username" name="username" [(ngModel)]="currentUser.username"/>
                 </div>
                 <div class="form-group mb-3">
-                  <label for="ilvl">Profile picture</label>
-                  <input type="text" class="form-control" id="ilvl" name="ilvl" />
+                  <label for="ilvl">Profile picture</label><br />
+                  <input id="imageUpload" type="file" 
+                  name="profile_photo" placeholder="Photo" required="" capture>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -44,5 +46,5 @@
   <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
     Cancel
   </button>
-  <button type="button" class="btn btn-primary">Send</button>
+  <button type="submit" class="btn btn-primary" (click)="updateUser()">Update</button>
 </div>
