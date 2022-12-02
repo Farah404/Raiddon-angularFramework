@@ -16,9 +16,19 @@
     </div>
   </div>
 </div>
-
+<div class="second-main" style="background-color: #282828">
 <h2></h2>
-
+<div class="input-group">
+  <input
+    type="search"
+    class="form-control rounded"
+    placeholder="Search"
+    aria-label="Search"
+    aria-describedby="search-addon"
+  />
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
+<h2></h2>
 <table
 class="animate-bottom table table-striped table-hover align-middle"
 style="width: 80%; margin: 0 auto; text-align: center"
@@ -34,7 +44,7 @@ style="width: 80%; margin: 0 auto; text-align: center"
       <th scope="col">Character Ranking</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="opacity:0.6; background-color:aliceblue">
     <ng-container *ngFor="let data of playersRankingsData">
     <tr>
       <td>{{data.encounterName}}</td>
@@ -52,3 +62,4 @@ style="width: 80%; margin: 0 auto; text-align: center"
 
 <h2></h2>
 
+</div>

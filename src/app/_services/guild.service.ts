@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from 'src/model/user';
+import { Guild } from 'src/model/guild';
 
-
-const baseUrl = 'http://localhost:8080/api/users';
+const baseUrl = 'http://localhost:8080/api/guilds';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class GuildService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<User[]> {
-    return this.http.get<User[]>(baseUrl);
+  getAll(): Observable<Guild[]> {
+    return this.http.get<Guild[]>(baseUrl);
   }
 
-  get(id: any): Observable<User> {
-    return this.http.get<User>(`${baseUrl}/${id}`);
+  get(id: any): Observable<Guild> {
+    return this.http.get<Guild>(`${baseUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }
 
+  
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
@@ -37,8 +37,10 @@ export class UserService {
     return this.http.delete(baseUrl);
   }
 
-  findByusername(username: any): Observable<User[]> {
-    return this.http.get<User[]>(`${baseUrl}?username=${username}`);
+  findByGuildName(guildName: any): Observable<Guild[]> {
+    return this.http.get<Guild[]>(`${baseUrl}?username=${guildName}`);
   }
+
+
 
 }

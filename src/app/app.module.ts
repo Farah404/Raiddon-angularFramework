@@ -41,7 +41,6 @@ import { ContactPlayerModalComponent } from './contact-player-modal/contact-play
 import { ApplyToGuildComponent } from './apply-to-guild-modal/apply-to-guild.component';
 import { CreateRaidModalComponent } from './create-raid-modal/create-raid-modal.component';
 import { AuctionHouseComponent } from './auction-house/auction-house.component';
-import { RaidReportsComponent } from './raid-reports/raid-reports.component';
 import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule }   from '@angular/forms';
@@ -75,7 +74,6 @@ import { UpdateProfileModalComponent } from './update-profile-modal/update-profi
     ApplyToGuildComponent,
     CreateRaidModalComponent,
     AuctionHouseComponent,
-    RaidReportsComponent,
     PlayerRankingsComponent,
     RegisterComponent,
     LoginComponent,
