@@ -25,250 +25,35 @@
     <input
       type="search"
       class="form-control rounded"
-      placeholder="Search"
+      placeholder="Search by guild name"
       aria-label="Search"
       aria-describedby="search-addon"
+      [(ngModel)]="guildName"
     />
-    <button type="button" class="btn btn-outline-primary">search</button>
+    <button type="button" class="btn btn-outline-primary" (click)="searchGuildName()">search</button>
   </div>
-  <div class="container animate-bottom">
+  <div class="container animate-bottom" >
     <h2></h2>
     <div class="row">
-      <div class="col-sm-6 col-md-3">
+      <ng-container *ngFor="let guild of guilds";>
+      <div class="col-sm-6 col-md-3" >
         <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
+          
           <img
             class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
+            src="{{guild.guildEmblem}}"
             alt="Card image cap"
-            width="400"
+            style="width: 500px;height: 300px;"
           />
           <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
+            <h4 class="card-title">{{guild.guildName}}</h4>
+            <p class="card-text">{{guild.slogan}}</p>
+            <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
           </div>
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3 hover-zoom" mdbRipple rippleColor="light">
-        <div class="card mb-3">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3 hover-zoom" mdbRipple rippleColor="light">
-        <div class="card mb-3">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
+    </ng-container>
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container -->
-  <div class="container">
-    <h2></h2>
-    <div class="row">
-      <div class="col-sm-6 col-md-3 hover-zoom" mdbRipple rippleColor="light">
-        <div class="card mb-3">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body hover-zoom" mdbRipple rippleColor="light">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-
-  <!-- /.container -->
-  <div class="container">
-    <h2></h2>
-    <div class="row">
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-      <div class="col-sm-6 col-md-3">
-        <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-          <!-- set a width on the image otherwise it will expand to full width       -->
-          <img
-            class="card-img-top img-fluid"
-            src="../../assets/profile-pictures/341690-Jaina-Proudmoore-World-of-Warcraft-WoW-Video-Game.jpg"
-            alt="Card image cap"
-            width="400"
-          />
-          <div class="card-body">
-            <h4 class="card-title">.card-title</h4>
-            <p class="card-text">.card-text</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
-          </div>
-        </div>
-        <!-- /.card -->
-      </div>
-      <!-- /.col-sm-4 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
 </div>
 

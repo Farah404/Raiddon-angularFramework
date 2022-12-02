@@ -13,7 +13,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FaqComponent } from './faq/faq.component';
 import { AuctionHouseComponent } from './auction-house/auction-house.component';
-import { RaidReportsComponent } from './raid-reports/raid-reports.component';
 import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -76,10 +75,6 @@ const routes: Routes = [
   {
     path:'auction-house',
     component: AuctionHouseComponent,
-  },
-  {
-    path:'raid-reports',
-    component: RaidReportsComponent,
   },
   {
     path:'players-rankings',

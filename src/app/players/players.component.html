@@ -1,11 +1,7 @@
-
-<div
-  class="main bg-image grayscale"
-  style="
+<div class="main bg-image grayscale" style="
     background-image: url('../../assets/wow-images/504723.jpg');
     height: 50vh;
-  "
->
+  ">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
       <h1 class="mb-3 typewriter">Looking for a Player?</h1>
@@ -16,68 +12,42 @@
   </div>
 </div>
 <div class="second-main" style="background-color: #282828">
-  
+
   <div class="caption">
     <h2></h2>
     <div class="input-group">
       <input
         type="search"
         class="form-control rounded"
-        placeholder="Search"
+        placeholder="Search by username"
         aria-label="Search"
         aria-describedby="search-addon"
+        [(ngModel)]="username"
       />
-      <button type="button" class="btn btn-outline-primary">search</button>
+      <button type="button" class="btn btn-outline-primary" (click)="searchUserName()">search</button>
     </div>
-    <table
-      class="animate-bottom table align-middle"
-      style="width: 80%; margin: 0 auto; text-align: center"
-    >
-      <thead class="bg-light table-dark">
-        <tr>
-          <th>Name</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody style="opacity: 0.6; background-color: aliceblue">
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <img
-                src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg"
-                alt=""
-                style="width: 45px; height: 45px"
-                class="rounded-circle"
-              />
-              <div class="ms-3">
-                <p class="fw-bold mb-1">Antisocial</p>
-              </div>
+    <div class="container animate-bottom" >
+      <h2></h2>
+      <div class="row">
+        <ng-container *ngFor="let user of users";>
+        <div class="col-sm-6 col-md-3" >
+          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+            
+            <img
+              class="card-img-top img-fluid"
+              src="{{user.profilePicture}}"
+              alt="Card image cap"
+              style="width: 550px;height: 400px;"
+            />
+            <div class="card-body">
+              <h4 class="card-title">{{user.battleTag}}</h4>
+              <a href="/players/player-details" class="btn btn-primary">Check Player</a>
             </div>
-          </td>
-          <td>
-            <a href="players/player-details"> view</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <img
-                src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg"
-                alt=""
-                style="width: 45px; height: 45px"
-                class="rounded-circle"
-              />
-              <div class="ms-3">
-                <p class="fw-bold mb-1">Antisocial</p>
-              </div>
-            </div>
-          </td>
-          <td>
-            <a href="players/player-details"> view</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+    </div>
+    </div>
+    <h2></h2>
   </div>
-  <h2></h2>
-</div>

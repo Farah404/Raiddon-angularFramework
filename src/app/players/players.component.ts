@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/model/user';
+import { UserService } from '../_services/user.service';
+
 
 @Component({
   selector: 'app-players',
@@ -7,9 +10,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersComponent implements OnInit {
 
-  constructor() { }
+  users?: User[];
+  currentUser: User = {};
+  currentIndex = -1;
+  username='';
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.retrieveUsers();
+  }
+  retrieveUsers(): void {
+    this.userService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.users = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  searchUserName(): void {
+    this.currentUser = {};
+    this.currentIndex = -1;
+
+    this.userService.findByusername(this.username)
+      .subscribe({
+        next: (data) => {
+          this.users = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
   }
 
 }
