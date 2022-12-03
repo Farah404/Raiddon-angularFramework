@@ -1,0 +1,146 @@
+<div class="main bg-image" style="
+  background-image: url('https://cdnb.artstation.com/p/assets/images/images/031/727/501/original/rui-goncalves-balrogvsglorfindel-2.gif?1604425325');
+  height: 30vh;
+">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+            <h1 class="mb-3 typewriter">Want to manage your equipment ?</h1>
+            <h5 class="mb-4">By using our dressing room you can easily do so!</h5>
+        </div>
+    </div>
+</div>
+<div class="stats">
+    <button class="btn btn-primary mb-1" (click)="openEquipmentModal()">Caulculate my Attributes</button>
+</div>
+<div class="container">
+    <h2></h2>
+    <div class="necklace"><img style="width:20%" src="https://www.pngrepo.com/png/246103/512/necklace.png" />Necklace
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select>
+    </div>
+    <div class="shoulder"><img style="width:20%"
+            src="https://www.svgrepo.com/show/323325/spiked-shoulder-armor.svg" />Shoulder <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="back"><img style="width:20%"
+            src="https://starpng.com/public/uploads/preview/superhero-capes-png-cape-icon-png-1015767840232y6soyaja6.png" />Cape
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="chest"><img style="width:20%" src="https://cdn-icons-png.flaticon.com/512/683/683550.png" />Chest
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="head"><img style="width:20%"
+            src="https://img.freepik.com/free-icon/helmet_318-536839.jpg?w=2000" />Helmet <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="hands" style="text-align:right;"><img style="width:20%"
+            src="https://w7.pngwing.com/pngs/636/141/png-transparent-glove-computer-icons-gauntlet-armour-boxing-glove-hand-armor-thumbnail.png" />Hands
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="waist" style="text-align:right;"><img style="width:20%"
+            src="https://static.thenounproject.com/png/2360094-200.png" />Waist <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="legs" style="text-align:right;"><img style="width:20%"
+            src="https://cdn3.iconfinder.com/data/icons/video-game-elements-soft-fill/60/Plate-Legs-Armour-gaming-armoury-512.png" />Legs
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="feet" style="text-align:right;"><img style="width:20%"
+            src="https://www.svgrepo.com/show/322686/leg-armor.svg" />Feet <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="Picture">
+        <img style="width: 100%;" src="https://i.imgur.com/n4nUivI.gif" />
+    </div>
+    <div class="firstRing"><img style="width:20%" src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />Ring 1
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="firstTrinket"><img style="width:20%"
+            src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />Trinket 1 <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="secondRing" style="text-align:right;"><img style="width:20%"
+            src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />Ring 2 <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="secondTrinket" style="text-align:right;"><img style="width:20%"
+            src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />Trinket 2 <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="wrist" style="text-align:right;"><img style="width:20%"
+            src="https://icon-library.com/images/armor-icon-png/armor-icon-png-12.jpg" />Wrist <select
+            class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="mainHand"><img style="width:20%"
+            src="https://cdn-icons-png.flaticon.com/512/3275/3275467.png" />Main-Hand <select class="form-select"
+            aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+    <div class="offHand" style="text-align:right;"><img style="width:20%"
+            src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/1024/62967-shield-icon.png" />Off-Hand
+        <select class="form-select" aria-label="Default select example">
+            <option *ngFor="let item of items">
+                {{ item.itemName }}
+
+            </option>
+        </select></div>
+</div>

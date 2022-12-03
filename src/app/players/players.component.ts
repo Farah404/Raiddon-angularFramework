@@ -21,7 +21,7 @@ export class PlayersComponent implements OnInit {
     this.retrieveUsers();
   }
   retrieveUsers(): void {
-    this.userService.getAll()
+    this.userService.getAllUsers()
       .subscribe({
         next: (data) => {
           this.users = data;

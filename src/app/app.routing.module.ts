@@ -16,6 +16,7 @@ import { AuctionHouseComponent } from './auction-house/auction-house.component';
 import { PlayerRankingsComponent } from './player-rankings/player-rankings.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { DressingRoomComponent } from './dressing-room/dressing-room.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,10 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent,
+  },
+  {
+    path:'dressing-room',
+    component: DressingRoomComponent,
   },
 ];
 

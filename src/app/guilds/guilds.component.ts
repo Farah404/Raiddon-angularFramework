@@ -10,6 +10,7 @@ import { GuildService } from '../_services/guild.service';
 export class GuildsComponent implements OnInit {
 
   guilds?: Guild[];
+  filteredGuilds: Guild[]
   currentGuild: Guild = {};
   currentIndex = -1;
   guildName='';
@@ -18,6 +19,8 @@ export class GuildsComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveGuilds();
+
+    
   }
 
   retrieveGuilds(): void {
@@ -25,6 +28,7 @@ export class GuildsComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.guilds = data;
+          this.filteredGuilds = this.guilds.filter(f => f.recruiting==true);
           console.log(data);
         },
         error: (e) => console.error(e)

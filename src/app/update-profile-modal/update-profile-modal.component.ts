@@ -40,7 +40,7 @@ export class UpdateProfileModalComponent implements OnInit {
   }
 
   getUser(id: string): void {
-    this.userService.get(id)
+    this.userService.getUser(id)
       .subscribe({
         next: (data) => {
           this.currentUser = data;
@@ -53,7 +53,7 @@ export class UpdateProfileModalComponent implements OnInit {
   updateUser(): void {
     this.message = '';
 
-    this.userService.update(this.currentUser.id, this.currentUser)
+    this.userService.updateUser(this.currentUser.id, this.currentUser)
       .subscribe({
         next: (res) => {
           console.log(res);

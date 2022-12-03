@@ -12,38 +12,39 @@
     </div>
   </div>
 </div>
+<ng-container *ngIf="currentUser;">
 <section class="section about-section gray-bg" id="about" style="background-color: #282828;">
   <div class="container">
     <div class="counter">
       <div class="row align-items-center flex-row-reverse">
         <div class="col">
           <div class="about-text go-to">
-            <h3 class="dark-color" *ngIf="currentUser;">{{ currentUser.battleTag }}</h3>
+            <h3 class="dark-color" >{{ currentUser.battleTag }}</h3>
             <div class="row about-list">
               <div class="col-md-6">
-                <div class="media" *ngIf="currentUser;">
+                <div class="media">
                     <label>Username</label>
-                    <p>{{ currentUser.username }}</p>
+                    <p>{{ currentUser.playableCharacter.name }}</p>
                 </div>
                 <div class="media">
                     <label>Realm</label>
-                    <p>xxxx</p>
+                    <p>{{ currentUser.playableCharacter.realm }}</p>
                 </div>
                 <div class="media">
                     <label>Faction</label>
-                    <p>xxxx</p>
+                    <p>{{ currentUser.playableCharacter.faction }}</p>
                 </div>
                 <div class="media">
                     <label>Race</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.race }}</p>
                 </div>
                 <div class="media">
                     <label>Class</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.playableClass }}</p>
                 </div>
                 <div class="media">
                     <label>Specialisations</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.mainSpec }}</p>
                 </div>
                
                 
@@ -51,29 +52,29 @@
               <div class="col-md-6">
                 <div class="media">
                     <label>Professions</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.firstProfession }}</p>
                 </div>
                 <div class="media">
                     <label>Guild</label>
-                    <p>xxx</p>
+                    <p>{{currentUser.playableCharacter.guild.guildName}}</p>
                 </div>
                 <div class="media">
                     <label>Guild Rank</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.guildRank}}</p>
                 </div>
                 <div class="media">
                     <label>iLvl</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.ilevel}}</p>
                 </div>
                 <div class="media">
                     <label>Level</label>
-                    <p>xxx</p>
+                    <p>{{ currentUser.playableCharacter.level}}</p>
                 </div>
                 <div class="media">
                     <label>Actions</label><br />
                     <button class="btn btn-primary mb-1" (click)="openUpdateModal()">Update Profile</button>
-                    <button class="btn btn-primary mb-1" (click)="openCharacModal()">Add Playable Character</button>
-                    <button class="btn btn-primary mb-1" (click)="openPrefModal()">Add Preferences</button>
+                    <button class="btn btn-primary mb-1" (click)="openPrefModal()">Check Preferences</button>
+                    <a class="btn btn-primary mb-1" href="dressing-room" >Manage Equipment</a>
 
                 </div>
               </div>
@@ -83,7 +84,6 @@
         <div class="col">
           <div class="about-avatar">
             <img
-            *ngIf="currentUser;"
               src="{{ currentUser.profilePicture }}"
               height="500vh"
               style="
@@ -129,16 +129,46 @@
         <div class="row">
             <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
         <h2></h2>
-        <div class="card ms-5" style="width: 18rem;">
-            <img class="card-img-top" src="../../assets/guilds/2770be9fba8f43ae8b5f0f5c6bffdcdc.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Guild Name</h5>
-              <p class="card-text">Guild Slogan</p>
-              <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
+        <div class="container animate-bottom" >
+          <h2></h2>
+          <div class="row">
+            <ng-container *ngFor="let guild of filteredGuilds";>
+            <div class="col-sm-6 col-md-3" >
+              <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+                
+                <img
+                  class="card-img-top img-fluid"
+                  src="{{guild.guildEmblem}}"
+                  alt="Card image cap"
+                  style="width: 500px;height: 300px;"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">{{guild.guildName}}</h4>
+                  <p class="card-text">{{guild.slogan}}</p>
+                  <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
+                </div>
+              </div>
             </div>
+          </ng-container>
           </div>
         </div>
+        </div>
     </div>
+    <h2></h2>
+    <div class="counter">
+      <div class="row">
+          <h3 class="dark-color">Available Raids we think might interest you!</h3>
+      <h2></h2>
+      <div class="card ms-5" style="width: 18rem;">
+          <img class="card-img-top" src="../../assets/guilds/2770be9fba8f43ae8b5f0f5c6bffdcdc.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Guild Name</h5>
+            <p class="card-text">Guild Slogan</p>
+            <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
+          </div>
+        </div>
+      </div>
+  </div>
     <h2></h2>
     <div class="counter">
         <div class="row">
@@ -160,8 +190,8 @@
     </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let data of playersRankingsData">
-    <tr *ngIf="data.characterName == 'Décapitaine'">
+    <ng-container *ngFor="let data of filteredPlayersRankingsData">
+    <tr>
       <td>{{data.characterName}}</td>
       <td>{{data.class}}</td>
       <td>{{data.spec}}</td>
@@ -177,3 +207,4 @@
     </div>
   </div>
 </section>
+</ng-container>

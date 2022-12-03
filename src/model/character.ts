@@ -18,7 +18,6 @@ export class Charac {
     public canFish?: boolean;
     public canFirstAid?: boolean;
     public guildRank?: String;
-    public equipment?: number;
-    public guild?: number;
-    public user?: number
+    public equipment?: object;
+    public guild?: object;
 }

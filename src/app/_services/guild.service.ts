@@ -40,7 +40,4 @@ export class GuildService {
   findByGuildName(guildName: any): Observable<Guild[]> {
     return this.http.get<Guild[]>(`${baseUrl}?username=${guildName}`);
   }
-
-
-
 }
