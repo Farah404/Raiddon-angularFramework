@@ -1,0 +1,214 @@
+.container {  display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "head Picture Picture Picture hands"
+      "necklace Picture Picture Picture waist"
+      "shoulder Picture Picture Picture legs"
+      "back Picture Picture Picture feet"
+      "chest Picture Picture Picture wrist"
+      "firstRing Picture Picture Picture secondRing"
+      "firstTrinket Picture Picture Picture secondTrinket"
+      "mainHand mainHand relic offHand offHand";
+      margin-top: 2%;
+      margin-bottom: 2%;
+  }
+  .necklace { grid-area: necklace; }
+  
+  .shoulder { grid-area: shoulder; }
+  
+  .back { grid-area: back; }
+  
+  .chest { grid-area: chest; }
+  
+  .head { grid-area: head; }
+  
+  .hands { grid-area: hands; }
+  
+  .waist { grid-area: waist; }
+  
+  .legs { grid-area: legs; }
+  
+  .feet { grid-area: feet; }
+  
+  .Picture { grid-area: Picture; }
+  
+  .firstRing { grid-area: firstRing; }
+  
+  .firstTrinket { grid-area: firstTrinket; }
+  
+  .secondRing { grid-area: secondRing; }
+  
+  .secondTrinket { grid-area: secondTrinket; }
+  
+  .wrist { grid-area: wrist; }
+  
+  .relic { grid-area: relic; }
+  
+  .mainHand { grid-area: mainHand; }
+  
+  .offHand { grid-area: offHand; }
+  
+  @media all and (-ms-high-contrast:none) {
+    .container {
+      display: -ms-grid;
+      -ms-grid-columns: repeat(5, 1fr);
+      -ms-grid-rows: repeat(8, 1fr);
+    }
+  
+    .necklace {
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .shoulder {
+      -ms-grid-row: 3;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .back {
+      -ms-grid-row: 4;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .chest {
+      -ms-grid-row: 5;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .head {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .hands {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .waist {
+      -ms-grid-row: 2;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .legs {
+      -ms-grid-row: 3;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .feet {
+      -ms-grid-row: 4;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .Picture {
+      -ms-grid-row: 1;
+      -ms-grid-row-span: 7;
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 3;
+    }
+  
+    .firstRing {
+      -ms-grid-row: 6;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .firstTrinket {
+      -ms-grid-row: 7;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+    }
+  
+    .secondRing {
+      -ms-grid-row: 6;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .secondTrinket {
+      -ms-grid-row: 7;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .wrist {
+      -ms-grid-row: 5;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 5;
+      -ms-grid-column-span: 1;
+    }
+  
+    .relic {
+      -ms-grid-row: 8;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 3;
+      -ms-grid-column-span: 1;
+    }
+  
+    .mainHand {
+      -ms-grid-row: 8;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 2;
+    }
+  
+    .offHand {
+      -ms-grid-row: 8;
+      -ms-grid-row-span: 1;
+      -ms-grid-column: 4;
+      -ms-grid-column-span: 2;
+    }
+  }
+  h2 {padding:2rem 0;}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+.stats{
+  text-align: center;
+  margin-top: 5%
+}

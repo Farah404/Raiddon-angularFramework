@@ -50,6 +50,8 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { CreacteCharacterModalComponent } from './creacte-character-modal/creacte-character-modal.component';
 import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
 import { UpdateProfileModalComponent } from './update-profile-modal/update-profile-modal.component';
+import { EquipmentModalComponent } from './equipment-modal/equipment-modal.component';
+import { DressingRoomComponent } from './dressing-room/dressing-room.component';
 
 
 @NgModule({
@@ -80,6 +82,8 @@ import { UpdateProfileModalComponent } from './update-profile-modal/update-profi
     CreacteCharacterModalComponent,
     PreferencesModalComponent,
     UpdateProfileModalComponent,
+    EquipmentModalComponent,
+    DressingRoomComponent,
   ],
   imports: [
     BrowserModule,

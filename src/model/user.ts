@@ -5,4 +5,5 @@ export class User {
     password?: string;
     battleTag?: string;
     profilePictureLink?: string;
+    playableCharacter?:object;
 }

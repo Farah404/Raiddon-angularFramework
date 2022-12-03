@@ -1,0 +1,29 @@
+export class Items {
+
+    id?:any;
+    itemName?:string;
+    itemLevel?:number;
+    itemIcon?:string;
+    itemSlot?:string;
+    itemArmorType?:string;
+    itemSource?:string;
+    itemDropZone?:string;
+    itemPriorityClass?:string;
+    itemPrioritySpec?:string;
+    armor?:number;
+    agility?:number;
+    stamina?:number;
+    intellect?:number;
+    strength?:number;
+    spirit?:number;
+    hitRating?:number;
+    hasterating?:number;
+    criticalStrike?:number;
+    spellPower?:number;
+    attackPower?:number;
+    defense?:number;
+    blockValue?:number;
+    parryValue?:number;
+    expertise?:number;
+    manaPerFiveSeconds?:number;
+}
