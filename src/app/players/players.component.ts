@@ -20,12 +20,12 @@ export class PlayersComponent implements OnInit {
   ngOnInit(): void {
     this.retrieveUsers();
   }
+  
   retrieveUsers(): void {
-    this.userService.getAllUsers()
+    this.userService.getAll()
       .subscribe({
         next: (data) => {
           this.users = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });
@@ -38,8 +38,6 @@ export class PlayersComponent implements OnInit {
     this.userService.findByusername(this.username)
       .subscribe({
         next: (data) => {
-          this.users = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });

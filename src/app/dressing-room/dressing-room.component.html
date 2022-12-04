@@ -1,146 +1,291 @@
 <div class="main bg-image" style="
-  background-image: url('https://cdnb.artstation.com/p/assets/images/images/031/727/501/original/rui-goncalves-balrogvsglorfindel-2.gif?1604425325');
+  background-image: url('https://wallpaperaccess.com/full/5900022.jpg');
   height: 30vh;
 ">
     <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-            <h1 class="mb-3 typewriter">Want to manage your equipment ?</h1>
-            <h5 class="mb-4">By using our dressing room you can easily do so!</h5>
+            <table class="table align-middle table-dark" style="width: 95%; margin: 0 auto; text-align: center">
+                <thead class="bg-light table-dark">
+                    <tr>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/1065/1065537.png" style="width: 50px;"/>&nbsp;Armor</th>
+                        <th><img src="https://cdn4.iconfinder.com/data/icons/positive-attitude-color/64/perseverance-climb-effort-stamina-cliff-512.png" style="width: 50px;"/>&nbsp;Stamina</th>
+                        <th><img src="https://img.icons8.com/dusk/512/artificial-intelligence.png" style="width: 50px;"/>&nbsp;Intellect</th>
+                        <th><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-strength-fitness-and-healthy-living-flaticons-lineal-color-flat-icons.png" style="width: 50px;"/>Strength</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/2163/2163338.png" style="width: 50px;"/>&nbsp;Spirit</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/4727/4727247.png" style="width: 50px;"/>&nbsp;Agility</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/4161/4161834.png" style="width: 50px;"/>&nbsp;Hit</th>
+                        <th><img src="https://cdn4.iconfinder.com/data/icons/blueline-performance/64/haste-512.png" style="width: 50px;"/>&nbsp;Haste</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/1496/1496059.png" style="width: 50px;"/>&nbsp;Strike</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/5663/5663946.png" style="width: 50px;"/>&nbsp;Spell</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/4334/4334081.png" style="width: 50px;"/>&nbsp;Attack</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                {{head.armor}}
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                {{neck.stamina}}
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                {{cape.intellect}}
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                {{chest.strength}}
+                            </ng-container>
+                        </td>
+                        <td>
+        
+                            <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                {{wrist.spirit}}
+                            </ng-container>
+                        </td>
+                        <td>
+        
+                            <ng-container class="cell" *ngFor="let mainHand of selectedMainHanditemBis">
+                                {{mainHand.agility}}
+                            </ng-container>
+                        </td>
+                        <td>
+        
+                            <ng-container class="cell" *ngFor="let hands of selectedHandsitemBis">
+                                {{hands.hitRating}}
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container class="cell" *ngFor="let legs of selectedLegsitemBis">
+                                {{legs.criticalStrike}}
+                            </ng-container>
+                        </td>
+                        <td>
+        
+                            <ng-container class="cell" *ngFor="let feet of selectedFeetitemBis">
+                                {{feet.spellPower}}
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container class="cell" *ngFor="let ring of selectedRingitemBis">
+                                {{ring.attackPower}}
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container class="cell" *ngFor="let trinket of selectedTrinketitemBis">
+                                {{trinket.defense}}
+                            </ng-container>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-<div class="stats">
-    <button class="btn btn-primary mb-1" (click)="openEquipmentModal()">Caulculate my Attributes</button>
-</div>
+
 <div class="container">
+    <h3></h3>
+    <div class="row">
+        <div class="col">
+            <ng-container *ngIf="currentUser">
+                <img class="img1" src="{{currentUser.profilePicture}}" />
+            </ng-container>
+            <img class="img2" src="https://pbs.twimg.com/media/CQKd_84UYAABzH9.png" />
+            <div class="name">{{currentUser.playableCharacter.name}}</div>
+            <div class="lvl">{{currentUser.playableCharacter.level}}</div>
+            <div class="spec">
+                {{currentUser.playableCharacter.mainSpec}}&nbsp;{{currentUser.playableCharacter.playableClass}}</div>
+            <div class="ilvl">{{currentUser.playableCharacter.ilevel}}</div>
+            <div class="gr">{{currentUser.playableCharacter.guildRank}}</div>
+        </div>
+
+        
+        <div class="col">
+
+            <div class="row">
+                <h3></h3>
+                <div class="col">
+                    <div class="head"><img style="width:10%"
+                            src="https://img.freepik.com/free-icon/helmet_318-536839.jpg?w=2000" />Helmet <h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectHeadChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="necklace"><img style="width:10%"
+                            src="https://www.pngrepo.com/png/246103/512/necklace.png" />Necklace<h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectNecklaceChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="shoulder"><img style="width:10%"
+                            src="https://www.svgrepo.com/show/323325/spiked-shoulder-armor.svg" />Shoulder <h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectShoulderChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="back"><img style="width:10%"
+                            src="https://starpng.com/public/uploads/preview/superhero-capes-png-cape-icon-png-1015767840232y6soyaja6.png" />Cape
+                        <h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectCapeChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="chest"><img style="width:10%"
+                            src="https://cdn-icons-png.flaticon.com/512/683/683550.png" />Chest<h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectChestChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="wrist"><img style="width:10%"
+                            src="https://icon-library.com/images/armor-icon-png/armor-icon-png-12.jpg" />Wrist<h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectWristChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="mainHand"><img style="width:10%"
+                            src="https://cdn-icons-png.flaticon.com/512/3275/3275467.png" />Main-Hand<h4></h4> <select
+                            class="form-select" aria-label="Default select example"
+                            (change)="selectMainHandChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select></div>
+                </div>
+                <div class="col">
+                    <div class="hands" style="text-align:right;"><img style="width:10%"
+                            src="https://w7.pngwing.com/pngs/636/141/png-transparent-glove-computer-icons-gauntlet-armour-boxing-glove-hand-armor-thumbnail.png" />Hands
+                        <h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectHandsChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="waist" style="text-align:right;"><img style="width:10%"
+                            src="https://static.thenounproject.com/png/2360094-200.png" />Waist<h4></h4> <select
+                            class="form-select" aria-label="Default select example"
+                            (change)="selectWaistChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select></div>
+                    <h3></h3>
+                    <div class="legs" style="text-align:right;"><img style="width:10%"
+                            src="https://cdn3.iconfinder.com/data/icons/video-game-elements-soft-fill/60/Plate-Legs-Armour-gaming-armoury-512.png" />Legs
+                        <h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectLegsChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="feet" style="text-align:right;"><img style="width:10%"
+                            src="https://www.svgrepo.com/show/322686/leg-armor.svg" />Feet <h4></h4>
+                        <h5></h5><select class="form-select" aria-label="Default select example"
+                            (change)="selectFeetChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="firstRing" style="text-align:right;"><img style="width:10%"
+                            src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />Ring<h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectRingChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                    <div class="secondTrinket" style="text-align:right;"><img style="width:10%"
+                            src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />Trinket <h4></h4><select
+                            class="form-select" aria-label="Default select example"
+                            (change)="selectTrinketChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select></div>
+                    <h3></h3>
+                    <div class="offHand" style="text-align:right;"><img style="width:10%"
+                            src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/1024/62967-shield-icon.png" />Off-Hand
+                        <h4></h4>
+                        <select class="form-select" aria-label="Default select example"
+                            (change)="selectOffHandChangeHandler($event)">
+                            <option *ngFor="let item of items">
+                                {{ item.itemName }}
+                            </option>
+                        </select>
+                    </div>
+                    <h3></h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
     <h2></h2>
-    <div class="necklace"><img style="width:20%" src="https://www.pngrepo.com/png/246103/512/necklace.png" />Necklace
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select>
-    </div>
-    <div class="shoulder"><img style="width:20%"
-            src="https://www.svgrepo.com/show/323325/spiked-shoulder-armor.svg" />Shoulder <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="back"><img style="width:20%"
-            src="https://starpng.com/public/uploads/preview/superhero-capes-png-cape-icon-png-1015767840232y6soyaja6.png" />Cape
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="chest"><img style="width:20%" src="https://cdn-icons-png.flaticon.com/512/683/683550.png" />Chest
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="head"><img style="width:20%"
-            src="https://img.freepik.com/free-icon/helmet_318-536839.jpg?w=2000" />Helmet <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="hands" style="text-align:right;"><img style="width:20%"
-            src="https://w7.pngwing.com/pngs/636/141/png-transparent-glove-computer-icons-gauntlet-armour-boxing-glove-hand-armor-thumbnail.png" />Hands
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="waist" style="text-align:right;"><img style="width:20%"
-            src="https://static.thenounproject.com/png/2360094-200.png" />Waist <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="legs" style="text-align:right;"><img style="width:20%"
-            src="https://cdn3.iconfinder.com/data/icons/video-game-elements-soft-fill/60/Plate-Legs-Armour-gaming-armoury-512.png" />Legs
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="feet" style="text-align:right;"><img style="width:20%"
-            src="https://www.svgrepo.com/show/322686/leg-armor.svg" />Feet <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="Picture">
-        <img style="width: 100%;" src="https://i.imgur.com/n4nUivI.gif" />
-    </div>
-    <div class="firstRing"><img style="width:20%" src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />Ring 1
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="firstTrinket"><img style="width:20%"
-            src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />Trinket 1 <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="secondRing" style="text-align:right;"><img style="width:20%"
-            src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />Ring 2 <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="secondTrinket" style="text-align:right;"><img style="width:20%"
-            src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />Trinket 2 <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="wrist" style="text-align:right;"><img style="width:20%"
-            src="https://icon-library.com/images/armor-icon-png/armor-icon-png-12.jpg" />Wrist <select
-            class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="mainHand"><img style="width:20%"
-            src="https://cdn-icons-png.flaticon.com/512/3275/3275467.png" />Main-Hand <select class="form-select"
-            aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
-    <div class="offHand" style="text-align:right;"><img style="width:20%"
-            src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/1024/62967-shield-icon.png" />Off-Hand
-        <select class="form-select" aria-label="Default select example">
-            <option *ngFor="let item of items">
-                {{ item.itemName }}
-
-            </option>
-        </select></div>
+    <table class="table align-middle" style="width: 95%; margin: 0 auto; text-align: center">
+        <thead class="bg-light table-dark">
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>Source</th>
+                <th>Drop Zone</th>
+                <th>iLevel</th>
+                <th>Specialisation</th>
+                <th>Slot</th>
+                <th>Armor Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let data of filteredItems">
+                <tr>
+                    <td><img src="{{data.itemIcon}}" class="rounded-circle" /></td>
+                    <td>{{data.itemName}}</td>
+                    <td>{{data.itemSource}}</td>
+                    <td>{{data.itemDropZone}}</td>
+                    <td>{{data.itemLevel}}</td>
+                    <td>{{data.itemPrioritySpec}}</td>
+                    <td>{{data.itemSlot}}</td>
+                    <td>{{data.itemArmorType}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
 </div>

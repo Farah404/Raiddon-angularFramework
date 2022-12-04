@@ -19,8 +19,6 @@ export class GuildsComponent implements OnInit {
 
   ngOnInit(): void {
     this.retrieveGuilds();
-
-    
   }
 
   retrieveGuilds(): void {
@@ -29,7 +27,6 @@ export class GuildsComponent implements OnInit {
         next: (data) => {
           this.guilds = data;
           this.filteredGuilds = this.guilds.filter(f => f.recruiting==true);
-          console.log(data);
         },
         error: (e) => console.error(e)
       });
@@ -38,12 +35,10 @@ export class GuildsComponent implements OnInit {
   searchGuildName(): void {
     this.currentGuild = {};
     this.currentIndex = -1;
-
     this.guildService.findByGuildName(this.guildName)
       .subscribe({
         next: (data) => {
           this.guilds = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });

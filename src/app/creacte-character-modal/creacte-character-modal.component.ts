@@ -19,9 +19,6 @@ export class CreacteCharacterModalComponent implements OnInit {
   professionsData = null;
   connectedRealmsData = null;
   reputationFactionsData = null;
- 
-
- 
 
   constructor(
     private storageService: StorageService,
@@ -29,8 +26,6 @@ export class CreacteCharacterModalComponent implements OnInit {
     private router: Router,
     private api: ApiService,
     public modalRef: MdbModalRef<CreacteCharacterModalComponent>) { }
-
-
 
   ngOnInit() {
 

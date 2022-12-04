@@ -12,4 +12,5 @@ export class Guild {
     objectives?:string;
     recruiting?:boolean;
     lootSystems?:string;
+    guildRecruitment?:object;
 }
