@@ -34,15 +34,12 @@ export class AppComponent {
     if (this.isLoggedIn) {
       const user = this.storageService.getUser();
       this.roles = user.roles;
-
-
       this.username = user.username;
     }
 
     this.eventBusSub = this.eventBusService.on('logout', () => {
       this.logout();
     });
-    
   }
 
   logout(): void {

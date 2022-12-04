@@ -120,8 +120,5 @@ export class ApiService {
   getPlayersRankings() {
     return this.http.get(this.wclogURL + 'api/playersRankings');
   }
-
-  
-
 }
 

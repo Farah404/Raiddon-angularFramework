@@ -47,14 +47,11 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.retrieveGuilds();
     this.currentUser = this.storageService.getUser();
-
     this.api.getPlayersRankings().subscribe((data) => {
       this.playersRankingsData = data;
       this.filteredPlayersRankingsData=this.playersRankingsData.filter(f => f.characterName==this.currentUser.playableCharacter.name);
-          
     })
     this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
-    console.log(this.currentUser.playableCharacter);
   }
   
   retrieveGuilds(): void {
@@ -63,7 +60,6 @@ export class UserProfileComponent implements OnInit {
         next: (data) => {
           this.guilds = data;
           this.filteredGuilds = this.guilds.filter(f => f.recruiting==true);
-          console.log(data);
         },
         error: (e) => console.error(e)
       });
