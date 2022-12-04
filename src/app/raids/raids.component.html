@@ -16,51 +16,41 @@
   </div>
 
   <div class="second-main" style="background-color:  	#282828;">
-    <div class="caption">
-        <h2></h2>
-        <div class="input-group">
-          <input
-            type="search"
-            class="form-control rounded"
-            placeholder="Search"
-            aria-label="Search"
-            aria-describedby="search-addon"
-          />
-          <button type="button" class="btn btn-outline-primary">search</button>
-        </div>
-        <h2></h2>
-        <table class=" animate-bottom table align-middle" style="width: 80%; margin: 0 auto; text-align:center">
-            <thead class="bg-light table-dark">
-                <tr>
-                    <th>Name</th>
-                    <th>xxx</th>
-                    <th>xxx</th>
-                    <th>xxx</th>
-                </tr>
-            </thead>
-            <tbody style="opacity:0.6; background-color:aliceblue">
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg" alt=""
-                                style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Antisocial</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                            View
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
     <h2></h2>
+    <div class="input-group">
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search by raid name"
+        aria-label="Search"
+        aria-describedby="search-addon"
+        [(ngModel)]="raidName"
+      />
+      <button type="button" class="btn btn-outline-primary" >search</button>
+    </div>
+    <div class="container animate-bottom" >
+      <h2></h2>
+      <div class="row">
+        <ng-container *ngFor="let raid of raids";>
+        <div class="col-sm-6 col-md-3" >
+          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+            
+            <img
+              class="card-img-top img-fluid"
+              src="{{raid.raidIcon}}"
+              alt="Card image cap"
+              style="width: 500px;height: 300px;"
+            />
+            <div class="card-body">
+              <h4 class="card-title">{{raid.raidName}}</h4>
+              <p class="card-text">{{raid.slogan}}</p>
+              <a href="/raids/raid-details" class="btn btn-primary">Check Raid</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      </div>
+    </div>
   </div>
 
   

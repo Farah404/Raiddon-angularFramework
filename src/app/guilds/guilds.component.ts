@@ -10,7 +10,7 @@ import { GuildService } from '../_services/guild.service';
 export class GuildsComponent implements OnInit {
 
   guilds?: Guild[];
-  filteredGuilds: Guild[]
+  filteredGuilds: Guild[];
   currentGuild: Guild = {};
   currentIndex = -1;
   guildName='';
