@@ -32,7 +32,6 @@ import { PlayersComponent } from './players/players.component';
 import { GameDataComponent } from './game-data/game-data.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { GuildDetailsComponent } from './guild-details/guild-details.component';
-import { RaidDetailsComponent } from './raid-details/raid-details.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -51,6 +50,7 @@ import { CreacteCharacterModalComponent } from './creacte-character-modal/creact
 import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
 import { UpdateProfileModalComponent } from './update-profile-modal/update-profile-modal.component';
 import { DressingRoomComponent } from './dressing-room/dressing-room.component';
+import { RaidDetailsModalComponent } from './raid-details-modal/raid-details-modal.component';
 
 
 @NgModule({
@@ -66,7 +66,6 @@ import { DressingRoomComponent } from './dressing-room/dressing-room.component';
     GameDataComponent,
     UserProfileComponent,
     GuildDetailsComponent,
-    RaidDetailsComponent,
     PlayerDetailsComponent,
     AboutComponent,
     ContactComponent,
@@ -82,6 +81,7 @@ import { DressingRoomComponent } from './dressing-room/dressing-room.component';
     PreferencesModalComponent,
     UpdateProfileModalComponent,
     DressingRoomComponent,
+    RaidDetailsModalComponent,
   ],
   imports: [
     BrowserModule,

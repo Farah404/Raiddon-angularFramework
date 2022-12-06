@@ -14,6 +14,7 @@
     </div>
   </div>
   </div>
+  
 
   <div class="second-main" style="background-color:  	#282828;">
     <h2></h2>
@@ -28,29 +29,37 @@
       />
       <button type="button" class="btn btn-outline-primary" >search</button>
     </div>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    
     <div class="container animate-bottom" >
-      <h2></h2>
       <div class="row">
-        <ng-container *ngFor="let raid of raids";>
-        <div class="col-sm-6 col-md-3" >
-          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-            
-            <img
-              class="card-img-top img-fluid"
-              src="{{raid.raidIcon}}"
-              alt="Card image cap"
-              style="width: 500px;height: 300px;"
-            />
-            <div class="card-body">
-              <h4 class="card-title">{{raid.raidName}}</h4>
-              <p class="card-text">{{raid.slogan}}</p>
-              <a href="/raids/raid-details" class="btn btn-primary">Check Raid</a>
-            </div>
-          </div>
-        </div>
-      </ng-container>
+      <ng-container *ngFor="let raid of raids";>
+        <div class="col-sm-4 " >
+    <div class="first hero">
+      <img class="hero-profile-img" src="{{raid.raidIcon}}" alt="">
+      <div class="hero-description-bk"></div>
+      <div class="hero-logo" mdbRipple rippleColor="light">
+        <img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" alt="">
+      </div>
+      <div class="hero-description">
+        <p>{{raid.raidName}}</p>
+        <p>{{raid.raidDifficulty}}</p>
+      </div>
+      <div  class="hero-date">
+        <p>{{raid.raidDate}}</p>
+      </div>
+      <div class="hero-btn">
+        <button class="btn btn-primary mb-1" (click)="openRaidDetailsModal()">Learn More & Apply</button>
       </div>
     </div>
+    </div>
+  </ng-container>
+</div>
+  </div>
+
+    
   </div>
 
   
