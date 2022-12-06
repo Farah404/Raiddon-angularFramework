@@ -7,7 +7,6 @@ import { PlayersComponent } from './players/players.component';
 import { GameDataComponent } from './game-data/game-data.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { GuildDetailsComponent } from './guild-details/guild-details.component';
-import { RaidDetailsComponent } from './raid-details/raid-details.component';
 import { PlayerDetailsComponent } from './player-details/player-details.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -17,6 +16,7 @@ import { PlayerRankingsComponent } from './player-rankings/player-rankings.compo
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { DressingRoomComponent } from './dressing-room/dressing-room.component';
+import { AuthGuardService } from './_services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -31,35 +31,38 @@ const routes: Routes = [
   {
     path:'raids',
     component: RaidsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'guilds',
     component: GuildsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'players',
     component: PlayersComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'game-data',
     component: GameDataComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'user-profile',
     component: UserProfileComponent,
+    canActivate:[AuthGuardService]
     
   },
   {
     path:'guilds/guild-details',
     component: GuildDetailsComponent,
-  },
-  {
-    path:'raids/raid-details',
-    component: RaidDetailsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'players/player-details',
     component: PlayerDetailsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'about',
@@ -76,10 +79,12 @@ const routes: Routes = [
   {
     path:'auction-house',
     component: AuctionHouseComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'players-rankings',
     component: PlayerRankingsComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:'register',
@@ -92,6 +97,7 @@ const routes: Routes = [
   {
     path:'dressing-room',
     component: DressingRoomComponent,
+    canActivate:[AuthGuardService]
   },
 ];
 
