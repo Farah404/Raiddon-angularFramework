@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { ApiService } from '../_services/api.service';
 import { StorageService } from '../_services/storage.service';
-import { Charac } from 'src/model/character';
-
-import { User } from 'src/model/user';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

@@ -1,11 +1,8 @@
-
-<div
-  class="main bg-image"
-  style="
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<div class="main bg-image" style="
     background-image: url('https://cdnb.artstation.com/p/assets/images/images/031/727/501/original/rui-goncalves-balrogvsglorfindel-2.gif?1604425325');
     height: 30vh;
-  "
->
+  ">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
       <h1 class="mb-3 typewriter">Your adventure begins here !</h1>
@@ -13,198 +10,338 @@
   </div>
 </div>
 <ng-container *ngIf="currentUser;">
-<section class="section about-section gray-bg" id="about" style="background-color: #282828;">
-  <div class="container">
-    <div class="counter">
-      <div class="row align-items-center flex-row-reverse">
-        <div class="col">
-          <div class="about-text go-to">
-            <h3 class="dark-color" >{{ currentUser.battleTag }}</h3>
-            <div class="row about-list">
-              <div class="col-md-6">
-                <div class="media">
+  <section class="section about-section gray-bg" id="about" style="background-color: #282828;">
+    <div class="container">
+      <div class="counter">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col">
+            <div class="about-text go-to">
+              <h3 class="dark-color">{{ currentUser.battleTag }}</h3>
+              <div class="row about-list">
+                <div class="col-md-6">
+                  <div class="media">
                     <label>Username</label>
                     <p>{{ currentUser.playableCharacter.name }}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Realm</label>
                     <p>{{ currentUser.playableCharacter.realm }}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Faction</label>
                     <p>{{ currentUser.playableCharacter.faction }}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Race</label>
                     <p>{{ currentUser.playableCharacter.race }}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Class</label>
                     <p>{{ currentUser.playableCharacter.playableClass }}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Specialisations</label>
-                    <p>{{ currentUser.playableCharacter.mainSpec }}</p>
+                    <p>{{ currentUser.playableCharacter.mainSpec }}, {{ currentUser.playableCharacter.secondarySpec }}
+                    </p>
+                  </div>
                 </div>
-               
-                
-              </div>
-              <div class="col-md-6">
-                <div class="media">
+                <div class="col-md-6">
+                  <div class="media">
                     <label>Professions</label>
-                    <p>{{ currentUser.playableCharacter.firstProfession }}</p>
-                </div>
-                <div class="media">
+                    <p>{{ currentUser.playableCharacter.firstProfession }}, {{
+                      currentUser.playableCharacter.secondProfession }}</p>
+                  </div>
+                  <div class="media">
                     <label>Guild</label>
                     <p>{{currentUser.playableCharacter.guild.guildName}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Guild Rank</label>
-                    <p>{{ currentUser.playableCharacter.guildRank}}</p>
-                </div>
-                <div class="media">
+                    <p>{{ currentUser.guildRank}}</p>
+                  </div>
+                  <div class="media">
                     <label>iLvl</label>
                     <p>{{ currentUser.playableCharacter.ilevel}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Level</label>
                     <p>{{ currentUser.playableCharacter.level}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Actions</label><br />
-                    <button class="btn btn-primary mb-1" (click)="openUpdateModal()">Update Profile</button>
-                    <button class="btn btn-primary mb-1" (click)="openPrefModal()">Check Preferences</button>
-                    <a class="btn btn-primary mb-1" href="dressing-room" >Manage Equipment</a>
-
+                    <a (click)="openUpdateModal()" style="cursor: pointer; color:blue;"><i
+                        class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Profile</a><br />
+                    <!-- <a (click)="openPrefModal()" style="cursor: pointer; color:blue;"><i class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check Preferences</a><br /> -->
+                    <a href="dressing-room" style="cursor: pointer; color:blue;">&nbsp;<i
+                        class="fa-solid fa-person-dress"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Equipment</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="about-avatar">
-            <img
-              src="{{ currentUser.profilePicture }}"
-              height="500vh"
-              style="
+          <div class="col">
+            <div class="about-avatar">
+              <img src="{{ currentUser.profilePicture }}" height="500vh" style="
                 border-radius: 50%;
                 margin-left: auto;
                 margin-right: auto;
                 display: block;
-              "
-            />
+              " />
+            </div>
           </div>
         </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" data-to="500" data-speed="500">500</h6>
-            <p class="m-0px font-w-600">Raid Reports</p>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" data-to="150" data-speed="150">150</h6>
-            <p class="m-0px font-w-600">Encounters</p>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" data-to="850" data-speed="850">850</h6>
-            <p class="m-0px font-w-600">Best Performance</p>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" data-to="190" data-speed="190">190</h6>
-            <p class="m-0px font-w-600">Playable Characters</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h2></h2>
-    <div class="counter">
+        <br />
         <div class="row">
-            <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
-        <h2></h2>
-        <div class="container animate-bottom" >
-          <h2></h2>
-          <div class="row">
-            <ng-container *ngFor="let guild of filteredGuilds";>
-            <div class="col-sm-6 col-md-3" >
-              <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-                
-                <img
-                  class="card-img-top img-fluid"
-                  src="{{guild.guildEmblem}}"
-                  alt="Card image cap"
-                  style="width: 500px;height: 300px;"
-                />
-                <div class="card-body">
-                  <h4 class="card-title">{{guild.guildName}}</h4>
-                  <p class="card-text">{{guild.slogan}}</p>
-                  <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">{{filteredPlayersRankingsDataRows}}</h6>
+              <p class="m-0px font-w-600">Raid Reports</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">{{currentUser.playableCharacter.preferences.lootSystems}}</h6>
+              <p class="m-0px font-w-600">Preferred LS</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">
+                <ng-container type="number" *ngIf="filteredPlayersRankingsData | max: 'percentile' as result"
+                  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01">{{ result | number : '1.0-2' }} %
+                </ng-container>
+              </h6>
+              <p class="m-0px font-w-600">Best Performance</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">{{ currentUser.playableCharacter.preferences.objectives}}</h6>
+              <p class="m-0px font-w-600">Objectives</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2></h2>
+      <mdb-tabs>
+        <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
+        <h3 class="light-color">Check all recruiting guilds <a href="guilds">here!</a></h3>
+        <mdb-tab title="by Recruited Class">
+          <div class="counter">
+            <div class="row">
+              <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
+              <h3 class="light-color">Check all recruiting guilds <a href="guilds">here!</a></h3>
+              <h2></h2>
+              <div class="container animate-bottom">
+                <h2></h2>
+                <div class="row">
+                  <ng-container *ngFor="let guild of filteredGuildsClass" ;>
+                    <div class="col-sm-6 col-md-3">
+                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+                        <img class="card-img-top img-fluid" src="{{guild.guildEmblem}}" alt="Card image cap"
+                          style="width: 500px;height: 300px;" />
+                        <div class="card-body">
+                          <h4 class="card-title">{{guild.guildName}}, {{guild.objectives}}</h4>
+                          <p class="card-text">Ran by {{guild.guildMaster}}</p>
+                          <p class="card-text mb-1">{{guild.raidsPerWeek}} raids per week</p>
+                          <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)"
+                            class="btn btn-primary">Check Guild</a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
                 </div>
               </div>
             </div>
-          </ng-container>
           </div>
-        </div>
-        </div>
-    </div>
-    <h2></h2>
-    <div class="counter">
-      <div class="row">
-          <h3 class="dark-color">Available Raids we think might interest you!</h3>
+        </mdb-tab>
+        <mdb-tab title="by Objectives">
+          <div class="counter">
+            <div class="row">
+              <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
+              <h3 class="light-color">Check all recruiting guilds <a href="guilds">here!</a></h3>
+              <h2></h2>
+              <div class="container animate-bottom">
+                <h2></h2>
+                <div class="row">
+                  <ng-container *ngFor="let guild of filteredGuildsObjectives" ;>
+                    <div class="col-sm-6 col-md-3">
+                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+                        <img class="card-img-top img-fluid" src="{{guild.guildEmblem}}" alt="Card image cap"
+                          style="width: 500px;height: 300px;" />
+                        <div class="card-body">
+                          <h4 class="card-title">{{guild.guildName}}, {{guild.objectives}}</h4>
+                          <p class="card-text">Ran by {{guild.guildMaster}}</p>
+                          <p class="card-text mb-1">{{guild.raidsPerWeek}} raids per week</p>
+                          <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)"
+                            class="btn btn-primary">Check Guild</a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mdb-tab>
+        <mdb-tab title="by Raids per Week">
+          <div class="counter">
+            <div class="row">
+              <h3 class="dark-color">Recruiting guilds we think you might like!</h3>
+              <h3 class="light-color">Check all recruiting guilds <a href="guilds">here!</a></h3>
+              <h2></h2>
+              <div class="container animate-bottom">
+                <h2></h2>
+                <div class="row">
+                  <ng-container *ngFor="let guild of filteredGuildsClass" ;>
+                    <div class="col-sm-6 col-md-3">
+                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+                        <img class="card-img-top img-fluid" src="{{guild.guildEmblem}}" alt="Card image cap"
+                          style="width: 500px;height: 300px;" />
+                        <div class="card-body">
+                          <h4 class="card-title">{{guild.guildName}}, {{guild.objectives}}</h4>
+                          <p class="card-text">Ran by {{guild.guildMaster}}</p>
+                          <p class="card-text mb-1">{{guild.raidsPerWeek}} raids per week</p>
+                          <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)"
+                            class="btn btn-primary">Check Guild</a>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mdb-tab>
+      </mdb-tabs>
       <h2></h2>
-      <div class="card ms-5" style="width: 18rem;">
-          <img class="card-img-top" src="../../assets/guilds/2770be9fba8f43ae8b5f0f5c6bffdcdc.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Guild Name</h5>
-            <p class="card-text">Guild Slogan</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
-          </div>
+
+      <mdb-tabs>
+        <h3 class="dark-color">Available raids we think you might like!</h3>
+                  <h3 class="light-color">Check all available raids <a href="raids">here!</a></h3>
+          <mdb-tab title="By Recruited Class">
+          <div class="counter">
+                <div class="row">
+                  <h2></h2>
+                  <div class="container animate-bottom">
+                    <h2></h2>
+                    <div class="row">
+                      <ng-container *ngFor="let raid of filteredRaidsClass" ;>
+                        <div class="col-sm-6 col-md-3">
+                          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+        
+                            <img class="card-img-top img-fluid" src="{{raid.raidIcon}}" alt="Card image cap"
+                              style="width: 500px;height: 300px;" />
+                            <div class="card-body">
+                              <h4 class="card-title">{{raid.raidName}}</h4>
+                              <p class="card-text">Organised by {{raid.raidLeader.playableCharacter.name}}</p>
+                              <p class="card-text mb-1">{{raid.raidLootSystem}}</p>
+                              <a routerLink="raid-details/{{raid.id}}" (click)="setSelectedRaid(raid)"
+                                class="btn btn-primary">Check Raid</a>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+        
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </mdb-tab>
+          <mdb-tab title="By Main Specialisation">
+            <div class="counter">
+                <div class="row">
+                  <h2></h2>
+                  <div class="container animate-bottom">
+                    <h2></h2>
+                    <div class="row">
+                      <ng-container *ngFor="let raid of filteredRaidsSpec" ;>
+                        <div class="col-sm-6 col-md-3">
+                          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+        
+                            <img class="card-img-top img-fluid" src="{{raid.raidIcon}}" alt="Card image cap"
+                              style="width: 500px;height: 300px;" />
+                            <div class="card-body">
+                              <h4 class="card-title">{{raid.raidName}}</h4>
+                              <p class="card-text">Organised by {{raid.raidLeader.playableCharacter.name}}</p>
+                              <p class="card-text mb-1">{{raid.raidLootSystem}}</p>
+                              <a routerLink="raid-details/{{raid.id}}" (click)="setSelectedRaid(raid)"
+                                class="btn btn-primary">Check Raid</a>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+        
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </mdb-tab>
+          <mdb-tab title="By Loot System">
+            <div class="counter">
+                <div class="row">
+                  <h2></h2>
+                  <div class="container animate-bottom">
+                    <h2></h2>
+                    <div class="row">
+                      <ng-container *ngFor="let raid of filteredRaidsLootsystem" ;>
+                        <div class="col-sm-6 col-md-3">
+                          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+        
+                            <img class="card-img-top img-fluid" src="{{raid.raidIcon}}" alt="Card image cap"
+                              style="width: 500px;height: 300px;" />
+                            <div class="card-body">
+                              <h4 class="card-title">{{raid.raidName}}</h4>
+                              <p class="card-text">Organised by {{raid.raidLeader.playableCharacter.name}}</p>
+                              <p class="card-text mb-1">{{raid.raidLootSystem}}</p>
+                              <a routerLink="raid-details/{{raid.id}}" (click)="setSelectedRaid(raid)"
+                                class="btn btn-primary">Check Raid</a>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-container>
+        
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </mdb-tab>
+        </mdb-tabs>
+
+      <h2></h2>
+      <div class="counter">
+        <div class="row">
+          <h3 class="dark-color">Your raid history</h3>
+          <h2></h2>
+
+          <table class="table align-middle" id="tableReports" style="width: 95%; margin: 0 auto; text-align: center">
+            <thead class="bg-light table-dark">
+              <tr>
+                <th>Character Name</th>
+                <th>Character Class</th>
+                <th>Character Specialisation</th>
+                <th>Character Parse %</th>
+                <th>Character ilvl</th>
+                <th>Character Ranking</th>
+                <th>Encounter Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let data of filteredPlayersRankingsData">
+                <tr>
+                  <td>{{data.characterName}}</td>
+                  <td>{{data.class}}</td>
+                  <td>{{data.spec}}</td>
+                  <td>{{data.percentile| number : '1.0-2'}}</td>
+                  <td>{{data.ilvlKeyOrPatch}}</td>
+                  <td>{{data.rank}}</td>
+                  <td>{{data.encounterName}}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
         </div>
       </div>
-  </div>
-    <h2></h2>
-    <div class="counter">
-        <div class="row">
-            <h3 class="dark-color">Your raid history</h3>
-<h2></h2>
-        <table
-  class="table align-middle"
-  style="width: 95%; margin: 0 auto; text-align: center"
->
-  <thead class="bg-light table-dark">
-    <tr>
-      <th>Character Name</th>
-      <th>Character Class</th>
-      <th>Character Specialisation</th>
-      <th>Character Parse %</th>
-      <th>Character ilvl</th>
-      <th>Character Ranking</th>
-      <th>Encounter Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngFor="let data of filteredPlayersRankingsData">
-    <tr>
-      <td>{{data.characterName}}</td>
-      <td>{{data.class}}</td>
-      <td>{{data.spec}}</td>
-      <td>{{data.percentile}}</td>
-      <td>{{data.ilvlKeyOrPatch}}</td>
-      <td>{{data.rank}}</td>
-      <td>{{data.encounterName}}</td>
-    </tr>
-  </ng-container>
-  </tbody>
-</table>
-        </div>
     </div>
-  </div>
-</section>
+  </section>
 </ng-container>

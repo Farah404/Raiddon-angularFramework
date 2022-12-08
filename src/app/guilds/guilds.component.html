@@ -7,11 +7,11 @@
     height: 50vh;
   "
 >
-
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
       <h1 class="mb-3 typewriter">Looking for a GUILD?</h1>
       <h5 class="mb-4">By using our guild finder page you may find your new home !</h5>
+      <h5 class="mb-4" (click)="openCreateGuildModal()" style="cursor: pointer;">Or create your own now</h5>
     </div>
   </div>
 
@@ -48,7 +48,7 @@
           <div class="card-body">
             <h4 class="card-title">{{guild.guildName}}</h4>
             <p class="card-text">{{guild.slogan}}</p>
-            <a href="/guilds/guild-details" class="btn btn-primary">Check Guild</a>
+            <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-primary">Check Guild</a>
           </div>
         </div>
       </div>

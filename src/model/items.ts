@@ -1,5 +1,4 @@
 export class Items {
-
     id?:any;
     itemName?:string;
     itemLevel?:number;

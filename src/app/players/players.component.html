@@ -41,7 +41,7 @@
             />
             <div class="card-body">
               <h4 class="card-title">{{user.battleTag}}</h4>
-              <a href="/players/player-details" class="btn btn-primary">Check Player</a>
+              <a routerLink="player-details/{{user.id}}" (click)="setSelectedUser(user)" class="btn btn-primary">Check Player</a>
             </div>
           </div>
         </div>

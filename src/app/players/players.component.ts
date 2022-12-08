@@ -43,4 +43,8 @@ export class PlayersComponent implements OnInit {
       });
   }
 
+  setSelectedUser(user: User): void {
+    this.userService.id = user.id;
+  }
+
 }

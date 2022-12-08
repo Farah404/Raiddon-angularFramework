@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Guild } from 'src/model/guild';
 
 const baseUrl = 'http://localhost:8080/api/guilds';
+const baseUrlAdd = 'http://localhost:8080/api/guilds/add';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ const baseUrl = 'http://localhost:8080/api/guilds';
 export class GuildService {
 
   constructor(private http: HttpClient) { }
-
+  id: number
   getAll(): Observable<Guild[]> {
     return this.http.get<Guild[]>(baseUrl);
   }
@@ -21,7 +22,7 @@ export class GuildService {
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post(baseUrlAdd, data);
   }
 
   

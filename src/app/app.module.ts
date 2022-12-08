@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MaxPipe } from './player-rankings/player-rankings.component';
 
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -50,7 +51,9 @@ import { CreacteCharacterModalComponent } from './creacte-character-modal/creact
 import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
 import { UpdateProfileModalComponent } from './update-profile-modal/update-profile-modal.component';
 import { DressingRoomComponent } from './dressing-room/dressing-room.component';
-import { RaidDetailsModalComponent } from './raid-details-modal/raid-details-modal.component';
+import { CreateGuildModalComponent } from './create-guild-modal/create-guild-modal.component';
+import { RaidDetailsComponent } from './raid-details/raid-details.component';
+
 
 
 @NgModule({
@@ -81,7 +84,9 @@ import { RaidDetailsModalComponent } from './raid-details-modal/raid-details-mod
     PreferencesModalComponent,
     UpdateProfileModalComponent,
     DressingRoomComponent,
-    RaidDetailsModalComponent,
+    CreateGuildModalComponent,
+    RaidDetailsComponent,
+    MaxPipe
   ],
   imports: [
     BrowserModule,

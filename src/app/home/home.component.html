@@ -13,29 +13,31 @@
 <div class="container">
   <div class="row mb-5">
     <div class="col-md-5">
+      <ng-container *ngFor="let guild of firstRankGuild";>
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
-          <img src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/FJPT5455KR5K1589912863345.jpg" class="img-fluid"/>
+          <img src="{{guild.guildEmblem}}" class="img-fluid"/>
           <a href="#!">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </a>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
+          <h5 class="card-title">{{guild.guildName}}</h5>
+          <p class="card-text mb-2">"{{guild.slogan}}"</p>
+          <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
         </div>
       </div>
+      </ng-container>
   </div>
     <div class="col-md-7">
-      <h1>Top Guilds</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+      <h1 class="mb-3">Top Guilds</h1>
+      <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
       when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
       but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
       containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       <hr />
-      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. 
+      <p class="mb-3 mt-3">Contrary to popular belief, Lorem Ipsum is not simply random text. 
         It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
         <a href="guilds"><button type="button" class="btn btn-primary me-3"><i class="fas fa-book me-2"></i>See more Guilds</button></a>
       <a href="about"> <button type="button"  class="btn btn-outline-primary"><i class="fas fa-question-circle me-2"></i>About us</button></a>
@@ -43,49 +45,55 @@
   </div>
   <div class="row mb-5">
     <div class="col-md-4">
+      <ng-container *ngFor="let guild of secondRankGuild";>
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
-          <img src="https://images7.alphacoders.com/320/320621.jpg" class="img-fluid"/>
+          <img src="{{guild.guildEmblem}}" class="img-fluid"/>
           <a href="/guilds/guild-details">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </a>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
+          <h5 class="card-title">{{guild.guildName}}</h5>
+          <p class="card-text mb-2">"{{guild.slogan}}"</p>
+          <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
         </div>
       </div>
+    </ng-container>
     </div>
     <div class="col-md-4">
+      <ng-container *ngFor="let guild of thirdRankGuild";>
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
-          <img src="https://images7.alphacoders.com/320/320621.jpg" class="img-fluid"/>
+          <img src="{{guild.guildEmblem}}" class="img-fluid"/>
           <a href="#!">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </a>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
+          <h5 class="card-title">{{guild.guildName}}</h5>
+          <p class="card-text mb-2">"{{guild.slogan}}"</p>
+          <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
         </div>
       </div>
+    </ng-container>
     </div>
     <div class="col-md-4">
+      <ng-container *ngFor="let guild of fourthRankGuild";>
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
-          <img src="https://images7.alphacoders.com/320/320621.jpg" class="img-fluid"/>
+          <img src="{{guild.guildEmblem}}" class="img-fluid"/>
           <a href="/guilds/guild-details">
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </a>
         </div>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Button</a>
+          <h5 class="card-title">{{guild.guildName}}</h5>
+          <p class="card-text mb-2">"{{guild.slogan}}"</p>
+           <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
         </div>
       </div>
+      </ng-container>
     </div>
   </div>
 </div>

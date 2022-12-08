@@ -1,11 +1,7 @@
-
-<div
-  class="main bg-image grayscale"
-  style="
+<div class="main bg-image grayscale" style="
     background-image: url('../../assets/wow-images/1176254.jpg');
     height: 50vh;
-  "
->
+  ">
 
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white ">
@@ -13,54 +9,44 @@
       <h5 class="mb-4">By using our raid finder page you may find your next instance !</h5>
     </div>
   </div>
-  </div>
-  
-
-  <div class="second-main" style="background-color:  	#282828;">
-    <h2></h2>
-    <div class="input-group">
-      <input
-        type="search"
-        class="form-control rounded"
-        placeholder="Search by raid name"
-        aria-label="Search"
-        aria-describedby="search-addon"
-        [(ngModel)]="raidName"
-      />
-      <button type="button" class="btn btn-outline-primary" >search</button>
-    </div>
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    
-    <div class="container animate-bottom" >
-      <div class="row">
-      <ng-container *ngFor="let raid of raids";>
-        <div class="col-sm-4 " >
-    <div class="first hero">
-      <img class="hero-profile-img" src="{{raid.raidIcon}}" alt="">
-      <div class="hero-description-bk"></div>
-      <div class="hero-logo" mdbRipple rippleColor="light">
-        <img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" alt="">
-      </div>
-      <div class="hero-description">
-        <p>{{raid.raidName}}</p>
-        <p>{{raid.raidDifficulty}}</p>
-      </div>
-      <div  class="hero-date">
-        <p>{{raid.raidDate}}</p>
-      </div>
-      <div class="hero-btn">
-        <button class="btn btn-primary mb-1" (click)="openRaidDetailsModal()">Learn More & Apply</button>
-      </div>
-    </div>
-    </div>
-  </ng-container>
 </div>
+
+
+<div class="second-main" style="background-color:  	#282828;">
+  <h2></h2>
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search by raid name" aria-label="Search"
+      aria-describedby="search-addon" [(ngModel)]="raidName" />
+    <button type="button" class="btn btn-outline-primary">search</button>
   </div>
 
-    
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+  <div class="container animate-bottom">
+    <div class="row">
+      <ng-container *ngFor="let raid of raids" ;>
+        <div class="col-sm-4 ">
+          <div class="first hero">
+            <img class="hero-profile-img" src="{{raid.raidIcon}}" alt="">
+            <div class="hero-description-bk"></div>
+            <div class="hero-logo" mdbRipple rippleColor="light">
+              <img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" alt="">
+            </div>
+            <div class="hero-description">
+              <p>{{raid.raidName}}</p>
+              <p>{{raid.raidDifficulty}}</p>
+            </div>
+            <div class="hero-date">
+              <p>{{raid.raidDate}}</p>
+            </div>
+            <div class="hero-btn">
+              <a routerLink="raid-details/{{raid.id}}" class="btn btn-primary mb-1"
+                (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </div>
-
-  
-
+</div>
