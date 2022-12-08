@@ -1,12 +1,7 @@
-
-
-<div
-  class="main bg-image grayscale"
-  style="
+<div class="main bg-image grayscale" style="
     background-image: url('https://images3.alphacoders.com/200/200959.jpg');
     height: 50vh;
-  "
->
+  ">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
       <h1 class="mb-3 typewriter">Want to know who parsed the most?</h1>
@@ -16,50 +11,102 @@
     </div>
   </div>
 </div>
+
+
 <div class="second-main" style="background-color: #282828">
-<h2></h2>
-<div class="input-group">
-  <input
-    type="search"
-    class="form-control rounded"
-    placeholder="Search"
-    aria-label="Search"
-    aria-describedby="search-addon"
-  />
-  <button type="button" class="btn btn-outline-primary">search</button>
+  <h2></h2>
+  <h2></h2>
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-outline-primary ">search</button>
+  </div>
+  <h2></h2>
+<div class="container">
+  <div class="row animate-bottom">
+    <div class="col">
+      <div class="card text-white bg-secondary  mb-3" style="max-width: 18rem;">
+        <div class="card-header">Best Performance</div>
+        <div class="card-body">
+          <div *ngIf="playersRankingsData | max: 'percentile' as result">
+            <p>{{ result | number : '1.0-2'}} %</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-secondary  mb-3" style="max-width: 18rem;">
+        <div class="card-header">Best Player</div>
+        <div class="card-body">
+          <div *ngFor="let bestPlayer of bestPlayer">
+            <p>{{bestPlayer.characterName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-secondary  mb-3" style="max-width: 18rem;">
+        <div class="card-header">Best Class</div>
+        <div class="card-body">
+          <div *ngFor="let bestClass of bestClass">
+            <p>{{bestClass.class}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-secondary  mb-3" style="max-width: 18rem;">
+        <div class="card-header">Best Specialisation</div>
+        <div class="card-body">
+          <div *ngFor="let bestSpecialisation of bestSpecialisation">
+            <p>{{bestSpecialisation.spec}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-secondary  mb-3" style="max-width: 18rem;">
+        <div class="card-header">Best Encounter</div>
+        <div class="card-body">
+          <div *ngFor="let bestEncounter of bestEncounter">
+            <p>{{bestEncounter.encounterName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2></h2>
 </div>
-<h2></h2>
-<table
-class="animate-bottom table table-striped table-hover align-middle"
-style="width: 80%; margin: 0 auto; text-align: center"
->
-  <thead class="bg-light table-dark">
-    <tr>
-      <th scope="col">Encounter Name</th>
-      <th scope="col">Chatacter Name</th>
-      <th scope="col">Character Class</th>
-      <th scope="col">Character Specialisation</th>
-      <th scope="col">Character ilvl</th>
-      <th scope="col">Character Parse %</th>
-      <th scope="col">Character Ranking</th>
-    </tr>
-  </thead>
-  <tbody style="opacity:0.6; background-color:aliceblue">
-    <ng-container *ngFor="let data of playersRankingsData">
-    <tr>
-      <td>{{data.encounterName}}</td>
-      <td>{{data.characterName}}</td>
-      <td>{{data.class}}</td>
-      <td>{{data.spec}}</td>
-      <td>{{data.ilvlKeyOrPatch}}</td>
-      <td>{{data.percentile}}</td>
-      <td>{{data.rank}}</td>
-    </tr>
-  </ng-container>
-  </tbody>
-</table>
+
+  <table class="animate-bottom table table-striped table-hover align-middle"
+    style="width: 80%; margin: 0 auto; text-align: center">
+    <thead class="bg-light table-dark">
+      <tr>
+        <th scope="col">Encounter Name</th>
+        <th scope="col">Chatacter Name</th>
+        <th scope="col">Character Class</th>
+        <th scope="col">Character Specialisation</th>
+        <th scope="col">Character ilvl</th>
+        <th scope="col">Character Parse %</th>
+        <th scope="col">Character Ranking</th>
+      </tr>
+    </thead>
+    <tbody style="opacity:0.6; background-color:aliceblue">
+      <ng-container *ngFor="let data of playersRankingsData">
+        <tr>
+          <td>{{data.encounterName}}</td>
+          <td>{{data.characterName}}</td>
+          <td>{{data.class}}</td>
+          <td>{{data.spec}}</td>
+          <td>{{data.ilvlKeyOrPatch}}</td>
+          <td>{{data.percentile | number : '1.0-2'}}</td>
+          <td>{{data.rank}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
 
 
-<h2></h2>
+  <h2></h2>
 
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/model/user';
-import { Charac } from 'src/model/character';
+import { PlayableCharacter} from 'src/model/user';
 
 
 const baseUrl = 'http://localhost:8080/api/users';
@@ -14,7 +14,7 @@ const baseUrlCharac = 'http://localhost:8080/api/characters';
 export class UserService {
 
   constructor(private http: HttpClient) { }
-
+  id: number
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(baseUrl);
   }
@@ -43,12 +43,12 @@ export class UserService {
     return this.http.get<User[]>(`${baseUrl}?username=${username}`);
   }
   
-  getAllCharacs(): Observable<Charac[]> {
-    return this.http.get<Charac[]>(baseUrlCharac);
+  getAllCharacs(): Observable<PlayableCharacter[]> {
+    return this.http.get<PlayableCharacter[]>(baseUrlCharac);
   }
 
-  getCharac(id: any): Observable<Charac> {
-    return this.http.get<Charac>(`${baseUrlCharac}/${id}`);
+  getCharac(id: any): Observable<PlayableCharacter> {
+    return this.http.get<PlayableCharacter>(`${baseUrlCharac}/${id}`);
   }
 
 }

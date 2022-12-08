@@ -17,12 +17,12 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { DressingRoomComponent } from './dressing-room/dressing-room.component';
 import { AuthGuardService } from './_services/auth-guard.service';
+import { RaidDetailsComponent } from './raid-details/raid-details.component';
 
 const routes: Routes = [
   {
     path:'',
     redirectTo: 'home', pathMatch: 'full',
-
   },
   {
     path:'home',
@@ -55,12 +55,27 @@ const routes: Routes = [
     
   },
   {
-    path:'guilds/guild-details',
+    path:'guilds/guild-details/:id',
     component: GuildDetailsComponent,
     canActivate:[AuthGuardService]
   },
   {
-    path:'players/player-details',
+    path:'user-profile/guild-details/:id',
+    component: GuildDetailsComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
+    path:'raids/raid-details/:id',
+    component: RaidDetailsComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
+    path:'user-profile/raid-details/:id',
+    component: RaidDetailsComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
+    path:'players/player-details/:id',
     component: PlayerDetailsComponent,
     canActivate:[AuthGuardService]
   },

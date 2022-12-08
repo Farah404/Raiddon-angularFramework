@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Raid } from 'src/model/raids';
 
 const baseUrl = 'http://localhost:8080/api/raids';
@@ -11,7 +11,7 @@ const baseUrl = 'http://localhost:8080/api/raids';
 export class RaidsService {
 
   constructor(private http: HttpClient) { }
-
+  id: number
   getAll(): Observable<Raid[]> {
     return this.http.get<Raid[]>(baseUrl);
   }
@@ -37,7 +37,11 @@ export class RaidsService {
     return this.http.delete(baseUrl);
   }
 
-  findByGuildName(raidName: any): Observable<Raid[]> {
+  findByRaidName(raidName: any): Observable<Raid[]> {
     return this.http.get<Raid[]>(`${baseUrl}?raidName=${raidName}`);
   }
+
+
+
+
 }

@@ -1,0 +1,50 @@
+<div class="main bg-image grayscale" style="
+    background-image: url('../../assets/wow-images/1176254.jpg');
+    height: 50vh;
+  ">
+
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="text-white ">
+      <h1 class="mb-3 typewriter">Looking for a Raid?</h1>
+      <h5 class="mb-4">By using our raid finder page you may find your next instance !</h5>
+    </div>
+  </div>
+</div>
+    <section class="section about-section gray-bg" id="about" style="background-color: #282828;">
+        <h2></h2>
+
+        <div class="container">
+            <div class="row">
+              <div class="column">
+                <img src="{{selectedRaid.raidIcon}}" style="
+                border-radius: 50%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width:80%;
+              ">
+              </div>
+              <div class="column">
+                <form action="/action_page.php">
+                  <label style="font-weight: bold;">Name: {{selectedRaid.raidName}}</label><br /><br />
+                  <label style="font-weight: bold;">Zone: {{selectedRaid.raidZone}}</label><br /><br />
+                  <label style="font-weight: bold;">Difficulty: {{selectedRaid.raidDifficulty}}</label><br /><br />
+                  <label style="font-weight: bold;">Loot System: {{selectedRaid.raidLootSystem}} </label><br /><br />
+                  <label style="font-weight: bold;">Total Encounters: {{selectedRaid.raidTotalEncounters}}</label><br /><br />
+                  <label style="font-weight: bold;">Date: {{selectedRaid.raidDate}}</label><br /><br />
+                  <label style="font-weight: bold;">Pull / Raid-Off: {{selectedRaid.raidPullTime}} - {{selectedRaid.raidOffTime}}</label><br /><br />
+                  <label style="font-weight: bold;">Raid Leader: {{selectedRaid.raidLeader.battleTag}} aka {{selectedRaid.raidLeader.playableCharacter.name}}</label><br /><br />
+                  <label style="font-weight: bold;">Organising Guild: {{selectedRaid.raidLeader.playableCharacter.guild.guildName}}</label><br /><br />
+                  <label style="font-weight: bold;">Needed Class: {{selectedRaid.raidRequirements.mainClass}}</label><br /><br />
+                  <label style="font-weight: bold;">Needed Roles: {{selectedRaid.raidRequirements.mainSpec}} & {{selectedRaid.raidRequirements.secondarySpec}}</label><br /><br />
+                  
+                  <input class="btn btn-primary" type="submit" value="Apply to Join Raid">
+                </form>
+              </div>
+            </div>
+          </div>
+          
+
+
+        <h2></h2>
+    </section>

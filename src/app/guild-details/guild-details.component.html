@@ -9,54 +9,55 @@
 >
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
-      <h1 class="mb-3">GUILD NAME</h1>
-      <h5 class="mb-4">GUILD SLOGAN</h5>
+      <h1 class="mb-3">{{currentGuild.guildName}} lead by {{currentGuild.guildMaster}}</h1> 
+      <h5 class="mb-4">{{currentGuild.slogan}} </h5>
     </div>
   </div>
 </div>
 <h2></h2>
 
+
 <div class="container mt-5 mb-5">
     <div class="row no-gutters">
-        <div class="col-md-4 col-lg-4"><img src="https://i.pinimg.com/originals/27/70/be/2770be9fba8f43ae8b5f0f5c6bffdcdc.jpg"></div>
+        <div class="col-md-4 col-lg-4"><img src="{{currentGuild.guildEmblem}}"></div>
         <div class="col-md-8 col-lg-8">
             <div class="d-flex flex-column">
                 <div class="d-flex flex-row text-white">
                     <div class="p-4 bg-primary text-center skill-block">
-                        <h4>90%</h4>
+                        <h4>{{currentGuild.realm}}</h4>
                         <h6> Server</h6>
                     </div>
                     <div class="p-3 bg-success text-center skill-block">
-                        <h4>70%</h4>
-                        <h6> Faction</h6>
+                        <h4>{{currentGuild.lootSystems}}</h4>
+                        <h6> Loot system</h6>
                     </div>
                     <div class="p-3 bg-warning text-center skill-block">
-                        <h4>80%</h4>
+                        <h4>{{currentGuild.totalPlayers}}</h4>
                         <h6> Members</h6>
                     </div>
                     <div class="p-3 bg-danger text-center skill-block">
-                        <h4>75%</h4>
-                        <h6>Raids </h6>
+                        <h4>{{currentGuild.objectives}}</h4>
+                        <h6>Objectives </h6>
                     </div>
                 </div>
                 <div class="p-3 bg-black text-white">
-                    <h6>Wow Log page</h6>
+                    <h6><i class="fa-solid fa-link"></i><a target="_blank" href="{{currentGuild.wowLogLink}}">Warcraft Logs page</a></h6>
                 </div>
                 <div class="d-flex flex-row text-white">
                     <div class="p-4 bg-primary text-center skill-block">
-                        <h4>90%</h4>
+                        <h4>{{currentGuild.rank}}</h4>
                         <h6> Rank</h6>
                     </div>
                     <div class="p-3 bg-success text-center skill-block">
-                        <h4>70%</h4>
-                        <h6> Recruiting</h6>
+                        <h4>{{currentGuild.guildRecruitment.bulk}}</h4>
+                        <h6> Recruitment Bulk</h6>
                     </div>
                     <div class="p-3 bg-warning text-center skill-block">
-                        <h4>80%</h4>
+                        <h4>{{currentGuild.raidsPerWeek}}</h4>
                         <h6> Raids/Week</h6>
                     </div>
                     <div class="p-3 bg-danger text-center skill-block">
-                        <h4>75%</h4>
+                        <h4>{{currentGuild.activities}}</h4>
                         <h6>Activities </h6>
                     </div>
                 </div>
@@ -67,99 +68,72 @@
 
 <div class="second-main" style="background-color:  	#282828;">
     <div class="caption">
-        <table class=" table align-middle" style="width: 80%; margin: 0 auto; text-align:center">
+        <div class="container tilte mb-1">Guild Memebers</div>
+        <table class=" table" style="width: 80%; margin: 0 auto;">
             <thead class="bg-light table-dark">
                 <tr>
-                    <th>Name</th>
-                    <th>Role</th>
+                    <th>Username</th>
+                    <th>Class</th>
+                    <th>Main Spec</th>
+                    <th>Second Spec</th>
+                    <th>Guild Rank</th>
+                    <th>WCL</th>
                 </tr>
             </thead>
+            <ng-container *ngFor="let members of filteredGuildMembers">
             <tbody style="opacity:0.6; background-color:aliceblue">
                 <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg" alt=""
-                                style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Antisocial</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                            
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg" alt=""
-                                style="width: 45px; height: 45px" class="rounded-circle" />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1">Antisocial</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                            
-                        </button>
-                    </td>
+                    <td>{{members.playableCharacter.name}}</td>
+                    <td>{{members.playableCharacter.playableClass}}</td>
+                    <td>{{members.playableCharacter.mainSpec}}</td>
+                    <td>{{members.playableCharacter.secondarySpec}}</td>
+                    <td>{{members.guildRank}}</td>
+                    <td><a target="_blank" href="{{members.playableCharacter.wowLogLink}}">Warcraft Logs page</a></td>
                 </tr>
                 
             </tbody>
+        </ng-container>
+        </table>
+    </div>
+    <h2></h2>
+    <div class="caption">
+        <div class="container tilte mb-1">Active Recruitments</div>
+        <table class=" table align-middle" style="width: 80%; margin: 0 auto; text-align:center">
+            <thead class="bg-light table-dark">
+                <tr>
+                    <th>Class</th>
+                    <th>Main Spec</th>
+                    <th>Second Spec</th>
+                    <th>Main Role</th>
+                    <th>Second Role</th>
+                    <th>Minimum iLevel</th>
+                    <th>Bulk</th>
+                    <th>Quantity</th>
+                    <th>Professions</th>
+                    <th>Apply</th>
+                </tr>
+            </thead>
+            <ng-container>
+            <tbody style="opacity:0.6; background-color:aliceblue">
+                <tr>
+                    <td>{{currentGuild.guildRecruitment.playableCharacter}}</td>
+                    <td>{{currentGuild.guildRecruitment.mainSpec}}</td>
+                    <td>{{currentGuild.guildRecruitment.secondarySpec}}</td>
+                    <td>{{currentGuild.guildRecruitment.mainRole}}</td>
+                    <td>{{currentGuild.guildRecruitment.secondaryRole}}</td>
+                    <td>{{currentGuild.guildRecruitment.minIlevel}}</td>
+                    <td>{{currentGuild.guildRecruitment.bulk}}</td>
+                    <td>{{currentGuild.guildRecruitment.quantity}}</td>
+                    <td>{{currentGuild.guildRecruitment.firstProfession}}/{{currentGuild.guildRecruitment.secondProfession}}</td>
+                    <td><div class="linkToPlayerProfile"><button class="btn btn-primary" (click)="openModal()">Apply</button></div></td>
+                </tr>
+                
+            </tbody>
+        </ng-container>
         </table>
     </div>
     <h2></h2>
   </div>
-
-  <div class="caption">
-    <table class=" table align-middle" style="width: 80%; margin: 0 auto; text-align:center">
-        <thead class="bg-light table-dark">
-            <tr>
-                <th>Class</th>
-                <th>Main specialisation</th>
-                <th>Apply</th>
-            </tr>
-        </thead>
-        <tbody style="opacity:0.6; background-color:aliceblue">
-            <tr>
-                <td>
-                    <div class="d-flex align-items-center">
-                        <img src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg" alt=""
-                            style="width: 45px; height: 45px" class="rounded-circle" />
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Antisocial</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="d-flex align-items-center">
-                        <img src="../../assets/wow-images/09f3101313990baaa77c394c750da0f5.jpg" alt=""
-                            style="width: 45px; height: 45px" class="rounded-circle" />
-                        <div class="ms-3">
-                            <p class="fw-bold mb-1">Antisocial</p>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                </td>
-                <td>
-                    <div class="linkToPlayerProfile"><button class="btn btn-primary" (click)="openModal()">Apply</button></div>
-                </td>
-            </tr>
-            
-        </tbody>
-    </table>
-    <h2></h2>
-</div>
 </div>
 
 

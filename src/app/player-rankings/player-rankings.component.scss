@@ -50,3 +50,21 @@ h2 {padding:2rem 0;}
       typing 3.5s steps(40, end),
       blink-caret .75s step-end infinite;
   }
+
+  .card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  }
+
+  .card:hover{
+    transform: scale(1.1);
+  }
+
+  .card-header{
+    font-weight: bold;
+    align-self: center;
+  }
+
+  .card-body{
+    align-self: center;
+    font-size: 30px;
+  }

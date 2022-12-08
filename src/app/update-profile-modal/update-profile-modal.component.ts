@@ -19,7 +19,7 @@ export class UpdateProfileModalComponent implements OnInit {
     email: '',
     password: '',
     battleTag:'',
-    profilePictureLink:''
+    profilePicture:''
   };
   
   message = '';
