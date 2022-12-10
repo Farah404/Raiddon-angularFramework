@@ -38,4 +38,8 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  setSelectedGuild(guild: Guild): void {
+    this.guildService.id = guild.id;
+  }
+
 }

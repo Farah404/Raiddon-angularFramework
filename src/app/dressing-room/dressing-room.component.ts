@@ -78,7 +78,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedHeaditemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -92,7 +91,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedNecklaceitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -106,7 +104,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedShoulderitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -120,7 +117,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedCapeitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -134,7 +130,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedChestitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -148,7 +143,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedWristitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -162,7 +156,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedMainHanditemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -176,7 +169,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedHandsitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -190,7 +182,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedWaistitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -204,7 +195,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedLegsitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -218,7 +208,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedFeetitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -232,7 +221,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedRingitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -246,7 +234,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedTrinketitemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });
@@ -261,7 +248,6 @@ export class DressingRoomComponent implements OnInit {
         .subscribe({
           next: (data) => {
             this.selectedOffHanditemBis = data;
-            console.log(data)
           },
           error: (e) => console.error(e)
         });

@@ -17,30 +17,26 @@
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
           <img src="{{guild.guildEmblem}}" class="img-fluid"/>
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{guild.guildName}}</h5>
           <p class="card-text mb-2">"{{guild.slogan}}"</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
+          <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-secondary">Check {{guild.guildName}} page</a>
         </div>
       </div>
       </ng-container>
   </div>
     <div class="col-md-7">
       <h1 class="mb-3">Top Guilds</h1>
-      <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, 
-      but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets 
-      containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p class="mb-3">Maze is always looking for exceptional applicants. Generally looking for people with high levels of multiclassing talent. 
+        All raiders are required to have 4 decently maintained characters. 
+        We don't speedrun. We have a tight-knit community of players, and our player retention is generally high.</p>
       <hr />
-      <p class="mb-3 mt-3">Contrary to popular belief, Lorem Ipsum is not simply random text. 
-        It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. </p>
-        <a href="guilds"><button type="button" class="btn btn-primary me-3"><i class="fas fa-book me-2"></i>See more Guilds</button></a>
-      <a href="about"> <button type="button"  class="btn btn-outline-primary"><i class="fas fa-question-circle me-2"></i>About us</button></a>
+      <p class="mb-3 mt-3">Generally we raid 2-3 days a week. These days are however not set in stone. Before a new content release patch, these days are gonna exceed that. 
+        In a normal week our raids start 18:00 server time and can end as late as midnight server time. 
+        We have a fairly small roster compared to some of our counterparts, so it's important to us that our applicants have a flexible schedule. </p>
+        <a href="guilds"><button type="button" class="btn btn-secondary me-3"><i class="fas fa-book me-2"></i>See more Guilds</button></a>
+      <a href="about"> <button type="button"  class="btn btn-outline-secondary"><i class="fas fa-question-circle me-2"></i>About us</button></a>
     </div>
   </div>
   <div class="row mb-5">
@@ -49,14 +45,11 @@
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
           <img src="{{guild.guildEmblem}}" class="img-fluid"/>
-          <a href="/guilds/guild-details">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{guild.guildName}}</h5>
           <p class="card-text mb-2">"{{guild.slogan}}"</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
+          <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-secondary">Check {{guild.guildName}} page</a>
         </div>
       </div>
     </ng-container>
@@ -66,14 +59,11 @@
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
           <img src="{{guild.guildEmblem}}" class="img-fluid"/>
-          <a href="#!">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{guild.guildName}}</h5>
           <p class="card-text mb-2">"{{guild.slogan}}"</p>
-          <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
+          <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-secondary">Check {{guild.guildName}} page</a>
         </div>
       </div>
     </ng-container>
@@ -83,14 +73,11 @@
       <div class="card">
         <div class="bg-image hover-zoom" mdbRipple rippleColor="light">
           <img src="{{guild.guildEmblem}}" class="img-fluid"/>
-          <a href="/guilds/guild-details">
-            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-          </a>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{guild.guildName}}</h5>
           <p class="card-text mb-2">"{{guild.slogan}}"</p>
-           <a href="/guilds/guild-details" class="btn btn-primary">Check {{guild.guildName}} page</a>
+           <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-secondary">Check {{guild.guildName}} page</a>
         </div>
       </div>
       </ng-container>

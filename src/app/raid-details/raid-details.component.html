@@ -10,41 +10,62 @@
     </div>
   </div>
 </div>
-    <section class="section about-section gray-bg" id="about" style="background-color: #282828;">
-        <h2></h2>
+<section class="section about-section gray-bg" id="about" style="background-color: #282828;">
+  <h2></h2>
 
-        <div class="container">
-            <div class="row">
-              <div class="column">
-                <img src="{{selectedRaid.raidIcon}}" style="
+  <div class="container animate-bottom">
+    <div class="row">
+      <div class="column">
+        <img src="{{selectedRaid.raidIcon}}" style="
                 border-radius: 50%;
                 margin-left: auto;
                 margin-right: auto;
                 display: block;
                 width:80%;
               ">
-              </div>
-              <div class="column">
-                <form action="/action_page.php">
-                  <label style="font-weight: bold;">Name: {{selectedRaid.raidName}}</label><br /><br />
-                  <label style="font-weight: bold;">Zone: {{selectedRaid.raidZone}}</label><br /><br />
-                  <label style="font-weight: bold;">Difficulty: {{selectedRaid.raidDifficulty}}</label><br /><br />
-                  <label style="font-weight: bold;">Loot System: {{selectedRaid.raidLootSystem}} </label><br /><br />
-                  <label style="font-weight: bold;">Total Encounters: {{selectedRaid.raidTotalEncounters}}</label><br /><br />
-                  <label style="font-weight: bold;">Date: {{selectedRaid.raidDate}}</label><br /><br />
-                  <label style="font-weight: bold;">Pull / Raid-Off: {{selectedRaid.raidPullTime}} - {{selectedRaid.raidOffTime}}</label><br /><br />
-                  <label style="font-weight: bold;">Raid Leader: {{selectedRaid.raidLeader.battleTag}} aka {{selectedRaid.raidLeader.playableCharacter.name}}</label><br /><br />
-                  <label style="font-weight: bold;">Organising Guild: {{selectedRaid.raidLeader.playableCharacter.guild.guildName}}</label><br /><br />
-                  <label style="font-weight: bold;">Needed Class: {{selectedRaid.raidRequirements.mainClass}}</label><br /><br />
-                  <label style="font-weight: bold;">Needed Roles: {{selectedRaid.raidRequirements.mainSpec}} & {{selectedRaid.raidRequirements.secondarySpec}}</label><br /><br />
-                  
-                  <input class="btn btn-primary" type="submit" value="Apply to Join Raid">
-                </form>
-              </div>
-            </div>
+      </div>
+      <div class="column">
+        <div class="row">
+<h2></h2>
+          <div class="col">
+            <label style="font-weight: bold;"><i class="fa-solid fa-signature"></i>&nbsp;Name: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-map-pin">&nbsp;</i>Zone: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-scale-unbalanced-flip">&nbsp;</i>Difficulty: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-sharp fa-solid fa-gift"></i>&nbsp;Loot System: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-sharp fa-solid fa-hashtag"></i>&nbsp;Total Encounters: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-calendar"></i>&nbsp;Date: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-business-time"></i>&nbsp;Pull / Raid-Off: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-user"></i>&nbsp;Raid Leader: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-users"></i>&nbsp;Organising Guild: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-paw"></i>&nbsp;Needed Class: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-user-ninja"></i>&nbsp;Needed Roles: </label><br /><br />
+          </div>
+          <div class="col">
+            <label> {{selectedRaid.raidName}}</label><br /><br />
+            <label> {{selectedRaid.raidZone}}</label><br /><br />
+            <label> {{selectedRaid.raidDifficulty}}</label><br /><br />
+            <label> {{selectedRaid.raidLootSystem}} </label><br /><br />
+            <label> {{selectedRaid.raidTotalEncounters}}</label><br /><br />
+            <label> {{selectedRaid.raidDate}}</label><br /><br />
+            <label> {{selectedRaid.raidPullTime}} - {{selectedRaid.raidOffTime}}</label><br /><br />
+            <label> {{selectedRaid.raidLeader.battleTag}} aka
+              {{selectedRaid.raidLeader.playableCharacter.name}}</label><br /><br />
+            <label> {{selectedRaid.raidLeader.playableCharacter.guild.guildName}}</label><br /><br />
+            <label> {{selectedRaid.raidRequirements.mainClass}}</label><br /><br />
+            <label> {{selectedRaid.raidRequirements.mainSpec}} &
+              {{selectedRaid.raidRequirements.secondarySpec}}</label><br /><br /><br />
           </div>
           
+        </div>
+
+        <input class="btn btn-secondary" type="submit" value="Apply to Join Raid">
+        
+
+      </div>
+    </div>
+  </div>
 
 
-        <h2></h2>
-    </section>
+
+  <h2></h2>
+</section>

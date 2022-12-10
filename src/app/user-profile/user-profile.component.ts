@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { StorageService } from '../_services/storage.service';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { CreacteCharacterModalComponent } from '../creacte-character-modal/creacte-character-modal.component';
@@ -8,17 +8,16 @@ import { ApiService } from '../_services/api.service';
 import { UserService } from '../_services/user.service';
 import { Guild } from 'src/model/guild';
 import { GuildService } from '../_services/guild.service';
-import { Raid } from 'src/model/raids';
+import { Preferences, Raid } from 'src/model/raids';
 import { RaidsService } from '../_services/raids.service';
 import { Pipe, PipeTransform } from '@angular/core'
-
-
+import { PreferencesService } from '../_services/preferences.service';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent implements OnInit, OnChanges {
   currentUser: any;
   currentCharacter: any;
   modalRef: MdbModalRef<CreacteCharacterModalComponent> | null = null;
@@ -41,43 +40,15 @@ export class UserProfileComponent implements OnInit {
     private userService : UserService,
     private api:ApiService,
     private guildService: GuildService,
-    private raidService: RaidsService) { }
+    private raidService: RaidsService,
+    private preferencesService: PreferencesService,) { }
 
   openCharacModal() {
     this.modalRef = this.modalService.open(CreacteCharacterModalComponent)
   }
 
-  openPrefModal() {
-    this.modalRef = this.modalService.open(PreferencesModalComponent)
-  }
-
   openUpdateModal() {
     this.modalRef = this.modalService.open(UpdateProfileModalComponent)
-  }
-
-
-  ngOnInit(): void {
-    this.retrieveGuilds();
-    this.retriveRaids();
-    this.currentUser = this.storageService.getUser();
-    this.api.getPlayersRankings().subscribe((data) => {
-      this.playersRankingsData = data;
-      this.filteredPlayersRankingsData=this.playersRankingsData.filter(f => f.characterName==this.currentUser.playableCharacter.name);
-    })
-    this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
-  }
-  
-  retrieveGuilds(): void {
-    this.guildService.getAll()
-      .subscribe({
-        next: (data) => {
-          this.guilds = data;
-          this.filteredGuildsObjectives = this.guilds.filter(f => f.objectives == this.currentUser.playableCharacter.preferences.objectives);
-          this.filteredGuildsClass = this.guilds.filter(f => f.guildRecruitment.playableCharacter == this.currentUser.playableCharacter.playableClass);
-          this.filteredGuildsRaidsWeek = this.guilds.filter(f => f.raidsPerWeek == this.currentUser.playableCharacter.preferences.raidsPerWeek);
-        },
-        error: (e) => console.error(e)
-      });
   }
 
   retriveRaids(): void {
@@ -103,6 +74,50 @@ export class UserProfileComponent implements OnInit {
   setSelectedRaid(raid: Raid): void {
     this.raidService.id = raid.id;
   }
+
+  setSelectedPreferences(preferences: Preferences): void {
+    this.preferencesService.id = this.currentUser.id;
+    this.modalRef = this.modalService.open(PreferencesModalComponent)
+    this.ngOnInit();
+  }
+
+  retrieveGuilds(): void {
+    this.guildService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.guilds = data;
+          this.filteredGuildsObjectives = this.guilds.filter(f => f.objectives == this.currentUser.playableCharacter.preferences.objectives);
+          this.filteredGuildsClass = this.guilds.filter(f => f.guildRecruitment.playableCharacter == this.currentUser.playableCharacter.playableClass);
+          this.filteredGuildsRaidsWeek = this.guilds.filter(f => f.raidsPerWeek == this.currentUser.playableCharacter.preferences.raidsPerWeek);
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  ngOnChanges(): void {
+    this.retrieveGuilds();
+    this.retriveRaids();
+    this.currentUser = this.storageService.getUser();
+    this.api.getPlayersRankings().subscribe((data) => {
+      this.playersRankingsData = data;
+      this.filteredPlayersRankingsData=this.playersRankingsData.filter(f => f.characterName==this.currentUser.playableCharacter.name);
+    })
+    this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
+  }
+
+  ngOnInit(): void {
+    this.retrieveGuilds();
+    this.retriveRaids();
+    this.currentUser = this.storageService.getUser();
+    this.api.getPlayersRankings().subscribe((data) => {
+      this.playersRankingsData = data;
+      this.filteredPlayersRankingsData=this.playersRankingsData.filter(f => f.characterName==this.currentUser.playableCharacter.name);
+    })
+    this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
+  }
+  
+
+
 
 }
 

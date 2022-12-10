@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Equipment } from 'src/model/equipment';
 
-const baseUrl = 'http://localhost:8080/api/equipment';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/equipment';
 
 @Injectable({
   providedIn: 'root'

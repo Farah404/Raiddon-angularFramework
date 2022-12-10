@@ -71,7 +71,7 @@
                     <label>Actions</label><br />
                     <a (click)="openUpdateModal()" style="cursor: pointer; color:blue;"><i
                         class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Profile</a><br />
-                    <!-- <a (click)="openPrefModal()" style="cursor: pointer; color:blue;"><i class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check Preferences</a><br /> -->
+                    <a (click)="setSelectedPreferences(preferences)" style="cursor: pointer; color:blue;"><i class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check Preferences</a><br />
                     <a href="dressing-room" style="cursor: pointer; color:blue;">&nbsp;<i
                         class="fa-solid fa-person-dress"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Equipment</a>
                   </div>
@@ -137,7 +137,7 @@
                 <div class="row">
                   <ng-container *ngFor="let guild of filteredGuildsClass" ;>
                     <div class="col-sm-6 col-md-3">
-                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="width: 105%">
                         <img class="card-img-top img-fluid" src="{{guild.guildEmblem}}" alt="Card image cap"
                           style="width: 500px;height: 300px;" />
                         <div class="card-body">
@@ -145,7 +145,7 @@
                           <p class="card-text">Ran by {{guild.guildMaster}}</p>
                           <p class="card-text mb-1">{{guild.raidsPerWeek}} raids per week</p>
                           <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)"
-                            class="btn btn-primary">Check Guild</a>
+                            class="btn btn-secondary">Check Guild</a>
                         </div>
                       </div>
                     </div>
@@ -174,7 +174,7 @@
                           <p class="card-text">Ran by {{guild.guildMaster}}</p>
                           <p class="card-text mb-1">{{guild.raidsPerWeek}} raids per week</p>
                           <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)"
-                            class="btn btn-primary">Check Guild</a>
+                            class="btn btn-secondary">Check Guild</a>
                         </div>
                       </div>
                     </div>
@@ -195,7 +195,7 @@
                 <div class="row">
                   <ng-container *ngFor="let guild of filteredGuildsClass" ;>
                     <div class="col-sm-6 col-md-3">
-                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
+                      <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="width: 105%">
                         <img class="card-img-top img-fluid" src="{{guild.guildEmblem}}" alt="Card image cap"
                           style="width: 500px;height: 300px;" />
                         <div class="card-body">
@@ -203,7 +203,7 @@
                           <p class="card-text">Ran by {{guild.guildMaster}}</p>
                           <p class="card-text mb-1">{{guild.raidsPerWeek}} raids per week</p>
                           <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)"
-                            class="btn btn-primary">Check Guild</a>
+                            class="btn btn-secondary">Check Guild</a>
                         </div>
                       </div>
                     </div>
@@ -221,89 +221,92 @@
                   <h3 class="light-color">Check all available raids <a href="raids">here!</a></h3>
           <mdb-tab title="By Recruited Class">
           <div class="counter">
-                <div class="row">
-                  <h2></h2>
-                  <div class="container animate-bottom">
-                    <h2></h2>
-                    <div class="row">
-                      <ng-container *ngFor="let raid of filteredRaidsClass" ;>
-                        <div class="col-sm-6 col-md-3">
-                          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-        
-                            <img class="card-img-top img-fluid" src="{{raid.raidIcon}}" alt="Card image cap"
-                              style="width: 500px;height: 300px;" />
-                            <div class="card-body">
-                              <h4 class="card-title">{{raid.raidName}}</h4>
-                              <p class="card-text">Organised by {{raid.raidLeader.playableCharacter.name}}</p>
-                              <p class="card-text mb-1">{{raid.raidLootSystem}}</p>
-                              <a routerLink="raid-details/{{raid.id}}" (click)="setSelectedRaid(raid)"
-                                class="btn btn-primary">Check Raid</a>
-                            </div>
-                          </div>
-                        </div>
-                      </ng-container>
-        
+            <div class="container animate-bottom">
+              <div class="row">
+                <ng-container *ngFor="let raid of filteredRaidsClass" ;>
+                  <div class="col-sm-4 ">
+                    <div class="first hero">
+                      <img class="hero-profile-img" src="{{raid.raidIcon}}" alt="">
+                      <div class="hero-description-bk"></div>
+                      <div class="hero-logo" mdbRipple rippleColor="light">
+                        <img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" alt="">
+                      </div>
+                      <div class="hero-description">
+                        <p>{{raid.raidName}}</p>
+                        <p>{{raid.raidDifficulty}}</p>
+                      </div>
+                      <div class="hero-date">
+                        <p>{{raid.raidDate}}</p>
+                      </div>
+                      <div class="hero-btn">
+                        <a routerLink="raid-details/{{raid.id}}" class="btn btn-secondary mb-1"
+                          (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ng-container>
+              </div>
+            </div>
               </div>
           </mdb-tab>
           <mdb-tab title="By Main Specialisation">
             <div class="counter">
+              <div class="container animate-bottom">
                 <div class="row">
-                  <h2></h2>
-                  <div class="container animate-bottom">
-                    <h2></h2>
-                    <div class="row">
-                      <ng-container *ngFor="let raid of filteredRaidsSpec" ;>
-                        <div class="col-sm-6 col-md-3">
-                          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-        
-                            <img class="card-img-top img-fluid" src="{{raid.raidIcon}}" alt="Card image cap"
-                              style="width: 500px;height: 300px;" />
-                            <div class="card-body">
-                              <h4 class="card-title">{{raid.raidName}}</h4>
-                              <p class="card-text">Organised by {{raid.raidLeader.playableCharacter.name}}</p>
-                              <p class="card-text mb-1">{{raid.raidLootSystem}}</p>
-                              <a routerLink="raid-details/{{raid.id}}" (click)="setSelectedRaid(raid)"
-                                class="btn btn-primary">Check Raid</a>
-                            </div>
-                          </div>
+                  <ng-container *ngFor="let raid of filteredRaidsSpec" ;>
+                    <div class="col-sm-4 ">
+                      <div class="first hero">
+                        <img class="hero-profile-img" src="{{raid.raidIcon}}" alt="">
+                        <div class="hero-description-bk"></div>
+                        <div class="hero-logo" mdbRipple rippleColor="light">
+                          <img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" alt="">
                         </div>
-                      </ng-container>
-        
+                        <div class="hero-description">
+                          <p>{{raid.raidName}}</p>
+                          <p>{{raid.raidDifficulty}}</p>
+                        </div>
+                        <div class="hero-date">
+                          <p>{{raid.raidDate}}</p>
+                        </div>
+                        <div class="hero-btn">
+                          <a routerLink="raid-details/{{raid.id}}" class="btn btn-secondary mb-1"
+                            (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ng-container>
                 </div>
+              </div>
               </div>
           </mdb-tab>
           <mdb-tab title="By Loot System">
             <div class="counter">
+              <div class="container animate-bottom">
                 <div class="row">
-                  <h2></h2>
-                  <div class="container animate-bottom">
-                    <h2></h2>
-                    <div class="row">
-                      <ng-container *ngFor="let raid of filteredRaidsLootsystem" ;>
-                        <div class="col-sm-6 col-md-3">
-                          <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light">
-        
-                            <img class="card-img-top img-fluid" src="{{raid.raidIcon}}" alt="Card image cap"
-                              style="width: 500px;height: 300px;" />
-                            <div class="card-body">
-                              <h4 class="card-title">{{raid.raidName}}</h4>
-                              <p class="card-text">Organised by {{raid.raidLeader.playableCharacter.name}}</p>
-                              <p class="card-text mb-1">{{raid.raidLootSystem}}</p>
-                              <a routerLink="raid-details/{{raid.id}}" (click)="setSelectedRaid(raid)"
-                                class="btn btn-primary">Check Raid</a>
-                            </div>
-                          </div>
+                  <ng-container *ngFor="let raid of filteredRaidsLootsystem" ;>
+                    <div class="col-sm-4 ">
+                      <div class="first hero">
+                        <img class="hero-profile-img" src="{{raid.raidIcon}}" alt="">
+                        <div class="hero-description-bk"></div>
+                        <div class="hero-logo" mdbRipple rippleColor="light">
+                          <img src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" alt="">
                         </div>
-                      </ng-container>
-        
+                        <div class="hero-description">
+                          <p>{{raid.raidName}}</p>
+                          <p>{{raid.raidDifficulty}}</p>
+                        </div>
+                        <div class="hero-date">
+                          <p>{{raid.raidDate}}</p>
+                        </div>
+                        <div class="hero-btn">
+                          <a routerLink="raid-details/{{raid.id}}" class="btn btn-secondary mb-1"
+                            (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </ng-container>
                 </div>
+              </div>
               </div>
           </mdb-tab>
         </mdb-tabs>

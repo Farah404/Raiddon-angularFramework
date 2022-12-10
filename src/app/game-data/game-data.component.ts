@@ -20,6 +20,7 @@ export class GameDataComponent implements OnInit {
 
   ngOnInit(){
 
+
     this.api.getPlayableRaces().subscribe((data) => {
       this.playableRacesData = data;
     })

@@ -17,14 +17,12 @@
     <h2></h2>
     <div class="input-group">
       <input
-        type="search"
+        type="text"
         class="form-control rounded"
         placeholder="Search by username"
-        aria-label="Search"
-        aria-describedby="search-addon"
         [(ngModel)]="username"
       />
-      <button type="button" class="btn btn-outline-primary" (click)="searchUserName()">search</button>
+      <button type="button" class="btn btn-outline-secondary input-group-append" (click)="searchUserName()">search</button>
     </div>
     <div class="container animate-bottom" >
       <h2></h2>
@@ -41,7 +39,7 @@
             />
             <div class="card-body">
               <h4 class="card-title">{{user.battleTag}}</h4>
-              <a routerLink="player-details/{{user.id}}" (click)="setSelectedUser(user)" class="btn btn-primary">Check Player</a>
+              <a routerLink="player-details/{{user.id}}" (click)="setSelectedUser(user)" class="btn btn-secondary">Check Player</a>
             </div>
           </div>
         </div>

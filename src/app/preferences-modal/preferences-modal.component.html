@@ -21,41 +21,22 @@
               <div class="col" aria-describedby="imghelp">
                 <div class="form-group mb-3">
                   <label for="ilvl">Raids per week</label>
-                  <input type="number" class="form-control" id="ilvl" name="ilvl" />
+                  <input type="number" class="form-control" id="raidsPerWeek" name="raidsPerWeek" [(ngModel)]="currentPreferences.raidsPerWeek"/>
                 </div>
                 <div class="form-group mb-3">
-                  <fieldset>
-                    <label>My aims:</label><br />
-                    <label class="checkbox-inline">
-                      <input type="checkbox" value="">&nbsp;I am loogking for a guild&nbsp;&nbsp;&nbsp;&nbsp;
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" value="">&nbsp;I a m looking for raid&nbsp;&nbsp;&nbsp;&nbsp;
-                    </label>
-                  </fieldset>
-                </div>
-                <div class="form-group mb-3">
-                  <label for="faction">My competitivity objective</label>
-                  <select class="form-select" aria-label="Default select example">
-                    <option value=""></option>
-                    <option value="1">Try Hard</option>
-                    <option value="2">Semi Try Hard</option>
-                    <option value="3">Chill</option>
-                  </select>
+                  <label for="objectives">My competitivity objective</label>:
+                  <input type="text" class="form-control" id="objectives" name="objectives" [(ngModel)]="currentPreferences.objectives"/>
+                  <label for="objectives" style="font-style: italic;">Please chose from: Try Hard, Semi TryHard and Chill</label>
                 </div>
                 <div class="form-group mb-3">
                   <label for="faction">My preferred loot system</label>
-                  <select class="form-select" aria-label="Default select example">
-                    <option value=""></option>
-                    <option value="1">Random</option>
-                    <option value="2">Attribution by loot master</option>
-                    <option value="3">DKP Dragon Kill Points</option>
-                    <option value="4">Gold Dragon Kill Points</option>
-                  </select>
+                  <input type="text" class="form-control" id="lootSystem" name="lootSystem" [(ngModel)]="currentPreferences.lootSystems"/>
+                  <label for="objectives" style="font-style: italic;">Please chose from: Random, Attribution, DKP and GDKP</label>
                 </div>
                 <div class="form-group mb-3">
                   <label for="ilvl">Few words about me</label>
-                  <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
+                  <textarea type="text" class="form-control" id="desc" name="desc" [(ngModel)]="currentPreferences.description"
+                  id="form10" class="md-textarea form-control" rows="3"></textarea>
                 </div>
               </div>
             </div>
@@ -70,5 +51,5 @@
   <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
     Cancel
   </button>
-  <button type="button" class="btn btn-primary">Validate</button>
+  <button type="button" class="btn btn-primary" (click)="updatePreferences()">Update</button>
 </div>

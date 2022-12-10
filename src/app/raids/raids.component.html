@@ -7,6 +7,7 @@
     <div class="text-white ">
       <h1 class="mb-3 typewriter">Looking for a Raid?</h1>
       <h5 class="mb-4">By using our raid finder page you may find your next instance !</h5>
+      <h5 class="mb-4" (click)="openCreateRaidModal()" style="cursor: pointer;">Or create your own now</h5>
     </div>
   </div>
 </div>
@@ -15,9 +16,13 @@
 <div class="second-main" style="background-color:  	#282828;">
   <h2></h2>
   <div class="input-group">
-    <input type="search" class="form-control rounded" placeholder="Search by raid name" aria-label="Search"
-      aria-describedby="search-addon" [(ngModel)]="raidName" />
-    <button type="button" class="btn btn-outline-primary">search</button>
+    <input
+      type="text"
+      class="form-control rounded"
+      placeholder="Search by raid name"
+      [(ngModel)]="raidName"
+    />
+    <button type="button" class="btn btn-outline-secondary input-group-append" (click)="searchRaidName()">search</button>
   </div>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -41,7 +46,7 @@
               <p>{{raid.raidDate}}</p>
             </div>
             <div class="hero-btn">
-              <a routerLink="raid-details/{{raid.id}}" class="btn btn-primary mb-1"
+              <a routerLink="raid-details/{{raid.id}}" class="btn btn-secondary mb-1"
                 (click)="setSelectedRaid(raid)">Learn More & Apply</a>
             </div>
           </div>

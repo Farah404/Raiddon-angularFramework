@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Preferences } from 'src/model/preferences';
+import { Preferences } from 'src/model/user';
 
-const baseUrl = 'http://localhost:8080/api/preferences';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/preferences';
 
 @Injectable({
   providedIn: 'root'

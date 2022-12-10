@@ -60,6 +60,11 @@ const routes: Routes = [
     canActivate:[AuthGuardService]
   },
   {
+    path:'home/guild-details/:id',
+    component: GuildDetailsComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
     path:'user-profile/guild-details/:id',
     component: GuildDetailsComponent,
     canActivate:[AuthGuardService]

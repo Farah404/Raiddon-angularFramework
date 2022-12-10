@@ -38,6 +38,7 @@ export class PlayersComponent implements OnInit {
     this.userService.findByusername(this.username)
       .subscribe({
         next: (data) => {
+          this.users = data;
         },
         error: (e) => console.error(e)
       });
