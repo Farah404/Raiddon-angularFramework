@@ -12,7 +12,6 @@
 [![My Skills](https://skills.thijs.gg/icons?i=css)](https://skills.thijs.gg)
 [![My Skills](https://skills.thijs.gg/icons?i=html)](https://skills.thijs.gg)
 [![My Skills](https://skills.thijs.gg/icons?i=git)](https://skills.thijs.gg)
-[![My Skills](https://skills.thijs.gg/icons?i=mongodb)](https://skills.thijs.gg)
 
 ![RAIDDON](https://user-images.githubusercontent.com/96427557/201051613-6f8d86f6-e411-4ef5-a9a8-39c9b4522b0c.png)
 
