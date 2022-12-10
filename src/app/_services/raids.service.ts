@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Raid } from 'src/model/raids';
 
-const baseUrl = 'http://localhost:8080/api/raids';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/raids';
+const baseUrlAdd = 'https://raiddon-spring-server.herokuapp.com/api/raids/add';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class RaidsService {
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+    return this.http.post(baseUrlAdd, data);
   }
 
   

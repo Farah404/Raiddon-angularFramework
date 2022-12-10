@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Charac } from 'src/model/character';
+import { PlayableCharacter } from 'src/model/user';
 
 
-const baseUrl = 'http://localhost:8080/api/characters';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/characters';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,12 @@ export class CharacterService {
   constructor(private http: HttpClient) { }
   id: number
 
-  getAll(): Observable<Charac[]> {
-    return this.http.get<Charac[]>(baseUrl);
+  getAll(): Observable<PlayableCharacter[]> {
+    return this.http.get<PlayableCharacter[]>(baseUrl);
   }
 
-  get(id: any): Observable<Charac> {
-    return this.http.get<Charac>(`${baseUrl}/${id}`);
+  get(id: any): Observable<PlayableCharacter> {
+    return this.http.get<PlayableCharacter>(`${baseUrl}/${id}`);
   }
   
   update(id: any, data: any): Observable<any> {

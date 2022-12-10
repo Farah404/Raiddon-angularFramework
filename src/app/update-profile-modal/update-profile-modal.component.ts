@@ -29,7 +29,7 @@ export class UpdateProfileModalComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private userService: UserService,
-    private storageService: StorageService,) { }
+    private storageService: StorageService) { }
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
@@ -44,7 +44,6 @@ export class UpdateProfileModalComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.currentUser = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });

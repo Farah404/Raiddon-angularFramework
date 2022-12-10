@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Guild } from 'src/model/guild';
 
-const baseUrl = 'http://localhost:8080/api/guilds';
-const baseUrlAdd = 'http://localhost:8080/api/guilds/add';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/guilds';
+const baseUrlAdd = 'https://raiddon-spring-server.herokuapp.com/api/add';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +39,6 @@ export class GuildService {
   }
 
   findByGuildName(guildName: any): Observable<Guild[]> {
-    return this.http.get<Guild[]>(`${baseUrl}?username=${guildName}`);
+    return this.http.get<Guild[]>(`${baseUrl}?guildName=${guildName}`);
   }
 }

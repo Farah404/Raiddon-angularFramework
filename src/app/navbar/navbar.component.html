@@ -39,10 +39,10 @@
           <a class="nav-link" href="/players">Players</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/players-rankings">Players Rankings</a>
+          <a class="nav-link" href="/raids">Raids</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/raids">Raids</a>
+          <a class="nav-link" href="/players-rankings">Players Rankings</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/auction-house">Auction House</a>
@@ -54,7 +54,7 @@
       <!-- Left links -->
 
       <div class="d-flex align-items-center" *ngIf="!isLoggedIn">
-        <a href="/register"><button type="button" class="btn btn-link px-3 me-2">
+        <a href="/register"><button type="button" class="btn btn-link px-3 me-2" style="color: rgb(103, 39, 133)">
           Sign up
         </button></a>
         <a href="/login"><button type="button" class="btn btn-primary me-3">
@@ -71,10 +71,10 @@
             <!-- Left links -->
 
             <div class="d-flex align-items-center" *ngIf="isLoggedIn">
-              <a href="/user-profile"><button type="button" class="btn btn-link px-3 me-2">
+              <a href="/user-profile"><button type="button" class="btn btn-link px-3 me-2" style="color: rgb(103, 39, 133);">
                 My Profile
               </button></a>
-              <button (click)="logout()" type="submit" class="btn btn-primary me-3">
+              <button (click)="logout()" type="submit" class="btn btn-secondary me-3">
                 Log Out  <i class="fa-solid fa-right-from-bracket"></i>
               </button>
               <a

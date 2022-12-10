@@ -23,15 +23,14 @@
   <h2></h2>
   <div class="input-group">
     <input
-      type="search"
+      type="text"
       class="form-control rounded"
       placeholder="Search by guild name"
-      aria-label="Search"
-      aria-describedby="search-addon"
       [(ngModel)]="guildName"
     />
-    <button type="button" class="btn btn-outline-primary" (click)="searchGuildName()">search</button>
+    <button type="button" class="btn btn-outline-secondary input-group-append" (click)="searchGuildName()">search</button>
   </div>
+  
   <div class="container animate-bottom" >
     <h2></h2>
     <div class="row">
@@ -48,7 +47,7 @@
           <div class="card-body">
             <h4 class="card-title">{{guild.guildName}}</h4>
             <p class="card-text">{{guild.slogan}}</p>
-            <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-primary">Check Guild</a>
+            <a routerLink="guild-details/{{guild.id}}" (click)="setSelectedGuild(guild)" class="btn btn-secondary">Check Guild</a>
           </div>
         </div>
       </div>

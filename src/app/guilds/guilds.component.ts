@@ -15,6 +15,7 @@ export class GuildsComponent implements OnInit {
   guilds?: Guild[];
   filteredGuilds: Guild[];
   currentGuild: Guild = {};
+  currentIndex = -1;
   guildName = '';
   modalRef: MdbModalRef<CreateGuildModalComponent> | null = null;
 
@@ -46,6 +47,7 @@ export class GuildsComponent implements OnInit {
 
   searchGuildName(): void {
     this.currentGuild = {};
+    this.currentIndex = -1;
     this.guildService.findByGuildName(this.guildName)
       .subscribe({
         next: (data) => {
@@ -58,5 +60,5 @@ export class GuildsComponent implements OnInit {
   setSelectedGuild(guild: Guild): void {
     this.guildService.id = guild.id;
   }
-
+  
 }

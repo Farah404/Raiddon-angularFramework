@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { RaidRequirement } from 'src/model/raidRequirement';
+import { RaidRequirement } from 'src/model/raids';
 
-const baseUrl = 'http://localhost:8080/api/raidRequirements';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/raidRequirements';
+const baseUrlAdd = 'https://raiddon-spring-server.herokuapp.com/api/raidRequirements/add';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class RaidRequirementsService {
   constructor(private http: HttpClient) { }
   
   id: number
+
+  create(data: any): Observable<any> {
+    return this.http.post(baseUrlAdd, data);
+  }
 
   getAll(): Observable<RaidRequirement[]> {
     return this.http.get<RaidRequirement[]>(baseUrl);

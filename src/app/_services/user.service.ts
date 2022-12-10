@@ -5,8 +5,8 @@ import { User } from 'src/model/user';
 import { PlayableCharacter} from 'src/model/user';
 
 
-const baseUrl = 'http://localhost:8080/api/users';
-const baseUrlCharac = 'http://localhost:8080/api/characters';
+const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/users';
+const baseUrlCharac = 'https://raiddon-spring-server.herokuapp.com/api/characters';
 
 @Injectable({
   providedIn: 'root'
