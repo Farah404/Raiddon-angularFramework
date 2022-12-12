@@ -11,6 +11,8 @@ export class Raid {
     raidLootSystem?:string;
     raidRequirements?:RaidRequirement;
     raidLeader?:User;
+    raidRequirementsId?:RaidRequirement["id"];
+    raidLeaderId?:User["id"];
 }
 
 export class RaidRequirement {

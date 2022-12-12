@@ -16,6 +16,7 @@ export class Guild {
     lootSystems?: string;
     guildMaster?:string;
     guildRecruitment?:GuildRecruitment;
+    guildRecruitmentId?:GuildRecruitment["id"];
 }
 
 export class GuildRecruitment {

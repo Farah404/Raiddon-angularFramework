@@ -25,10 +25,17 @@ export class CreateRaidModalComponent implements OnInit {
   constructor(public modalRef: MdbModalRef<CreateRaidModalComponent>,
     private storageService: StorageService,
     private raidReqService: RaidRequirementsService,
-    private raidService: RaidsService) { }
+    private raidService: RaidsService,
+    private api: ApiService) { }
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
+    this.api.getPlayableClasses().subscribe((data) => {
+      this.playableClassesData = data;
+    })
+    this.api.getClassTalents().subscribe((data) => {
+      this.classTalentsData = data;
+    })
   }
 
   raidRequirements: RaidRequirement = {
@@ -39,7 +46,6 @@ export class CreateRaidModalComponent implements OnInit {
     secondaryRole: '',
   }
   raid: Raid = {
-    id:this.storageService.getUser().id + 25,
     raidIcon: '',
     raidName: '',
     raidZone: '',
@@ -49,31 +55,31 @@ export class CreateRaidModalComponent implements OnInit {
     raidOffTime: '',
     raidDifficulty: '',
     raidLootSystem: '',
-    raidRequirements: this.raidRequirements,
-    raidLeader: this.storageService.getUser().id,
+    raidRequirementsId: this.raidRequirements.id,
+    raidLeaderId: this.storageService.getUser().id,
   }
   submitted = false;
 
 
-saveRaidRequirements():void{
-  const raidRequirementsData = {
-    id:this.storageService.getUser().id + 25,
-    mainClass: this.raidRequirements.mainClass,
-    mainSpec: this.raidRequirements.mainSpec,
-    secondarySpec: this.raidRequirements.secondarySpec,
-    mainRole: this.raidRequirements.mainRole,
-    secondaryRole: this.raidRequirements.secondaryRole,
-  };
+  saveRaidRequirements(): void {
+    const raidRequirementsData = {
+      id: this.storageService.getUser().id + 25,
+      mainClass: this.raidRequirements.mainClass,
+      mainSpec: this.raidRequirements.mainSpec,
+      secondarySpec: this.raidRequirements.secondarySpec,
+      mainRole: this.raidRequirements.mainRole,
+      secondaryRole: this.raidRequirements.secondaryRole,
+    };
 
-  this.raidReqService.create(raidRequirementsData)
-    .subscribe({
-      next: (res) => {
-        console.log(res);
-        this.submitted = true;
-      },
-      error: (e) => console.error(e)
-    });
-}
+    this.raidReqService.create(raidRequirementsData)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true;
+        },
+        error: (e) => console.error(e)
+      });
+  }
   saveRaid(): void {
 
     const raidData = {
@@ -86,8 +92,8 @@ saveRaidRequirements():void{
       raidOffTime: this.raid.raidOffTime,
       raidDifficulty: this.raid.raidDifficulty,
       raidLootSystem: this.raid.raidLootSystem,
-      raidRequirements: this.raidRequirements,
-      raidLeader: this.storageService.getUser().id,
+      raidRequirementsId: this.raidRequirements.id,
+      raidLeaderId: this.storageService.getUser().id,
     }
 
     this.raidService.create(raidData)
@@ -119,8 +125,8 @@ saveRaidRequirements():void{
       raidOffTime: '',
       raidDifficulty: '',
       raidLootSystem: '',
-      raidRequirements: this.raidRequirements,
-      raidLeader: this.storageService.getUser().id,
+      raidRequirementsId: this.raidRequirements.id,
+      raidLeaderId: this.storageService.getUser().id,
     }
   }
 
