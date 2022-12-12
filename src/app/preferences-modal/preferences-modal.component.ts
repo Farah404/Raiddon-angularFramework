@@ -1,7 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, DoCheck } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/model/user';
 import { StorageService } from '../_services/storage.service';
 import { PreferencesService } from '../_services/preferences.service';
 import { Preferences } from 'src/model/user';
@@ -11,7 +10,7 @@ import { Preferences } from 'src/model/user';
   templateUrl: './preferences-modal.component.html',
   styleUrls: ['./preferences-modal.component.scss']
 })
-export class PreferencesModalComponent implements OnInit {
+export class PreferencesModalComponent implements OnInit, DoCheck {
   currentUser: any;
   @Input() viewMode = false;
   @Input() currentPreferences: Preferences = {
@@ -22,6 +21,12 @@ export class PreferencesModalComponent implements OnInit {
     objectives: '',
     lootSystems: '',
   };
+
+  @Output() currentPreferencesChange: EventEmitter<Preferences> = new EventEmitter<Preferences> ;
+
+  ngDoCheck() {
+    this.currentPreferencesChange.next(this.currentPreferences);
+  }
 
   id: number = this.route.snapshot.params.id;
   message = '';
@@ -58,8 +63,8 @@ export class PreferencesModalComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'Your details were updated successfully!';
-          this.ngOnInit();
-          this.modalRef.close()
+          this.storageService.saveUser;
+          window.location.replace('user-profile');
         },
         error: (e) => console.error(e)
       });

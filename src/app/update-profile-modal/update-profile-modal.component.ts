@@ -56,6 +56,7 @@ export class UpdateProfileModalComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
+          this.modalRef.close()
           this.message = res.message ? res.message : 'Your details were updated successfully!';
         },
         error: (e) => console.error(e)

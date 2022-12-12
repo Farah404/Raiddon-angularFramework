@@ -1,293 +1,401 @@
 <div class="submit-form">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create your own guild now!</h5>
+        <div class="main bg-image" style="
+    background-image: url('https://cdn1.dotesports.com/wp-content/uploads/2022/07/25145718/WoW_WrathClassic_BoreanTundra_Coldarra_001-scaled.jpg');
+    height: 20vh;
+  ">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="ms-3 mb-3">Create your own guild now!</h1>
+      </div>
+    </div>
+  </div>
     </div>
     <div class="modal-body">
+        <mdb-tabs>
+            <mdb-tab title="Guild">
+                <div class="row">
+                    <div class="col">
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="guildName">
+                                    Guild Name
+                                </label>
+                                <input class="form-control" id="guildName" name="guildName" type="text" required
+                                    [(ngModel)]="guild.guildName" />
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="guildMaster">
+                                    Guild Master
+                                </label>
+                                <select class="form-control" id="guildMaster" name="guildMaster" type="text" required
+                                    [(ngModel)]="guild.guildMaster">
+                                    <option>{{currentUser.playableCharacter.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="slogan">
+                                    Guild Slogan
+                                </label>
+                                <input class="form-control" id="slogan" name="slogan" type="text" required
+                                    [(ngModel)]="guild.slogan" />
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="objectives">
+                                    Guild Objectives
+                                </label>
+                                <select class="form-select" [(ngModel)]="guild.objectives">
+                                    <option value="Chill">Chill</option>
+                                    <option value="Semi Try Hard">Semi Try Hard</option>
+                                    <option value="Try Hard">Try Hard</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="realm">
+                                    Guild Emblem
+                                </label>
+                                <select class="form-control" id="realm" name="realm" type="text" required
+                                    [(ngModel)]="guild.guildEmblem">
+                                    <option value="https://live.staticflickr.com/565/20846156995_e6c3171ef1_b.jpg">
+                                        🐲&emsp; Dragon</option>
+                                    <option
+                                        value="https://static.vecteezy.com/system/resources/previews/005/880/404/original/lion-sword-logo-design-template-vector.jpg">
+                                        🦁&emsp; Lion</option>
+                                    <option
+                                        value="https://i.pinimg.com/736x/0f/8b/24/0f8b24e84518ee8a7a217c9e25fbf445.jpg">
+                                        🦏&emsp; Kobold</option>
+                                    <option
+                                        value="https://media.istockphoto.com/id/1336478149/vector/abstract-flying-eagle-icon.jpg?b=1&s=170667a&w=0&k=20&c=dARyFMjh1TTyLvbVzB6MpgbjL_n2Tn5e9NpM3jQkAZw=">
+                                        🦅&emsp; Eagle</option>
+                                    <option
+                                        value="https://static.vecteezy.com/system/resources/previews/007/997/313/original/yellow-tiger-illustration-creative-animal-detiled-cartoon-and-mascot-style-suitable-for-logo-icon-symbol-and-sign-such-as-e-sports-emblem-and-strong-logo-free-vector.jpg">
+                                        🐯&emsp; Tiger</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="lootSystem">
+                                Guild Loot System
+                            </label>
+                            <select type="text" class="form-control" id="lootSystem" name="lootSystem"
+                                [(ngModel)]="guild.lootSystems">
+                                <option value="Random">Random</option>
+                                <option value="Attribution">Attribution</option>
+                                <option value="DKP">DKP</option>
+                                <option value="GDKP">GDKP</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="guildName">
+                                    Guild Rank
+                                </label>
+                                <input class="form-control" id="guildName" name="guildName" type="number"
+                                    [(ngModel)]="guild.rank" />
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="realm">
+                                    Guild Realm
+                                </label>
+                                <select class="form-control" id="realm" name="realm" type="text" required
+                                    [(ngModel)]="guild.realm">
+                                    <option *ngFor="let data of connectedRealmsData">
+                                        {{ data.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="totalPlayers">
+                                    Total active players
+                                </label>
+                                <input class="form-control" id="totalPlayers" name="totalPlayers" type="number"
+                                    [(ngModel)]="guild.totalPlayers" />
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Guild Activities
+                                </label>
+                                <select class="form-select" for="activities" [(ngModel)]="guild.activities">
+                                    <option value="PVP">PVP</option>
+                                    <option value="PVE">PVE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="wowLogLink">
+                                    Warcraft log link
+                                </label>
+                                <input class="form-control" id="wowLogLink" name="wowLogLink" type="text"
+                                    [(ngModel)]="guild.wowLogLink" />
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="raidsPerWeek">
+                                    Raids per Week
+                                </label>
+                                <select class="form-control" id="raidsPerWeek" name="raidsPerWeek" type="number"
+                                    [(ngModel)]="guild.raidsPerWeek">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                    </div>
+                </div>
+                <div class="md-form">
+                    <div class="form-group">
+                        <label class="control-label" for="recruiting">
+                            Is your guild recruiting?
+                        </label>
+                        <select class="form-select" [(ngModel)]="guild.recruiting">
+                            <option value="TRUE">Yes, we are looking for new players</option>
+                            <option value="FALSE">No, our roster is full</option>
+                        </select>
+                    </div>
+                </div>
+                <h2></h2>
+                <button (click)="saveGuild()" class="btn btn-success" style="float: right;">Submit</button>
+                <h2></h2><h2></h2>
+            </mdb-tab>
 
-        <div *ngIf="!submitted">
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="guildName">
-                        Guild Name
-                    </label>
-                    <input class="form-control" id="guildName" name="guildName" type="text" required
-                        [(ngModel)]="guild.guildName" />
+            <mdb-tab title="Guild Recruitment">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="control-label" for="playableCharacter ">
+                                Class
+                            </label>
+                            <select class="form-control" id="playableCharacter" name="playableCharacter" type="text"
+                                required [(ngModel)]="guildRecruitment.playableCharacter">
+                                <ng-container *ngFor="let class of playableClassesData">
+                                    <option value="{{class.name}}">{{class.name}}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="minIlvl ">
+                                Minimum iLevel
+                            </label>
+                            <select class="form-control" id="minIlvl" name="minIlvl" type="number" required
+                                [(ngModel)]="guildRecruitment.minIlevel">
+                                <option>200</option>
+                                <option>210</option>
+                                <option>220</option>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="minLevel ">
+                                Minimum Level
+                            </label>
+                            <select class="form-control" id="minLevel" name="minLevel" type="number" required
+                                [(ngModel)]="guildRecruitment.minLevel">
+                                <option>50</option>
+                                <option>60</option>
+                                <option>70</option>
+                                <option>80</option>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="recruitingSpec">
+                                Main Specialisation
+                            </label>
+                            <select class="form-control" id="recruitingSpec" name="recruitingSpec" type="text"
+                                required [(ngModel)]="guildRecruitment.mainSpec">
+                                <ng-container *ngFor="let talent of classTalentsData">
+                                    <option>{{talent.name}}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="recruitingRole">
+                                Main Role
+                            </label>
+                            <select class="form-control" id="recruitingRole" name="recruitingRole" type="text"
+                                required [(ngModel)]="guildRecruitment.mainRole">
+                                <option value="Tank">Tank</option>
+                                <option value="Damage">Damage</option>
+                                <option value="Healer">Healer</option>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="recruitingSpec">
+                                Secondary Specialisation
+                            </label>
+                            <select class="form-control" id="recruitingSpec" name="recruitingSpec" type="text"
+                                required [(ngModel)]="guildRecruitment.secondarySpec">
+                                <ng-container *ngFor="let talent of classTalentsData">
+                                    <option>{{talent.name}}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <h2></h2>
+                       
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="control-label" for="recruitingSpec">
+                                Secondary Role
+                            </label>
+                            <select class="form-control" id="recruitingSpec" name="recruitingSpec" type="text"
+                                required [(ngModel)]="guildRecruitment.secondaryRole">
+                                <option value="Tank">Tank</option>
+                                <option value="Damage">Damage</option>
+                                <option value="Healer">Healer</option>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="recruiting">
+                                    Main profession
+                                </label>
+                                <select class="form-control" id="firstProfession" name="firstProfession" type="text"
+                                    required [(ngModel)]="guildRecruitment.firstProfession">
+                                    <option value=""></option>
+                                    <option *ngFor="let data of professionsData">
+                                        {{ data.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="recruiting">
+                                    Second profession
+                                </label>
+                                <select class="form-control" id="secondProfession" name="secondProfession"
+                                    type="text" required [(ngModel)]="guildRecruitment.secondProfession">
+                                    <option value=""></option>
+                                    <option *ngFor="let data of professionsData">
+                                        {{ data.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="quantity">
+                                Slots available
+                            </label>
+                            <select class="form-control" id="quantity" name="quantity" type="number" required
+                                [(ngModel)]="guildRecruitment.quantity">
+                                <option value="Tank">Tank</option>
+                                <option value="Damage">Damage</option>
+                                <option value="Healer">Healer</option>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="form-group">
+                            <label class="control-label" for="bulk">
+                                Recruitment bulk rate
+                            </label>
+                            <select class="form-control" id="bulk" name="bulk" type="number" required
+                                [(ngModel)]="guildRecruitment.bulk">
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <h2></h2>
+                        <div class="md-form">
+                            <div class="form-group">
+                                <label class="control-label" for="description">
+                                    Description
+                                </label>
+                                <input class="form-control" id="bulk" name="bulk" type="text" required
+                                    [(ngModel)]="guildRecruitment.description" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="slogan">
-                        Guild Slogan
-                    </label>
-                    <input class="form-control" id="slogan" name="slogan" type="text" />
+                <div class="md-form">
+                    <div class="form-group">
+                        <label class="control-label" for="recruiting">
+                            Should the candidate have the cooking ability?
+                        </label>
+                        <select class="form-control" id="bulk" name="bulk" type="number" required
+                            [(ngModel)]="guildRecruitment.canCook">
+                            <option value="TRUE">Yes</option>
+                            <option value="FALSE">No</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="realm">
-                        Guild Realm
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option *ngFor="let data of connectedRealmsData">
-                            {{ data.name }}
-                        </option>
-                    </select>
+                <h2></h2>
+                <div class="md-form">
+                    <div class="form-group">
+                        <label class="control-label" for="recruiting">
+                            Should the candidate have the fishing ability?
+                        </label>
+                        <select class="form-control" id="bulk" name="bulk" type="number" required
+                            [(ngModel)]="guildRecruitment.canFish">
+                            <option value="TRUE">Yes</option>
+                            <option value="FALSE">No</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="guildName">
-                        Guild Rank
-                    </label>
-                    <input class="form-control" id="guildName" name="guildName" type="number" />
+                <h2></h2>
+                <div class="md-form">
+                    <div class="form-group">
+                        <label class="control-label" for="recruiting">
+                            Should the candidate have the first aid ability?
+                        </label>
+                        <select class="form-control" id="bulk" name="bulk" type="number" required
+                            [(ngModel)]="guildRecruitment.canFirstAid">
+                            <option value="TRUE">Yes</option>
+                            <option value="FALSE">No</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="objectives">
-                        Guild Objectives
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Chill</option>
-                        <option value="2">Semi Try Hard</option>
-                        <option value="3">Try Hard</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="totalPlayers">
-                        Total active players
-                    </label>
-                    <input class="form-control" id="totalPlayers" name="totalPlayers" type="number" />
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="activities">
-                        Guild Activities
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">PVP</option>
-                        <option value="2">PVE</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="wowLogLink">
-                        Warcraft log link
-                    </label>
-                    <input class="form-control" id="wowLogLink" name="wowLogLink" type="text" />
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="raidsPerWeek">
-                        Raids per Week
-                    </label>
-                    <input class="form-control" id="raidsPerWeek" name="raidsPerWeek" type="number" />
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Is your guild recruiting?
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Yes, we are looking for new players</option>
-                        <option value="2">No, our roster is full</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Recruiting class
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option *ngFor="let data of playableClassesData">
-                            {{ data.name }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Slots available in roster
-                    </label>
-                    <input class="form-control" id="recruiting" name="recruiting" type="number" />
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Recruitment bulk rate?
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">High</option>
-                        <option value="2">Medium</option>
-                        <option value="3">Low</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Guild Emblem
-                    </label>
-                    <input class="form-control" id="recruiting" name="recruiting" type="text" />
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Candidate main specialisation
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option *ngFor="let data of classTalentsData">
-                            {{ data.name }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Candidate second specialisation
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option *ngFor="let data of classTalentsData">
-                            {{ data.name }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Candidate main role
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Damage</option>
-                        <option value="2">Healer</option>
-                        <option value="3">Tank</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Candidate second role
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Damage</option>
-                        <option value="2">Healer</option>
-                        <option value="3">Tank</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Candidate main profession
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option *ngFor="let data of professionsData">
-                            {{ data.name }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Candidate second profession
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option *ngFor="let data of professionsData">
-                            {{ data.name }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Should the candidate have the cooking ability?
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Should the candidate have the fishing ability?
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-            </div>
-            <h2></h2>
-            <div class="md-form">
-                <div class="form-group">
-                    <label class="control-label" for="recruiting">
-                        Should the candidate have the first aid ability?
-                    </label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option value=""></option>
-                        <option value="1">Yes</option>
-                        <option value="2">No</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
-                Cancel
-            </button>
-            <button (click)="saveGuild()" class="btn btn-success">Submit</button>
-        </div>
+                <h2></h2>
+                <button (click)="saveGuildRecruitment()" class="btn btn-success" style="float: right;">Submit</button>
+                <h2></h2><h2></h2>
+            </mdb-tab>
+        </mdb-tabs>
+
+
     </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+            Cancel
+        </button>
+
+    </div>
+
 </div>

@@ -7,78 +7,503 @@
             <table class="table align-middle table-dark" style="width: 95%; margin: 0 auto; text-align: center">
                 <thead class="bg-light table-dark">
                     <tr>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/1065/1065537.png" style="width: 50px;"/>&nbsp;Armor</th>
-                        <th><img src="https://cdn4.iconfinder.com/data/icons/positive-attitude-color/64/perseverance-climb-effort-stamina-cliff-512.png" style="width: 50px;"/>&nbsp;Stamina</th>
-                        <th><img src="https://img.icons8.com/dusk/512/artificial-intelligence.png" style="width: 50px;"/>&nbsp;Intellect</th>
-                        <th><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-strength-fitness-and-healthy-living-flaticons-lineal-color-flat-icons.png" style="width: 50px;"/>Strength</th>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/2163/2163338.png" style="width: 50px;"/>&nbsp;Spirit</th>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/4727/4727247.png" style="width: 50px;"/>&nbsp;Agility</th>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/4161/4161834.png" style="width: 50px;"/>&nbsp;Hit</th>
-                        <th><img src="https://cdn4.iconfinder.com/data/icons/blueline-performance/64/haste-512.png" style="width: 50px;"/>&nbsp;Haste</th>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/1496/1496059.png" style="width: 50px;"/>&nbsp;Strike</th>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/5663/5663946.png" style="width: 50px;"/>&nbsp;Spell</th>
-                        <th><img src="https://cdn-icons-png.flaticon.com/512/4334/4334081.png" style="width: 50px;"/>&nbsp;Attack</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/1065/1065537.png"
+                                style="width: 50px;" />&nbsp;Armor</th>
+                        <th><img src="https://cdn4.iconfinder.com/data/icons/positive-attitude-color/64/perseverance-climb-effort-stamina-cliff-512.png"
+                                style="width: 50px;" />&nbsp;Stamina</th>
+                        <th><img src="https://img.icons8.com/dusk/512/artificial-intelligence.png"
+                                style="width: 50px;" />&nbsp;Intellect</th>
+                        <th><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-strength-fitness-and-healthy-living-flaticons-lineal-color-flat-icons.png"
+                                style="width: 50px;" />Strength</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/2163/2163338.png"
+                                style="width: 50px;" />&nbsp;Spirit</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/4727/4727247.png"
+                                style="width: 50px;" />&nbsp;Agility</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/4161/4161834.png"
+                                style="width: 50px;" />&nbsp;Hit</th>
+                        <th><img src="https://cdn4.iconfinder.com/data/icons/blueline-performance/64/haste-512.png"
+                                style="width: 50px;" />&nbsp;Haste</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/1496/1496059.png"
+                                style="width: 50px;" />&nbsp;Strike</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/5663/5663946.png"
+                                style="width: 50px;" />&nbsp;Spell</th>
+                        <th><img src="https://cdn-icons-png.flaticon.com/512/4334/4334081.png"
+                                style="width: 50px;" />&nbsp;Attack</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
                             <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
-                                {{head.armor}}
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.armor + neck.armor +
+                                                                                shoulder.armor + cape.armor +
+                                                                                chest.armor +
+                                                                                mainHand.armor +
+                                                                                hands.armor +
+                                                                                legs.armor+ feet.armor + ring.armor +
+                                                                                trinket.armor + off.armor}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-                            <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
-                                {{neck.stamina}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.stamina + neck.stamina +
+                                                                                shoulder.stamina + cape.stamina +
+                                                                                chest.stamina +
+                                                                                mainHand.stamina +
+                                                                                hands.stamina +
+                                                                                legs.stamina+ feet.stamina +
+                                                                                ring.stamina +
+                                                                                trinket.stamina + off.stamina}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-                            <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
-                                {{cape.intellect}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.intellect + neck.intellect +
+                                                                                shoulder.intellect + cape.intellect +
+                                                                                chest.intellect +
+                                                                                mainHand.intellect +
+                                                                                hands.intellect +
+                                                                                legs.intellect+ feet.intellect +
+                                                                                ring.intellect +
+                                                                                trinket.intellect + off.intellect}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
-                                {{chest.strength}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.strength + neck.strength +
+                                                                                shoulder.strength + cape.strength +
+                                                                                chest.strength +
+                                                                                mainHand.strength +
+                                                                                hands.strength +
+                                                                                legs.strength+ feet.strength +
+                                                                                ring.strength +
+                                                                                trinket.strength + off.strength}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-        
-                            <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
-                                {{wrist.spirit}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.spirit + neck.spirit +
+                                                                                shoulder.spirit + cape.spirit +
+                                                                                chest.spirit +
+                                                                                mainHand.spirit +
+                                                                                hands.spirit +
+                                                                                legs.spirit+ feet.spirit +
+                                                                                ring.spirit +
+                                                                                trinket.spirit + off.spirit}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-        
-                            <ng-container class="cell" *ngFor="let mainHand of selectedMainHanditemBis">
-                                {{mainHand.agility}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.agility + neck.agility +
+                                                                                shoulder.agility + cape.agility +
+                                                                                chest.agility +
+                                                                                mainHand.agility +
+                                                                                hands.agility +
+                                                                                legs.agility+ feet.agility +
+                                                                                ring.agility +
+                                                                                trinket.agility + off.agility}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-        
-                            <ng-container class="cell" *ngFor="let hands of selectedHandsitemBis">
-                                {{hands.hitRating}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.stamina + neck.agility +
+                                                                                shoulder.agility + cape.spirit +
+                                                                                chest.agility +
+                                                                                mainHand.spirit +
+                                                                                hands.spirit +
+                                                                                legs.agility+ feet.stamina +
+                                                                                ring.stamina +
+                                                                                trinket.spirit + off.stamina}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-                            <ng-container class="cell" *ngFor="let legs of selectedLegsitemBis">
-                                {{legs.criticalStrike}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.strength + neck.intellect +
+                                                                                shoulder.intellect + cape.strength +
+                                                                                chest.stamina +
+                                                                                mainHand.intellect +
+                                                                                hands.stamina +
+                                                                                legs.intellect+ feet.stamina +
+                                                                                ring.strength +
+                                                                                trinket.stamina + off.strength}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-        
-                            <ng-container class="cell" *ngFor="let feet of selectedFeetitemBis">
-                                {{feet.spellPower}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.spirit + neck.intellect +
+                                                                                shoulder.intellect + cape.intellect +
+                                                                                chest.spirit +
+                                                                                mainHand.intellect +
+                                                                                hands.intellect +
+                                                                                legs.intellect+ feet.spirit +
+                                                                                ring.intellect +
+                                                                                trinket.intellect + off.spirit}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-                            <ng-container class="cell" *ngFor="let ring of selectedRingitemBis">
-                                {{ring.attackPower}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.spellPower + neck.spellPower +
+                                                                                shoulder.spellPower + cape.spellPower +
+                                                                                chest.spellPower +
+                                                                                mainHand.spellPower +
+                                                                                hands.spellPower +
+                                                                                legs.spellPower+ feet.spellPower +
+                                                                                ring.spellPower +
+                                                                                trinket.spellPower + off.spellPower}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                         <td>
-                            <ng-container class="cell" *ngFor="let trinket of selectedTrinketitemBis">
-                                {{trinket.defense}}
+                            <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
+                                <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
+                                    <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
+                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
+                                            <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
+                                                <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
+                                                    <ng-container class="cell"
+                                                        *ngFor="let mainHand of selectedMainHanditemBis">
+                                                        <ng-container class="cell"
+                                                            *ngFor="let hands of selectedHandsitemBis">
+                                                            <ng-container class="cell"
+                                                                *ngFor="let legs of selectedLegsitemBis">
+                                                                <ng-container class="cell"
+                                                                    *ngFor="let feet of selectedFeetitemBis">
+                                                                    <ng-container class="cell"
+                                                                        *ngFor="let ring of selectedRingitemBis">
+                                                                        <ng-container class="cell"
+                                                                            *ngFor="let trinket of selectedTrinketitemBis">
+                                                                            <ng-container class="cell"
+                                                                                *ngFor="let off of selectedOffHanditemBis">
+                                                                                {{head.attackPower + neck.attackPower +
+                                                                                shoulder.attackPower + cape.attackPower
+                                                                                +
+                                                                                chest.attackPower +
+                                                                                mainHand.attackPower +
+                                                                                hands.attackPower +
+                                                                                legs.attackPower+ feet.attackPower +
+                                                                                ring.attackPower +
+                                                                                trinket.attackPower + off.attackPower}}
+                                                                            </ng-container>
+                                                                        </ng-container>
+                                                                    </ng-container>
+                                                                </ng-container>
+                                                            </ng-container>
+                                                        </ng-container>
+                                                    </ng-container>
+                                                </ng-container>
+                                            </ng-container>
+                                        </ng-container>
+                                    </ng-container>
+                                </ng-container>
                             </ng-container>
                         </td>
                     </tr>
@@ -104,7 +529,7 @@
             <div class="gr">{{currentUser.playableCharacter.guildRank}}</div>
         </div>
 
-        
+
         <div class="col">
 
             <div class="row">

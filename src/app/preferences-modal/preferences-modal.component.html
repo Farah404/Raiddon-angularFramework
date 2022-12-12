@@ -21,22 +21,38 @@
               <div class="col" aria-describedby="imghelp">
                 <div class="form-group mb-3">
                   <label for="ilvl">Raids per week</label>
-                  <input type="number" class="form-control" id="raidsPerWeek" name="raidsPerWeek" [(ngModel)]="currentPreferences.raidsPerWeek"/>
+                  <select type="number" class="form-control" id="raidsPerWeek" name="raidsPerWeek"
+                    [(ngModel)]="currentPreferences.raidsPerWeek">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
                 </div>
                 <div class="form-group mb-3">
                   <label for="objectives">My competitivity objective</label>:
-                  <input type="text" class="form-control" id="objectives" name="objectives" [(ngModel)]="currentPreferences.objectives"/>
-                  <label for="objectives" style="font-style: italic;">Please chose from: Try Hard, Semi TryHard and Chill</label>
+                  <select type="text" class="form-control" id="objectives" name="objectives"
+                    [(ngModel)]="currentPreferences.objectives">
+                    <option value="Try Hard">Try Hard</option>
+                    <option value="Semi Try Hard">Semi Try Hard</option>
+                    <option value="Chill">Chill</option>
+                  </select>
                 </div>
                 <div class="form-group mb-3">
                   <label for="faction">My preferred loot system</label>
-                  <input type="text" class="form-control" id="lootSystem" name="lootSystem" [(ngModel)]="currentPreferences.lootSystems"/>
-                  <label for="objectives" style="font-style: italic;">Please chose from: Random, Attribution, DKP and GDKP</label>
+                  <select type="text" class="form-control" id="lootSystem" name="lootSystem"
+                    [(ngModel)]="currentPreferences.lootSystems">
+                    <option value="Random">Random</option>
+                    <option value="Attribution">Attribution</option>
+                    <option value="DKP">DKP</option>
+                    <option value="GDKP">GDKP</option>
+                  </select>
                 </div>
                 <div class="form-group mb-3">
                   <label for="ilvl">Few words about me</label>
-                  <textarea type="text" class="form-control" id="desc" name="desc" [(ngModel)]="currentPreferences.description"
-                  id="form10" class="md-textarea form-control" rows="3"></textarea>
+                  <textarea type="text" class="form-control" id="desc" name="desc"
+                    [(ngModel)]="currentPreferences.description" id="form10" class="md-textarea form-control"
+                    rows="3"></textarea>
                 </div>
               </div>
             </div>

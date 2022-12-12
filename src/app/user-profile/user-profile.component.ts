@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../_services/storage.service';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { CreacteCharacterModalComponent } from '../creacte-character-modal/creacte-character-modal.component';
@@ -12,12 +12,13 @@ import { Preferences, Raid } from 'src/model/raids';
 import { RaidsService } from '../_services/raids.service';
 import { Pipe, PipeTransform } from '@angular/core'
 import { PreferencesService } from '../_services/preferences.service';
+import { User } from 'src/model/user';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.scss']
 })
-export class UserProfileComponent implements OnInit, OnChanges {
+export class UserProfileComponent implements OnInit {
   currentUser: any;
   currentCharacter: any;
   modalRef: MdbModalRef<CreacteCharacterModalComponent> | null = null;
@@ -94,20 +95,9 @@ export class UserProfileComponent implements OnInit, OnChanges {
       });
   }
 
-  ngOnChanges(): void {
-    this.retrieveGuilds();
-    this.retriveRaids();
-    this.currentUser = this.storageService.getUser();
-    this.api.getPlayersRankings().subscribe((data) => {
-      this.playersRankingsData = data;
-      this.filteredPlayersRankingsData=this.playersRankingsData.filter(f => f.characterName==this.currentUser.playableCharacter.name);
-    })
-    this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
-  }
-
   ngOnInit(): void {
     this.retrieveGuilds();
-    this.retriveRaids();
+    this.retriveRaids(); 
     this.currentUser = this.storageService.getUser();
     this.api.getPlayersRankings().subscribe((data) => {
       this.playersRankingsData = data;
@@ -115,10 +105,12 @@ export class UserProfileComponent implements OnInit, OnChanges {
     })
     this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
   }
+
+ 
+
+
+
   
-
-
-
 }
 
 
