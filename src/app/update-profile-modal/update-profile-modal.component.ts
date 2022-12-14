@@ -12,6 +12,8 @@ import { StorageService } from '../_services/storage.service';
 })
 export class UpdateProfileModalComponent implements OnInit {
 
+  connectedUser: any;
+
   @Input() viewMode = false;
 
   @Input() currentUser: User = {
@@ -23,11 +25,10 @@ export class UpdateProfileModalComponent implements OnInit {
   };
   
   message = '';
-
+  id: number = this.route.snapshot.params.id;
   constructor(
     public modalRef: MdbModalRef<UpdateProfileModalComponent>,
     private route: ActivatedRoute,
-    private router: Router,
     private userService: UserService,
     private storageService: StorageService) { }
 
@@ -35,7 +36,6 @@ export class UpdateProfileModalComponent implements OnInit {
     this.currentUser = this.storageService.getUser();
     if (!this.viewMode) {
       this.message = '';
-      this.getUser(this.route.snapshot.params["id"]);
     }
   }
 
@@ -50,14 +50,15 @@ export class UpdateProfileModalComponent implements OnInit {
   }
 
   updateUser(): void {
+    console.log(this.currentUser);
     this.message = '';
-
-    this.userService.updateUser(this.currentUser.id, this.currentUser)
+    this.userService.updateUserDTO(this.currentUser)
       .subscribe({
         next: (res) => {
           console.log(res);
           this.modalRef.close()
           this.message = res.message ? res.message : 'Your details were updated successfully!';
+          window.location.reload();
         },
         error: (e) => console.error(e)
       });

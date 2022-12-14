@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from '../_services/storage.service';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
-import { CreacteCharacterModalComponent } from '../creacte-character-modal/creacte-character-modal.component';
 import { PreferencesModalComponent } from '../preferences-modal/preferences-modal.component';
 import { UpdateProfileModalComponent } from '../update-profile-modal/update-profile-modal.component';
 import { ApiService } from '../_services/api.service';
 import { UserService } from '../_services/user.service';
 import { Guild } from 'src/model/guild';
 import { GuildService } from '../_services/guild.service';
-import { Preferences, Raid } from 'src/model/raids';
+import { PlayableCharacter, Preferences, Raid } from 'src/model/raids';
 import { RaidsService } from '../_services/raids.service';
 import { Pipe, PipeTransform } from '@angular/core'
 import { PreferencesService } from '../_services/preferences.service';
 import { User } from 'src/model/user';
+import { CharacterService } from '../_services/character.service';
+import { UpdatePlayableCharacterModalComponent } from '../update-playable-character-modal/update-playable-character-modal.component';
+
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -20,8 +22,9 @@ import { User } from 'src/model/user';
 })
 export class UserProfileComponent implements OnInit {
   currentUser: any;
+  connectedUser: any;
   currentCharacter: any;
-  modalRef: MdbModalRef<CreacteCharacterModalComponent> | null = null;
+  modalRef: MdbModalRef<UpdateProfileModalComponent> | null = null;
   playersRankingsData=null;
   filteredPlayersRankingsData=null;
   guilds?: Guild[];
@@ -42,11 +45,8 @@ export class UserProfileComponent implements OnInit {
     private api:ApiService,
     private guildService: GuildService,
     private raidService: RaidsService,
-    private preferencesService: PreferencesService,) { }
-
-  openCharacModal() {
-    this.modalRef = this.modalService.open(CreacteCharacterModalComponent)
-  }
+    private preferencesService: PreferencesService,
+    private characterservice: CharacterService) { }
 
   openUpdateModal() {
     this.modalRef = this.modalService.open(UpdateProfileModalComponent)
@@ -57,9 +57,9 @@ export class UserProfileComponent implements OnInit {
     .subscribe({
       next: (data) =>{
         this.raids = data;
-        this.filteredRaidsLootsystem = this.raids.filter(f => f.raidLootSystem == this.currentUser.playableCharacter.preferences.lootSystems)
-        this.filteredRaidsClass = this.raids.filter(f => f.raidRequirements.mainClass == this.currentUser.playableCharacter.playableClass)
-        this.filteredRaidsSpec = this.raids.filter(f => f.raidRequirements.mainSpec == this.currentUser.playableCharacter.mainSpec)
+        this.filteredRaidsLootsystem = this.raids.filter(f => f.raidLootSystem == this.connectedUser.playableCharacter.preferences.lootSystems)
+        this.filteredRaidsClass = this.raids.filter(f => f.raidRequirements.mainClass == this.connectedUser.playableCharacter.playableClass)
+        this.filteredRaidsSpec = this.raids.filter(f => f.raidRequirements.mainSpec == this.connectedUser.playableCharacter.mainSpec)
       }
   });
   }
@@ -77,19 +77,25 @@ export class UserProfileComponent implements OnInit {
   }
 
   setSelectedPreferences(preferences: Preferences): void {
-    this.preferencesService.id = this.currentUser.id;
+    this.preferencesService.id = this.connectedUser.id;
     this.modalRef = this.modalService.open(PreferencesModalComponent)
-    this.ngOnInit();
   }
+
+  setSelectedPlayableCharacter(playableCharacter: PlayableCharacter): void{
+    this.characterservice.id = this.connectedUser.id;
+    this.modalRef = this.modalService.open(UpdatePlayableCharacterModalComponent)
+  }
+
+
 
   retrieveGuilds(): void {
     this.guildService.getAll()
       .subscribe({
         next: (data) => {
           this.guilds = data;
-          this.filteredGuildsObjectives = this.guilds.filter(f => f.objectives == this.currentUser.playableCharacter.preferences.objectives);
-          this.filteredGuildsClass = this.guilds.filter(f => f.guildRecruitment.playableCharacter == this.currentUser.playableCharacter.playableClass);
-          this.filteredGuildsRaidsWeek = this.guilds.filter(f => f.raidsPerWeek == this.currentUser.playableCharacter.preferences.raidsPerWeek);
+          this.filteredGuildsObjectives = this.guilds.filter(f => f.objectives == this.connectedUser.playableCharacter.preferences.objectives);
+          this.filteredGuildsClass = this.guilds.filter(f => f.guildRecruitment.playableCharacter == this.connectedUser.playableCharacter.playableClass);
+          this.filteredGuildsRaidsWeek = this.guilds.filter(f => f.raidsPerWeek == this.connectedUser.playableCharacter.preferences.raidsPerWeek);
         },
         error: (e) => console.error(e)
       });
@@ -99,6 +105,7 @@ export class UserProfileComponent implements OnInit {
     this.retrieveGuilds();
     this.retriveRaids(); 
     this.currentUser = this.storageService.getUser();
+    this.getUser();
     this.api.getPlayersRankings().subscribe((data) => {
       this.playersRankingsData = data;
       this.filteredPlayersRankingsData=this.playersRankingsData.filter(f => f.characterName==this.currentUser.playableCharacter.name);
@@ -106,10 +113,15 @@ export class UserProfileComponent implements OnInit {
     this.currentCharacter = this.userService.getCharac(this.currentUser.playableCharacter.id);
   }
 
- 
-
-
-
+  getUser(): void {
+    this.userService.getUser(this.currentUser.id)
+      .subscribe({
+        next: (data) => {
+          this.connectedUser = data;
+        },
+        error: (e) => console.error(e)
+      });
+  }
   
 }
 

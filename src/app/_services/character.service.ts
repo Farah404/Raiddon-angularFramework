@@ -5,6 +5,7 @@ import { PlayableCharacter } from 'src/model/user';
 
 
 const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/characters';
+const baseUrlUpdate = 'https://raiddon-spring-server.herokuapp.com/api/charactersDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class CharacterService {
   
   update(id: any, data: any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`, data);
+  }
+
+  updateCharacterDTO(data: any): Observable<any> {
+    return this.http.put(`${baseUrlUpdate}`, data);
   }
 
   delete(id: any): Observable<any> {

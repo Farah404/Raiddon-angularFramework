@@ -1,4 +1,5 @@
 
+
 export class User {
     id?: any;
     username?: string;
@@ -8,6 +9,11 @@ export class User {
     profilePicture?: string;
     guildRank?: String;
     playableCharacter?: PlayableCharacter;
+}
+
+export class Role{
+    id?:any;
+    name: string;
 }
 
 export class PlayableCharacter {

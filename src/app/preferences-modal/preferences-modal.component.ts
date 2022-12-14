@@ -57,14 +57,13 @@ export class PreferencesModalComponent implements OnInit, DoCheck {
 
   updatePreferences(): void {
     this.message = '';
-
     this.preferencesService.update(this.currentPreferences.id, this.currentPreferences)
       .subscribe({
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'Your details were updated successfully!';
           this.storageService.saveUser;
-          window.location.replace('user-profile');
+          window.location.reload();
         },
         error: (e) => console.error(e)
       });

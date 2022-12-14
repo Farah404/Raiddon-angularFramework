@@ -37,7 +37,6 @@
                             <ng-container class="cell" *ngFor="let head of selectedHeaditemBis">
                                 <ng-container class="cell" *ngFor="let neck of selectedNecklaceitemBis">
                                     <ng-container class="cell" *ngFor="let shoulder of selectedShoulderitemBis">
-                                        <ng-container class="cell" *ngFor="let cape of selectedCapeitemBis">
                                             <ng-container class="cell" *ngFor="let chest of selectedChestitemBis">
                                                 <ng-container class="cell" *ngFor="let wrist of selectedWristitemBis">
                                                     <ng-container class="cell"
@@ -55,14 +54,13 @@
                                                                             <ng-container class="cell"
                                                                                 *ngFor="let off of selectedOffHanditemBis">
                                                                                 {{head.armor + neck.armor +
-                                                                                shoulder.armor + cape.armor +
+                                                                                shoulder.armor +
                                                                                 chest.armor +
                                                                                 mainHand.armor +
                                                                                 hands.armor +
                                                                                 legs.armor+ feet.armor + ring.armor +
                                                                                 trinket.armor + off.armor}}
                                                                             </ng-container>
-                                                                        </ng-container>
                                                                     </ng-container>
                                                                 </ng-container>
                                                             </ng-container>
@@ -683,7 +681,82 @@
         </div>
 
     </div>
-
+    <section class="section about-section" id="about">
+    <div class="counter align-middle" style="margin: 0 auto;">
+        <div class="row">
+          <div class="col">
+            <div class="item"><img style="width:10%"
+                src="https://img.freepik.com/free-icon/helmet_318-536839.jpg?w=2000" />{{currentUser.playableCharacter.equipment.headItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://www.pngrepo.com/png/246103/512/necklace.png" />{{currentUser.playableCharacter.equipment.neckItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://www.svgrepo.com/show/323325/spiked-shoulder-armor.svg" />{{currentUser.playableCharacter.equipment.shoulderItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://starpng.com/public/uploads/preview/superhero-capes-png-cape-icon-png-1015767840232y6soyaja6.png" />{{currentUser.playableCharacter.equipment.backItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/683/683550.png" />{{currentUser.playableCharacter.equipment.chestItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />{{currentUser.playableCharacter.equipment.firstRingItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />{{currentUser.playableCharacter.equipment.firstTrinketItem}}
+            </div>
+            <h6></h6>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/3275/3275467.png" />{{currentUser.playableCharacter.equipment.mainHandItem}}
+            </div>
+          </div>
+          <div class="col" style="text-align: center; "><img src="https://i.pinimg.com/originals/ed/7a/6b/ed7a6b0a14356cbd0bc9e1617400f3cf.gif" />
+            <h6></h6><h6></h6><h6></h6>
+            <div class="item" style="text-align: center; font-family: 'Brush Script MT', cursive; font-size:xx-large;">{{currentUser.playableCharacter.name}}'s equipment</div>
+          </div>
+          <div class="col" style="text-align: end;">
+            <div class="item">{{currentUser.playableCharacter.equipment.handItem}}<img style="width:10%"
+                src="https://w7.pngwing.com/pngs/636/141/png-transparent-glove-computer-icons-gauntlet-armour-boxing-glove-hand-armor-thumbnail.png" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.waistItem}}<img style="width:10%"
+                src="https://static.thenounproject.com/png/2360094-200.png" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.legsItem}}<img style="width:10%"
+                src="https://cdn3.iconfinder.com/data/icons/video-game-elements-soft-fill/60/Plate-Legs-Armour-gaming-armoury-512.png" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.feetItem}}<img style="width:10%"
+                src="https://www.svgrepo.com/show/322686/leg-armor.svg" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.wristItem}}<img style="width:10%"
+                src="https://icon-library.com/images/armor-icon-png/armor-icon-png-12.jpg" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.secondRingItem}}<img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.secondTrinketItem}}<img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />
+            </div>
+            <h6></h6>
+            <div class="item">{{currentUser.playableCharacter.equipment.relicItem}}<img style="width:10%"
+                src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/1024/62967-shield-icon.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <h2></h2>
     <table class="table align-middle" style="width: 95%; margin: 0 auto; text-align: center">
         <thead class="bg-light table-dark">

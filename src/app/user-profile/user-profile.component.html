@@ -16,34 +16,41 @@
         <div class="row align-items-center flex-row-reverse">
           <div class="col">
             <div class="about-text go-to">
-              <h3 class="dark-color">{{ currentUser.battleTag }}</h3>
+              <h3 class="dark-color">{{ connectedUser.battleTag }}</h3>
               <div class="row about-list">
                 <div class="col-md-6">
                   <div class="media">
                     <label>Username</label>
-                    <p>{{ currentUser.playableCharacter.name }}</p>
+                    <p>{{ connectedUser.playableCharacter.name }}</p>
                   </div>
                   <div class="media">
                     <label>Realm</label>
-                    <p>{{ currentUser.playableCharacter.realm }}</p>
+                    <p>{{ connectedUser.playableCharacter.realm }}</p>
                   </div>
                   <div class="media">
                     <label>Faction</label>
-                    <p>{{ currentUser.playableCharacter.faction }}</p>
+                    <p>{{ connectedUser.playableCharacter.faction }}</p>
                   </div>
                   <div class="media">
                     <label>Race</label>
-                    <p>{{ currentUser.playableCharacter.race }}</p>
+                    <p>{{ connectedUser.playableCharacter.race }}</p>
                   </div>
                   <div class="media">
                     <label>Class</label>
-                    <p>{{ currentUser.playableCharacter.playableClass }}</p>
+                    <p>{{ connectedUser.playableCharacter.playableClass }}</p>
                   </div>
                   <div class="media">
                     <label>Specialisations</label>
                     <p>
-                      {{ currentUser.playableCharacter.mainSpec }},
-                      {{ currentUser.playableCharacter.secondarySpec }}
+                      {{ connectedUser.playableCharacter.mainSpec }},
+                      {{ connectedUser.playableCharacter.secondarySpec }}
+                    </p>
+                  </div>
+                  <div class="media">
+                    <label>Roles</label>
+                    <p>
+                      {{ connectedUser.playableCharacter.mainRole }},
+                      {{ connectedUser.playableCharacter.secondaryRole }}
                     </p>
                   </div>
                 </div>
@@ -51,25 +58,25 @@
                   <div class="media">
                     <label>Professions</label>
                     <p>
-                      {{ currentUser.playableCharacter.firstProfession }},
-                      {{ currentUser.playableCharacter.secondProfession }}
+                      {{ connectedUser.playableCharacter.firstProfession }},
+                      {{ connectedUser.playableCharacter.secondProfession }}
                     </p>
                   </div>
                   <div class="media">
                     <label>Guild</label>
-                    <p>{{ currentUser.playableCharacter.guild.guildName }}</p>
+                    <p>{{ connectedUser.playableCharacter.guild.guildName }}</p>
                   </div>
                   <div class="media">
                     <label>Guild Rank</label>
-                    <p>{{ currentUser.guildRank }}</p>
+                    <p>{{ connectedUser.guildRank }}</p>
                   </div>
                   <div class="media">
                     <label>iLvl</label>
-                    <p>{{ currentUser.playableCharacter.ilevel }}</p>
+                    <p>{{ connectedUser.playableCharacter.ilevel }}</p>
                   </div>
                   <div class="media">
                     <label>Level</label>
-                    <p>{{ currentUser.playableCharacter.level }}</p>
+                    <p>{{ connectedUser.playableCharacter.level }}</p>
                   </div>
                   <div class="media">
                     <label>Actions</label><br />
@@ -78,6 +85,7 @@
                     <a (click)="setSelectedPreferences(preferences)" style="cursor: pointer; color: blue"><i
                         class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check
                       Preferences</a><br />
+                      <a (click)="setSelectedPlayableCharacter(playableCharacter)" style="cursor: pointer; color: blue"><i class="fa-sharp fa-solid fa-gamepad"></i>&nbsp;&nbsp;&nbsp;Update Playable Character</a><br />
                     <a href="dressing-room" style="cursor: pointer; color: blue">&nbsp;<i
                         class="fa-solid fa-person-dress"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Equipment</a>
                   </div>
@@ -107,7 +115,7 @@
           <div class="col-6 col-lg-3">
             <div class="count-data text-center">
               <h6 class="count h2">
-                {{ currentUser.playableCharacter.preferences.lootSystems }}
+                {{ connectedUser.playableCharacter.preferences.lootSystems }}
               </h6>
               <p class="m-0px font-w-600">Preferred LS</p>
             </div>
@@ -126,7 +134,7 @@
           <div class="col-6 col-lg-3">
             <div class="count-data text-center">
               <h6 class="count h2">
-                {{ currentUser.playableCharacter.preferences.objectives }}
+                {{ connectedUser.playableCharacter.preferences.objectives }}
               </h6>
               <p class="m-0px font-w-600">Objectives</p>
             </div>
@@ -159,13 +167,13 @@
                           style="width: 500px; height: 300px" />
                         <div class="card-body">
                           <h4 class="card-title">
-                            {{ guild.guildName }}, {{ guild.objectives }}
+                            {{ guild.guildName }} <br /> {{ guild.slogan }}
                           </h4>
                           <p class="card-text">
                             Ran by {{ guild.guildMaster }}
                           </p>
                           <p class="card-text mb-1">
-                            {{ guild.raidsPerWeek }} raids per week
+                            Recruiting {{ guild.guildRecruitment.playableCharacter }}
                           </p>
                           <a routerLink="guild-details/{{ guild.id }}" (click)="setSelectedGuild(guild)"
                             class="btn btn-secondary">Check Guild</a>
@@ -198,13 +206,13 @@
                           style="width: 500px; height: 300px" />
                         <div class="card-body">
                           <h4 class="card-title">
-                            {{ guild.guildName }}, {{ guild.objectives }}
+                            {{ guild.guildName }} <br /> {{ guild.slogan }}
                           </h4>
                           <p class="card-text">
                             Ran by {{ guild.guildMaster }}
                           </p>
                           <p class="card-text mb-1">
-                            {{ guild.raidsPerWeek }} raids per week
+                            {{ guild.objectives }}
                           </p>
                           <a routerLink="guild-details/{{ guild.id }}" (click)="setSelectedGuild(guild)"
                             class="btn btn-secondary">Check Guild</a>
@@ -237,7 +245,7 @@
                           style="width: 500px; height: 300px" />
                         <div class="card-body">
                           <h4 class="card-title">
-                            {{ guild.guildName }}, {{ guild.objectives }}
+                            {{ guild.guildName }} <br /> {{ guild.slogan }}
                           </h4>
                           <p class="card-text">
                             Ran by {{ guild.guildMaster }}
@@ -290,7 +298,7 @@
                       </div>
                       <div class="hero-btn">
                         <a routerLink="raid-details/{{ raid.id }}" class="btn btn-secondary mb-1"
-                          (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+                          (click)="setSelectedRaid(raid)">Recruiting {{raid.raidRequirements.mainClass}}</a>
                       </div>
                     </div>
                   </div>
@@ -329,7 +337,7 @@
                       </div>
                       <div class="hero-btn">
                         <a routerLink="raid-details/{{ raid.id }}" class="btn btn-secondary mb-1"
-                          (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+                          (click)="setSelectedRaid(raid)">Recruiting {{raid.raidRequirements.mainSpec}} {{raid.raidRequirements.mainClass}}</a>
                       </div>
                     </div>
                   </div>
@@ -368,7 +376,7 @@
                       </div>
                       <div class="hero-btn">
                         <a routerLink="raid-details/{{ raid.id }}" class="btn btn-secondary mb-1"
-                          (click)="setSelectedRaid(raid)">Learn More & Apply</a>
+                          (click)="setSelectedRaid(raid)">{{raid.raidLootSystem}}</a>
                       </div>
                     </div>
                   </div>
