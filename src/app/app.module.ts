@@ -47,14 +47,12 @@ import { FormsModule }   from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ApiService } from './_services/api.service';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
-import { CreacteCharacterModalComponent } from './creacte-character-modal/creacte-character-modal.component';
 import { PreferencesModalComponent } from './preferences-modal/preferences-modal.component';
 import { UpdateProfileModalComponent } from './update-profile-modal/update-profile-modal.component';
 import { DressingRoomComponent } from './dressing-room/dressing-room.component';
 import { CreateGuildModalComponent } from './create-guild-modal/create-guild-modal.component';
 import { RaidDetailsComponent } from './raid-details/raid-details.component';
-
-
+import { UpdatePlayableCharacterModalComponent } from './update-playable-character-modal/update-playable-character-modal.component';
 
 @NgModule({
   declarations: [
@@ -80,13 +78,13 @@ import { RaidDetailsComponent } from './raid-details/raid-details.component';
     PlayerRankingsComponent,
     RegisterComponent,
     LoginComponent,
-    CreacteCharacterModalComponent,
     PreferencesModalComponent,
     UpdateProfileModalComponent,
     DressingRoomComponent,
     CreateGuildModalComponent,
     RaidDetailsComponent,
-    MaxPipe
+    MaxPipe,
+    UpdatePlayableCharacterModalComponent
   ],
   imports: [
     BrowserModule,

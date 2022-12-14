@@ -1,168 +1,245 @@
 <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-<div
-  class="main bg-image"
-  style="
+<div class="main bg-image" style="
     background-image: url('https://rare-gallery.com/mocahbig/425388-landscape-digital-art-Forange-forest-artwork-World-of-Warcraft.jpg');
     height: 30vh;
-  "
->
+  ">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
       <h1 class="mb-3 typewriter">Welcome to {{selectedUser.battleTag}} profile !</h1>
     </div>
   </div>
 </div>
-<ng-container >
-<section class="section about-section gray-bg" id="about" style="background-color: #282828;">
-  <div class="container">
-    <div class="counter">
-      <div class="row align-items-center flex-row-reverse">
-        <div class="col">
-          <div class="about-text go-to">
-            <h3 class="dark-color" ></h3>
-            <div class="row about-list">
-              <div class="col-md-6">
-                <div class="media">
+<ng-container>
+  <section class="section about-section gray-bg" id="about" style="background-color: #282828;">
+    <div class="container">
+      <div class="counter">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col">
+            <div class="about-text go-to">
+              <h3 class="dark-color"></h3>
+              <div class="row about-list">
+                <div class="col-md-6">
+                  <div class="media">
                     <label>Username</label>
                     <p>{{selectedUser.playableCharacter.name}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Realm</label>
                     <p>{{selectedUser.playableCharacter.realm}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Faction</label>
                     <p>{{selectedUser.playableCharacter.faction}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Race</label>
                     <p>{{selectedUser.playableCharacter.race}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Class</label>
                     <p>{{selectedUser.playableCharacter.playableClass}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Specialisations</label>
-                    <p>{{selectedUser.playableCharacter.mainSpec}} / {{selectedUser.playableCharacter.secondarySpec}}</p>
+                    <p>{{selectedUser.playableCharacter.mainSpec}} / {{selectedUser.playableCharacter.secondarySpec}}
+                    </p>
+                  </div>
+                  <div class="media">
+                    <label>Roles</label>
+                    <p>{{selectedUser.playableCharacter.mainRole}} / {{selectedUser.playableCharacter.secondaryRole}}
+                    </p>
+                  </div>
+
+
                 </div>
-               
-                
-              </div>
-              <div class="col-md-6">
-                <div class="media">
+                <div class="col-md-6">
+                  <div class="media">
                     <label>Professions</label>
-                    <p>{{selectedUser.playableCharacter.firstProfession}} / {{selectedUser.playableCharacter.secondProfession}}</p>
-                </div>
-                <div class="media">
+                    <p>{{selectedUser.playableCharacter.firstProfession}} /
+                      {{selectedUser.playableCharacter.secondProfession}}</p>
+                  </div>
+                  <div class="media">
                     <label>Guild</label>
                     <p>{{selectedUser.playableCharacter.guild.guildName}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Guild Rank</label>
                     <p>{{selectedUser.guildRank}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>iLvl</label>
                     <p>{{selectedUser.playableCharacter.ilevel}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Level</label>
                     <p>{{selectedUser.playableCharacter.level}}</p>
-                </div>
-                <div class="media">
+                  </div>
+                  <div class="media">
                     <label>Actions</label><br />
-                    <a (click)="openContactModal()" style="cursor: pointer; color:blue;"><i class="fa-solid fa-message"></i>&nbsp;&nbsp;&nbsp;&nbsp;Contact Player</a><br />
+                    <a (click)="openContactModal()" style="cursor: pointer; color:blue;"><i
+                        class="fa-solid fa-message"></i>&nbsp;&nbsp;&nbsp;&nbsp;Contact Player</a><br />
                     <!-- <a (click)="openPrefModal()" style="cursor: pointer; color:blue;"><i class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check Preferences</a><br /> -->
-                
+
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="about-avatar">
-            <img
-              src="{{selectedUser.profilePicture}}"
-              height="500vh"
-              style="
+          <div class="col">
+            <div class="about-avatar">
+              <img src="{{selectedUser.profilePicture}}" height="500vh" style="
                 border-radius: 50%;
                 margin-left: auto;
                 margin-right: auto;
                 display: block;
-              "
-            />
+              " />
+            </div>
           </div>
         </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" >{{filteredPlayersRankingsDataRows}}</h6>
-            <p class="m-0px font-w-600">Raid Reports</p>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" >{{selectedUser.playableCharacter.preferences.lootSystems}}</h6>
-            <p class="m-0px font-w-600">Preferred LS</p>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2">
-            <ng-container *ngIf="filteredPlayersRankingsData | max: 'percentile' as result">{{ result | number : '1.0-2'}} %</ng-container></h6>
-            <p class="m-0px font-w-600">Best Performance</p>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3">
-          <div class="count-data text-center">
-            <h6 class="count h2" >{{selectedUser.playableCharacter.preferences.objectives}}</h6>
-            <p class="m-0px font-w-600">Objectives</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <h2></h2>
-    <h2></h2>
-    <h2></h2>
-    <div class="counter">
+        <br />
         <div class="row">
-            <h3 class="dark-color">Raid history</h3>
-<h2></h2>
-
-        <table
-  class="table align-middle" id="tableReports"
-  style="width: 95%; margin: 0 auto; text-align: center"
->
-  <thead class="bg-light table-dark">
-    <tr>
-      <th>Character Name</th>
-      <th>Character Class</th>
-      <th>Character Specialisation</th>
-      <th>Character Parse %</th>
-      <th>Character ilvl</th>
-      <th>Character Ranking</th>
-      <th>Encounter Name</th>
-    </tr>
-  </thead>
-  <tbody >
-    <ng-container *ngFor="let data of filteredPlayersRankingsData">
-    <tr>
-      <td>{{data.characterName}}</td>
-      <td>{{data.class}}</td>
-      <td>{{data.spec}}</td>
-      <td>{{data.percentile | number : '1.0-2'}}</td>
-      <td>{{data.ilvlKeyOrPatch}}</td>
-      <td>{{data.rank}}</td>
-      <td>{{data.encounterName}}</td>
-    </tr>
-  </ng-container>
-  </tbody>
-</table>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">{{filteredPlayersRankingsDataRows}}</h6>
+              <p class="m-0px font-w-600">Raid Reports</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">{{selectedUser.playableCharacter.preferences.lootSystems}}</h6>
+              <p class="m-0px font-w-600">Preferred LS</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">
+                <ng-container *ngIf="filteredPlayersRankingsData | max: 'percentile' as result">{{ result | number :
+                  '1.0-2'}} %</ng-container>
+              </h6>
+              <p class="m-0px font-w-600">Best Performance</p>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="count-data text-center">
+              <h6 class="count h2">{{selectedUser.playableCharacter.preferences.objectives}}</h6>
+              <p class="m-0px font-w-600">Objectives</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <h2></h2>
+      <h2></h2>
+      <h2></h2>
+      <div class="counter align-middle" style="margin: 0 auto;">
+        <div class="row">
+          <div class="col">
+            <div class="item"><img style="width:10%"
+                src="https://img.freepik.com/free-icon/helmet_318-536839.jpg?w=2000" />{{selectedUser.playableCharacter.equipment.headItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://www.pngrepo.com/png/246103/512/necklace.png" />{{selectedUser.playableCharacter.equipment.neckItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://www.svgrepo.com/show/323325/spiked-shoulder-armor.svg" />{{selectedUser.playableCharacter.equipment.shoulderItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://starpng.com/public/uploads/preview/superhero-capes-png-cape-icon-png-1015767840232y6soyaja6.png" />{{selectedUser.playableCharacter.equipment.backItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/683/683550.png" />{{selectedUser.playableCharacter.equipment.chestItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />{{selectedUser.playableCharacter.equipment.firstRingItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />{{selectedUser.playableCharacter.equipment.firstTrinketItem}}
+            </div>
+            <h2></h2>
+            <div class="item"><img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/3275/3275467.png" />{{selectedUser.playableCharacter.equipment.mainHandItem}}
+            </div>
+          </div>
+          <div class="col" style="text-align: center; "><img src="https://i.pinimg.com/originals/ed/7a/6b/ed7a6b0a14356cbd0bc9e1617400f3cf.gif" />
+            <h2></h2><h2></h2><h2></h2>
+            <div class="item" style="text-align: center; font-family: 'Brush Script MT', cursive; font-size:xx-large;">{{selectedUser.playableCharacter.name}}'s equipment</div>
+          </div>
+          <div class="col" style="text-align: end;">
+            <div class="item">{{selectedUser.playableCharacter.equipment.handItem}}<img style="width:10%"
+                src="https://w7.pngwing.com/pngs/636/141/png-transparent-glove-computer-icons-gauntlet-armour-boxing-glove-hand-armor-thumbnail.png" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.waistItem}}<img style="width:10%"
+                src="https://static.thenounproject.com/png/2360094-200.png" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.legsItem}}<img style="width:10%"
+                src="https://cdn3.iconfinder.com/data/icons/video-game-elements-soft-fill/60/Plate-Legs-Armour-gaming-armoury-512.png" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.feetItem}}<img style="width:10%"
+                src="https://www.svgrepo.com/show/322686/leg-armor.svg" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.wristItem}}<img style="width:10%"
+                src="https://icon-library.com/images/armor-icon-png/armor-icon-png-12.jpg" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.secondRingItem}}<img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/332/332938.png" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.secondTrinketItem}}<img style="width:10%"
+                src="https://cdn-icons-png.flaticon.com/512/4681/4681055.png" />
+            </div>
+            <h2></h2>
+            <div class="item">{{selectedUser.playableCharacter.equipment.relicItem}}<img style="width:10%"
+                src="https://icons.iconarchive.com/icons/google/noto-emoji-objects/1024/62967-shield-icon.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2></h2>
+      <h2></h2>
+      <h2></h2>
+      <div class="counter">
+        <div class="row">
+          <h3 class="dark-color">Raid history</h3>
+          <h2></h2>
+
+          <table class="table align-middle" id="tableReports" style="width: 95%; margin: 0 auto; text-align: center">
+            <thead class="bg-light table-dark">
+              <tr>
+                <th>Character Name</th>
+                <th>Character Class</th>
+                <th>Character Specialisation</th>
+                <th>Character Parse %</th>
+                <th>Character ilvl</th>
+                <th>Character Ranking</th>
+                <th>Encounter Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let data of filteredPlayersRankingsData">
+                <tr>
+                  <td>{{data.characterName}}</td>
+                  <td>{{data.class}}</td>
+                  <td>{{data.spec}}</td>
+                  <td>{{data.percentile | number : '1.0-2'}}</td>
+                  <td>{{data.ilvlKeyOrPatch}}</td>
+                  <td>{{data.rank}}</td>
+                  <td>{{data.encounterName}}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </ng-container>

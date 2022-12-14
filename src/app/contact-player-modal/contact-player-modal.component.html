@@ -1,16 +1,29 @@
 <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Contacting player</h5>
-    <button
-      type="button"
-      class="btn-close"
-      aria-label="Close"
-      (click)="modalRef.close()"
-    ></button>
-  </div>
+  <div class="main bg-image" style="
+background-image: url('https://c4.wallpaperflare.com/wallpaper/374/434/470/warcraft-world-of-warcraft-dragon-onyxia-world-of-warcraft-orc-hd-wallpaper-preview.jpg');
+height: 20vh;
+">
+<div class="d-flex justify-content-center align-items-center h-100">
+<div class="text-white">
+  <h1 class="ms-3 mb-3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </h1>
+</div>
+</div>
+</div>
+</div>
   <div class="modal-body">
   <!--Textarea with icon prefix-->
   <div class="md-form">
-    <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
+    <input placeholder="Your username" id="form10" class="md-textarea form-control" rows="3" />
+  </div>
+  <h2></h2>
+  <div class="md-form">
+    <input placeholder="Subject" id="form10" class="md-textarea form-control" rows="3" />
+  </div>
+  <h2></h2>
+  <div class="md-form">
+    <textarea placeholder="Hello there..." id="form10" class="md-textarea form-control" rows="3"></textarea>
   </div>
 
   </div>
@@ -18,5 +31,5 @@
     <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
       Cancel
     </button>
-    <button type="button" class="btn btn-primary">Validate</button>
+    <button type="button" class="btn btn-primary">Send</button>
   </div>

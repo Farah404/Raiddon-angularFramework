@@ -1,0 +1,166 @@
+<div class="modal-header">
+  <div class="main bg-image" style="
+      background-image: url('https://www.gamersdecide.com/sites/default/files/illidan_1.jpg');
+      height: 20vh;
+    ">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="ms-3 mb-3">Tell Us More about yourself</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-body" style="width:100%">
+
+  <section class="section about-section gray-bg" id="about">
+    <div class="container">
+      <div class="counter">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col">
+            <div class="row">
+              <div class="col" aria-describedby="imghelp">
+                <div class="form-group mb-3">
+                  <label for="ilvl">Name</label>
+                  <input disabled="" type="text" class="form-control" id="name" name="name"
+                    [(ngModel)]="currentPlayableCharacter.name" />
+                </div>
+                <div class="form-group mb-3">
+                  <label for="faction">Warcraft Logs Link</label>
+                  <input disabled="" type="text" class="form-control" id="wowLogLink" name="wowLogLink"
+                    [(ngModel)]="currentPlayableCharacter.wowLogLink" />
+                </div>
+                <div class="form-group mb-3">
+                  <label for="objectives">Level</label>:
+                  <input type="number" class="form-control" id="level" name="level"
+                    [(ngModel)]="currentPlayableCharacter.level" />
+                </div>
+                <div class="form-group mb-3">
+                  <label for="faction">iLevel</label>
+                  <input type="number" class="form-control" id="ilevel" name="ilevel"
+                    [(ngModel)]="currentPlayableCharacter.ilevel" />
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group mb-3">
+                      <label for="faction">Realm</label>
+                      <select type="text" class="form-control" id="faction" name="faction"
+                        [(ngModel)]="currentPlayableCharacter.realm">
+                        <option value=""></option>
+                        <option *ngFor="let data of connectedRealmsData">
+                          {{ data.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="faction">Faction</label>
+                      <select type="text" class="form-control" id="faction" name="faction"
+                        [(ngModel)]="currentPlayableCharacter.faction">
+                        <option value="Alliancce">Alliancce</option>
+                        <option value="Horde">Horde</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group mb-3">
+                      <label for="faction">Class</label>
+                      <select type="text" class="form-control" id="playableClass" name="playableClass"
+                        [(ngModel)]="currentPlayableCharacter.playableClass">
+                        <option value=""></option>
+                        <option *ngFor="let data of playableClassesData">
+                          {{ data.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="faction">Race</label>
+                      <select type="text" class="form-control" id="race" name="race"
+                        [(ngModel)]="currentPlayableCharacter.race">
+                        <option value=""></option>
+                        <option *ngFor="let data of playableRacesData">
+                          {{ data.name }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group mb-3">
+                      <label for="faction">Main Specialisation</label>
+                      <select type="text" class="form-control" id="mainSpec" name="mainSpec"
+                        [(ngModel)]="currentPlayableCharacter.mainSpec">
+                        <option value=""></option>
+                        <option *ngFor="let data of classTalentsData">
+                          {{ data.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="faction">Main Role</label>
+                      <select type="text" class="form-control" id="mainRole" name="mainRole"
+                        [(ngModel)]="currentPlayableCharacter.mainRole">
+                        <option value=""></option>
+                        <option value="1">Healer</option>
+                        <option value="2">Tank</option>
+                        <option value="3">Damage</option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="faction">First Profession</label>
+                      <select type="text" class="form-control" id="firstProfession" name="firstProfession"
+                        [(ngModel)]="currentPlayableCharacter.firstProfession">
+                        <option value=""></option>
+                          <option *ngFor="let data of professionsData">
+                            {{ data.name }}
+                          </option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group mb-3">
+                      <label for="faction">Second Specialisation</label>
+                      <select type="text" class="form-control" id="secondarySpec" name="secondarySpec"
+                        [(ngModel)]="currentPlayableCharacter.secondarySpec">
+                        <option value=""></option>
+                        <option *ngFor="let data of classTalentsData">
+                          {{ data.name }}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="faction">Second Role</label>
+                      <select type="text" class="form-control" id="secondaryRole" name="secondaryRole"
+                        [(ngModel)]="currentPlayableCharacter.secondaryRole">
+                        <option value=""></option>
+                        <option value="1">Healer</option>
+                        <option value="2">Tank</option>
+                        <option value="3">Damage</option>
+                      </select>
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="faction">Second Profession</label>
+                      <select type="text" class="form-control" id="secondProfession" name="secondProfession"
+                        [(ngModel)]="currentPlayableCharacter.secondProfession">
+                        <option value=""></option>
+                          <option *ngFor="let data of professionsData">
+                            {{ data.name }}
+                          </option>
+                        </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+    Cancel
+  </button>
+  <button type="button" class="btn btn-primary" (click)="updatePlayableCharacter()">Update</button>
+</div>
