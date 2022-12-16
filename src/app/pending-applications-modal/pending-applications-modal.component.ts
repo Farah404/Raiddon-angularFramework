@@ -26,7 +26,6 @@ export class PendingApplicationsModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = this.storageService.getUser();
-    console.log(this.currentUser);
     this.retriveRaidApplications();
     this.retriveGuildApplications()
   }

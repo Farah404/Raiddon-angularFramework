@@ -126,7 +126,9 @@ export class PlayerDetailsComponent implements OnInit {
     private userService: UserService) { }
 
   openContactModal() {
-    this.modalRef = this.modalService.open(ContactPlayerModalComponent)
+    this.modalRef = this.modalService.open(ContactPlayerModalComponent);
+    this.id = this.userService.id;
+    this.getUser(this.id);
   }
 
   ngOnInit(): void {

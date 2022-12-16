@@ -5,6 +5,8 @@ import { StorageService } from '../_services/storage.service';
 import { EventBusService } from '../_shared/event-bus.service';
 import { MessagingModalComponent } from '../messaging-modal/messaging-modal.component';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { Messaging } from 'src/model/messaging';
+import { MessagingService } from '../_services/messaging.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,13 +19,19 @@ export class NavbarComponent {
   username?: string;
   eventBusSub?: Subscription;
   modalRef: MdbModalRef<MessagingModalComponent> | null = null;
+  allMessages: Messaging[];
+  filteredMessages: Messaging [];
+  currentUser: any;
   constructor(private storageService: StorageService,
     private authService: AuthService,
     private eventBusService: EventBusService,
-    private modalService: MdbModalService,) { }
+    private modalService: MdbModalService,
+    private messagingService: MessagingService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
+    this.currentUser = this.storageService.getUser();
+    this.retriveMessages();
 
     if (this.isLoggedIn) {
       const user = this.storageService.getUser();
@@ -57,5 +65,20 @@ export class NavbarComponent {
       modalClass: 'modal-xl'
     })
   }
+
+  retriveMessages(): void {
+    this.messagingService.getAll()
+    .subscribe({
+      next: (data) =>{
+        this.allMessages = data;
+        this.filteredMessages = this.allMessages.filter(f => f.userReceiver.id == this.currentUser.id)
+      }
+    });
+  }
+
+  get filteredMessagesRows (): number{
+    return this.filteredMessages.length;
+  }
+
 
 }
