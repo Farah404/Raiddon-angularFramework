@@ -15,15 +15,15 @@ height: 20vh;
   <div class="modal-body">
   <!--Textarea with icon prefix-->
   <div class="md-form">
-    <input placeholder="Your username" id="form10" class="md-textarea form-control" rows="3" />
+    <input disabled="" placeholder="Your username" id="form10" class="md-textarea form-control" rows="3" [(ngModel)]="userSender.playableCharacter.name" />
   </div>
   <h2></h2>
   <div class="md-form">
-    <input placeholder="Subject" id="form10" class="md-textarea form-control" rows="3" />
+    <input placeholder="Subject" id="form10" class="md-textarea form-control" rows="3" [(ngModel)]="messaging.subject"/>
   </div>
   <h2></h2>
   <div class="md-form">
-    <textarea placeholder="Hello there..." id="form10" class="md-textarea form-control" rows="3"></textarea>
+    <textarea placeholder="Hello there..." id="form10" class="md-textarea form-control" rows="3" [(ngModel)]="messaging.message"></textarea>
   </div>
 
   </div>
@@ -31,5 +31,5 @@ height: 20vh;
     <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
       Cancel
     </button>
-    <button type="button" class="btn btn-primary">Send</button>
+    <button type="button" class="btn btn-primary" (click)="createMessage()">Send</button>
   </div>

@@ -3,25 +3,36 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
 </div>
 <div class="modal-body">
-    <div class="row">
-        <div class="col" style="text-align: justify;
+    <ng-container *ngFor="let sms of filteredMessages">
+        <div class="row">
+            <div class="col" style="text-align: justify;
     text-justify: inter-word;">
-            <div class="card" style="height: 200px;">
-                <div class="card-horizontal">
-                    <div class="img-square-wrapper">
-                        <img style="height: 200px; width:200px;"
-                            src="https://acidinkdesigns.com/wp-content/uploads/2022/02/Warrior-class-icon.jpg"
-                            alt="Card image cap">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Sender</h4>
-                        <p class="card-text">Subject</p>
-                        <button type="button" class="btn btn-secondary"> Reply</button>
+                <div class="card" style="height: auto;">
+                    <div class="card-horizontal">
+                        <div class="img-square-wrapper">
+                            <img style="border-radius: 100%; height:150px; width:100px; margin-left: 10px;
+                            margin-top: 10px;
+                            display: block;"
+                                src="{{sms.userSender.profilePicture}}"
+                                alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">From: {{sms.userSender.playableCharacter.name}}</h4>
+                            <p class="card-text">Subject: {{sms.subject}}</p>
+                            <p class="card-text">Content: {{sms.message}}</p>
+                            <h2></h2><hr><h2></h2>
+                            <input placeholder="Subject" /><br /><br />
+                            <TextArea placeholder="Hello there..." ></TextArea><br /><br />
+                            <button type="button" class="btn btn-secondary"> Delete Message</button> &nbsp;&nbsp;&nbsp;
+                            <button type="button" class="btn btn-secondary"> Reply to
+                                &nbsp;{{sms.userSender.playableCharacter.name}}</button>
+                        </div>
+                        <h2></h2>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-container>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
