@@ -58,9 +58,22 @@
                   <div class="media">
                     <label>Professions</label>
                     <p>
-                      {{ connectedUser.playableCharacter.firstProfession }},
-                      {{ connectedUser.playableCharacter.secondProfession }}
+                      {{ connectedUser.playableCharacter.firstProfession }} /
+                      {{ connectedUser.playableCharacter.secondProfession }} <br />
+                      <ng-container *ngIf="connectedUser.playableCharacter.canCook == true">
+                        Cooking
+                      </ng-container>
+                      <ng-container *ngIf="connectedUser.playableCharacter.canFish == true">
+                      / Fishing
+                      </ng-container>
+                      <ng-container *ngIf="connectedUser.playableCharacter.canFirstAid == true">
+                      / First Aid
+                      </ng-container>
                     </p>
+                  </div>
+                  <div class="media">
+                    <label>Other</label>
+                    <p>{{ connectedUser.playableCharacter.level }}</p>
                   </div>
                   <div class="media">
                     <label>Guild</label>
@@ -71,12 +84,8 @@
                     <p>{{ connectedUser.guildRank }}</p>
                   </div>
                   <div class="media">
-                    <label>iLvl</label>
-                    <p>{{ connectedUser.playableCharacter.ilevel }}</p>
-                  </div>
-                  <div class="media">
-                    <label>Level</label>
-                    <p>{{ connectedUser.playableCharacter.level }}</p>
+                    <label>Level & iLvl</label>
+                    <p>{{ connectedUser.playableCharacter.level }}, {{ connectedUser.playableCharacter.ilevel }}</p>
                   </div>
                   <div class="media">
                     <label>Actions</label><br />

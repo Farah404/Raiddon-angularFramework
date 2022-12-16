@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Applying to raid confirmation</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+  <!--Textarea with icon prefix-->
+The raid leader will be notified of your wish to apply to their raid. Would you like to proceed?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+      Cancel
+    </button>
+    <button (click)="applyToRaid()" class="btn btn-success" style="float: right;">Apply</button>
+  </div>

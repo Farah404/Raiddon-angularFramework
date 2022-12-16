@@ -69,6 +69,8 @@ export class GuildDetailsComponent implements OnInit {
 
   openModal() {
     this.modalRef = this.modalService.open(ApplyToGuildComponent)
+    this.id = this.guildService.id;
+    this.getGuild(this.id)
   }
   ngOnInit(): void {
     this.id = this.guildService.id;
