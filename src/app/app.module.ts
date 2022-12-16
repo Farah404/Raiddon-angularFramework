@@ -65,6 +65,8 @@ import { TrollModalComponent } from './_wiki/troll-modal/troll-modal.component';
 import { DraeneiModalComponent } from './_wiki/draenei-modal/draenei-modal.component';
 import { ClassesModalComponent } from './_wiki/classes-modal/classes-modal.component';
 import { ApplyToRaidModalComponent } from './apply-to-raid-modal/apply-to-raid-modal.component';
+import { PendingApplicationsModalComponent } from './pending-applications-modal/pending-applications-modal.component';
+import { MessagingModalComponent } from './messaging-modal/messaging-modal.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +110,9 @@ import { ApplyToRaidModalComponent } from './apply-to-raid-modal/apply-to-raid-m
     TrollModalComponent,
     DraeneiModalComponent,
     ClassesModalComponent,
-    ApplyToRaidModalComponent
+    ApplyToRaidModalComponent,
+    PendingApplicationsModalComponent,
+    MessagingModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,78 @@
+<div class="modal-header">
+    <div class="main bg-image" style="
+      background-image: url('https://prod.assets.earlygamecdn.com/images/wowclassic_2022-10-19-145150_agtb.jpg');
+      height: 20vh;
+    ">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="ms-3 mb-3">Your Pending
+                    Applications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <h3>Guild Applications</h3>
+    <table class="table table-striped table-dark align-middle" style="margin: 0 auto; text-align: center">
+        <thead class="thead-dark">
+            <tr>
+                <th></th>
+                <th>Guild Name</th>
+                <th>Guild Realm</th>
+                <th>Guild Rank</th>
+                <th>Guild Objectives</th>
+                <th>Guild Loot System</th>
+                <th>Guild Master</th>
+            </tr>
+        </thead>
+        <ng-container *ngFor="let guildApp of filteredGuildApplications">
+            <tbody>
+                <tr>
+                    <td><i class="fa-solid fa-spinner"></i></td>
+                    <td>{{guildApp.selectedGuild.guildName}}</td>
+                    <td>{{guildApp.selectedGuild.realm}}</td>
+                    <td>{{guildApp.selectedGuild.rank}}</td>
+                    <td>{{guildApp.selectedGuild.objectives}}</td>
+                    <td>{{guildApp.selectedGuild.lootSystems}}</td>
+                    <td>{{guildApp.selectedGuild.guildMaster}}</td>
+                </tr>
+            </tbody>
+        </ng-container>
+    </table>
+    <h2></h2>
+    <hr />
+    <h2></h2>
+    <h3>Raid Applications</h3>
+    <table class="table table-striped table-dark align-middle" style="margin: 0 auto; text-align: center">
+        <thead class="thead-dark">
+            <tr>
+                <th></th>
+                <th>Raid Name</th>
+                <th>Raid Zone</th>
+                <th>Raid Date</th>
+                <th>Raid Pull</th>
+                <th>Raid Loot System</th>
+                <th>Raid Leader</th>
+            </tr>
+        </thead>
+        <ng-container *ngFor="let raidApp of filteredRaidApplications">
+            <tbody>
+                <tr>
+                    <td><i class="fa-solid fa-spinner"></i></td>
+                    <td>{{raidApp.selectedRaid.raidName}}</td>
+                    <td>{{raidApp.selectedRaid.raidZone}}</td>
+                    <td>{{raidApp.selectedRaid.raidDate}}</td>
+                    <td>{{raidApp.selectedRaid.raidPullTime}}</td>
+                    <td>{{raidApp.selectedRaid.raidLootSystem}}</td>
+                    <td>{{raidApp.selectedRaid.raidLeader.playableCharacter.name}}</td>
+                </tr>
+            </tbody>
+        </ng-container>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+        Cancel
+    </button>
+</div>

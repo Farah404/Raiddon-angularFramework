@@ -11,8 +11,8 @@ import { PlayableCharacter, Preferences, Raid } from 'src/model/raids';
 import { RaidsService } from '../_services/raids.service';
 import { Pipe, PipeTransform } from '@angular/core'
 import { PreferencesService } from '../_services/preferences.service';
-import { User } from 'src/model/user';
 import { CharacterService } from '../_services/character.service';
+import { PendingApplicationsModalComponent } from '../pending-applications-modal/pending-applications-modal.component';
 import { UpdatePlayableCharacterModalComponent } from '../update-playable-character-modal/update-playable-character-modal.component';
 
 @Component({
@@ -36,7 +36,6 @@ export class UserProfileComponent implements OnInit {
   filteredRaidsLootsystem?: Raid[];
   filteredRaidsClass?: Raid[];
   name = 'max pipe';
-  
 
   constructor(
     private storageService: StorageService, 
@@ -50,6 +49,12 @@ export class UserProfileComponent implements OnInit {
 
   openUpdateModal() {
     this.modalRef = this.modalService.open(UpdateProfileModalComponent)
+  }
+
+  openPendingModal() {
+    this.modalRef = this.modalService.open(PendingApplicationsModalComponent, {
+      modalClass: 'modal-xl'
+    })
   }
 
   retriveRaids(): void {
@@ -85,8 +90,6 @@ export class UserProfileComponent implements OnInit {
     this.characterservice.id = this.connectedUser.id;
     this.modalRef = this.modalService.open(UpdatePlayableCharacterModalComponent)
   }
-
-
 
   retrieveGuilds(): void {
     this.guildService.getAll()
