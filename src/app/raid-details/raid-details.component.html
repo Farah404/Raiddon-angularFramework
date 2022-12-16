@@ -26,19 +26,25 @@
       </div>
       <div class="column">
         <div class="row">
-<h2></h2>
+          <h2></h2>
           <div class="col">
             <label style="font-weight: bold;"><i class="fa-solid fa-signature"></i>&nbsp;Name: </label><br /><br />
             <label style="font-weight: bold;"><i class="fa-solid fa-map-pin">&nbsp;</i>Zone: </label><br /><br />
-            <label style="font-weight: bold;"><i class="fa-solid fa-scale-unbalanced-flip">&nbsp;</i>Difficulty: </label><br /><br />
-            <label style="font-weight: bold;"><i class="fa-sharp fa-solid fa-gift"></i>&nbsp;Loot System: </label><br /><br />
-            <label style="font-weight: bold;"><i class="fa-sharp fa-solid fa-hashtag"></i>&nbsp;Total Encounters: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-scale-unbalanced-flip">&nbsp;</i>Difficulty:
+            </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-sharp fa-solid fa-gift"></i>&nbsp;Loot System:
+            </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-sharp fa-solid fa-hashtag"></i>&nbsp;Total Encounters:
+            </label><br /><br />
             <label style="font-weight: bold;"><i class="fa-solid fa-calendar"></i>&nbsp;Date: </label><br /><br />
-            <label style="font-weight: bold;"><i class="fa-solid fa-business-time"></i>&nbsp;Pull / Raid-Off: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-business-time"></i>&nbsp;Pull / Raid-Off:
+            </label><br /><br />
             <label style="font-weight: bold;"><i class="fa-solid fa-user"></i>&nbsp;Raid Leader: </label><br /><br />
-            <label style="font-weight: bold;"><i class="fa-solid fa-users"></i>&nbsp;Organising Guild: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-users"></i>&nbsp;Organising Guild:
+            </label><br /><br />
             <label style="font-weight: bold;"><i class="fa-solid fa-paw"></i>&nbsp;Needed Class: </label><br /><br />
-            <label style="font-weight: bold;"><i class="fa-solid fa-user-ninja"></i>&nbsp;Needed Roles: </label><br /><br />
+            <label style="font-weight: bold;"><i class="fa-solid fa-user-ninja"></i>&nbsp;Needed Roles:
+            </label><br /><br />
           </div>
           <div class="col">
             <label> {{selectedRaid.raidName}}</label><br /><br />
@@ -55,11 +61,11 @@
             <label> {{selectedRaid.raidRequirements.mainSpec}} &
               {{selectedRaid.raidRequirements.secondarySpec}}</label><br /><br /><br />
           </div>
-          
+
         </div>
 
-        <input class="btn btn-secondary" type="submit" value="Apply to Join Raid">
-        
+        <input class="btn btn-secondary" (click)="openModal()" type="submit" value="Apply to Join Raid">
+
 
       </div>
     </div>

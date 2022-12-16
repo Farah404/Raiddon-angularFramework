@@ -1,10 +1,7 @@
-<div
-  class="main bg-image"
-  style="
+<div class="main bg-image" style="
     background-image: url('https://i.pinimg.com/originals/83/b0/54/83b054919580af2ac3aafecd9a3b5688.gif');
     height: 50vh;
-  "
->
+  ">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
       <h1 class="mb-3 typewriter">Want to know more about WoW?</h1>
@@ -15,107 +12,428 @@
   </div>
 </div>
 
-<h2></h2>
-<div class="tabs">
-  <input type="radio" id="tab1" name="tab-control" checked />
-  <input type="radio" id="tab2" name="tab-control" />
-  <input type="radio" id="tab3" name="tab-control" />
-  <input type="radio" id="tab4" name="tab-control" />
-  <ul>
-    <li title="Features">
-      <label for="tab1" role="button"
-        ><br /><span>Playable Characters</span></label
-      >
-    </li>
-    <li title="Delivery Contents">
-      <label for="tab2" role="button"><br /><span>Professions</span></label>
-    </li>
-    <li title="Shipping">
-      <label for="tab3" role="button"
-        ><br /><span>Connected Realms</span></label
-      >
-    </li>
-    <li title="Returns">
-      <label for="tab4" role="button"
-        ><br /><span>Reputation Factions</span></label
-      >
-    </li>
-  </ul>
 
-  <div class="slider"><div class="indicator"></div></div>
-  <div class="content">
-    <section>
-      <img class="center" src="../../assets/wow-images/a.png" style="width: 130vh;"/>
-      <mdb-tabs>
-        <mdb-tab title="Races"><div class="games">  
-          <ng-container *ngFor="let data of playableRacesData">
-            <div class="game">
-              <div class="game-description">
-                <p class="game-name">{{ data.name }}</p>
-              </div>
-            </div>
-          </ng-container> 
-          
-        </div></mdb-tab>
-        <mdb-tab title="Classes"> <div class="games">  
-          <ng-container *ngFor="let data of playableClassesData">
-            <div class="game">
-              <div class="game-description">
-                <p class="game-name">{{ data.name }}</p>
-              </div>
-            </div>
-          </ng-container> 
-        </div></mdb-tab>
-        <mdb-tab title="Talents">      <div class="games">  
-          <ng-container *ngFor="let data of classTalentsData">
-            <div class="game">
-              <div class="game-description">
-                <p class="game-name">{{ data.name }}</p>
-              </div>
-            </div>
-          </ng-container> 
-        </div></mdb-tab>
-      </mdb-tabs>
-    </section>
+<div class="main" style="background-color: #282828">
+  <h2></h2>
+  <div class="tabs" style="background-color: #C0C0C0">
+    <input type="radio" id="tab1" name="tab-control" checked />
+    <input type="radio" id="tab2" name="tab-control" />
+    <input type="radio" id="tab3" name="tab-control" />
+    <input type="radio" id="tab4" name="tab-control" />
+    <ul>
+      <li title="Features">
+        <label for="tab1" role="button"><br /><span>Playable Characters</span></label>
+      </li>
+      <li title="Delivery Contents">
+        <label for="tab2" role="button"><br /><span>Professions</span></label>
+      </li>
+      <li title="Shipping">
+        <label for="tab3" role="button"><br /><span>Connected Realms</span></label>
+      </li>
+      <li title="Returns">
+        <label for="tab4" role="button"><br /><span>Reputation Factions</span></label>
+      </li>
+    </ul>
 
-    <section>
-      <img class="center" src="../../assets/wow-images/982478.jpg" style="width: 130vh;"/>
-      <div class="games">  
-        <ng-container *ngFor="let data of professionsData">
-          <div class="game">
-            <div class="game-description">
-              <p class="game-name">{{ data.name }}</p>
+    <div class="slider">
+      <div class="indicator"></div>
+    </div>
+    <div class="content">
+      <section>
+        <img class="center" src="../../assets/wow-images/a.png" style="width: 130vh;" />
+        <mdb-tabs>
+          <mdb-tab title="Races">
+
+            <div class="row">
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Human'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Human'">
+                        <img class="card-img-top img-fluid"
+                          src="https://images.saymedia-content.com/.image/t_share/MTc0NDI2MDMwNDQwNzE5NzIw/top-five-reasons-the-humans-are-the-best-wow-race.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openHumanModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Orc'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Orc'">
+                        <img class="card-img-top img-fluid"
+                          src="https://townsquare.media/site/442/files/2013/11/Warcraft-Durotan.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openOrcModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Dwarf'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Dwarf'">
+                        <img class="card-img-top img-fluid"
+                          src="https://blizzardwatch.com/wp-content/uploads/2016/07/WoW_TCG_dwarf_paladin.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openDwarfModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Night Elf'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Night Elf'">
+                        <img class="card-img-top img-fluid"
+                          src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/2019/05/warcraft-night-elf.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openNightElfModal()">
+                          {{ data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Undead'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Undead'">
+                        <img class="card-img-top img-fluid"
+                          src="https://miro.medium.com/max/697/1*Eg40Sn89vE64xv9BrGOUCA.png" alt="Card image cap"
+                          style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openUndeadModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Tauren'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Tauren'">
+                        <img class="card-img-top img-fluid"
+                          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/705b1c70-b724-447d-9eea-4f3e76650a75/daf6jqv-a441f099-82a0-4f2c-9fc2-c0961aa43f23.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzcwNWIxYzcwLWI3MjQtNDQ3ZC05ZWVhLTRmM2U3NjY1MGE3NVwvZGFmNmpxdi1hNDQxZjA5OS04MmEwLTRmMmMtOWZjMi1jMDk2MWFhNDNmMjMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.N62Q7yWkgav8Yf6gkyBbd2ZoV3poYaLSNtCBduHhprE"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openTaurenModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Gnome'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Gnome'">
+                        <img class="card-img-top img-fluid"
+                          src="https://blizzardwatch.com/wp-content/uploads/2015/11/GnomeHeader01-Header-110115.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openGnomeModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Troll'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Troll'">
+                        <img class="card-img-top img-fluid"
+                          src="https://scontent.frns1-1.fna.fbcdn.net/v/t31.18172-8/17760805_1876677585936405_9072389450070311190_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9267fe&_nc_ohc=FfwwP_bhemQAX9q-dWR&_nc_ht=scontent.frns1-1.fna&oh=00_AfD88wj9wLeZYmMTPyit5sgQBBZKR5WKPYtWIjwjvGhU2A&oe=63C29B65"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openTrollModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Blood Elf'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Blood Elf'">
+                        <img class="card-img-top img-fluid"
+                          src="https://blizzardwatch.com/wp-content/uploads/2016/07/WoW_TCG_Firewarden_Wyland.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openBloodElfModal()">
+                          {{ data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngFor="let data of playableRacesData" ;>
+                <ng-container *ngIf="data.name == 'Draenei'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Draenei'">
+                        <img class="card-img-top img-fluid"
+                          src="https://images4.alphacoders.com/727/thumb-1920-727855.jpg" alt="Card image cap"
+                          style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openDraeneiModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
             </div>
-          </div>
-        </ng-container> 
-      </div>
-    </section>
-    <section>
-      <img class="center" src="../../assets/wow-images/banner.jpg" style="width: 130vh;"/>
-      <div class="games">  
-        <ng-container *ngFor="let data of connectedRealmsData">
-          <div class="game">
-            <div class="game-description">
-              <p class="game-name">{{ data.name }}</p>
+          </mdb-tab>
+
+          <mdb-tab title="Classes">
+            <div class="row">
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Warrior'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Warrior'">
+                        <img class="card-img-top img-fluid" src="https://i.redd.it/cpdm008xx0541.png"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Paladin'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Paladin'">
+                        <img class="card-img-top img-fluid" src="https://wallpaperaccess.com/full/3042910.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Hunter'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Hunter'">
+                        <img class="card-img-top img-fluid"
+                          src="https://cdn.wccftech.com/wp-content/uploads/2019/07/wow-classic-hunter.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Rogue'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Rogue'">
+                        <img class="card-img-top img-fluid"
+                          src="https://dhbiuzu7sx6b3.cloudfront.net/assets/article/2020/06/29/rogue-classic-stamp-2_feature.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Priest'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Priest'">
+                        <img class="card-img-top img-fluid" src="https://wallpaperaccess.com/full/3838509.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Shaman'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Shaman'">
+                        <img class="card-img-top img-fluid"
+                          src="https://static.icy-veins.com/images/classic/og-images/shaman.jpg" alt="Card image cap"
+                          style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Mage'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;">
+                      <ng-container *ngIf="data.name == 'Mage'">
+                        <img class="card-img-top img-fluid"
+                          src="https://static1.millenium.org/articles/6/36/15/06/@/1309572-mage-article_cover_bd-2.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Warlock'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Warlock'">
+                        <img class="card-img-top img-fluid"
+                          src="https://i.etsystatic.com/15391860/r/il/6b73f5/1273256799/il_570xN.1273256799_cel2.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Druid'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;;">
+                      <ng-container *ngIf="data.name == 'Druid'">
+                        <img class="card-img-top img-fluid"
+                          src="https://i.pinimg.com/originals/db/e0/e0/dbe0e0bebbb9dcd1c05d47f3cb6516fd.jpg"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
+
+              <ng-container *ngFor="let data of playableClassesData">
+                <ng-container *ngIf="data.name == 'Death Knight'" ;>
+                  <div class="col-sm-6 col-md-3">
+                    <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple;">
+                      <ng-container *ngIf="data.name == 'Death Knight'">
+                        <img class="card-img-top img-fluid"
+                          src="https://preview.redd.it/v338r6lng8061.jpg?auto=webp&s=359080926cfd8118f760c6392c81aa37ce2345ed"
+                          alt="Card image cap" style="width: 400px;height: 250px;" /></ng-container>
+                      <div class="card-body">
+                        <h4 class="card-title" style="color: aliceblue; cursor: pointer" (click)="openClassesModal()">{{
+                          data.name }}</h4>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </ng-container>
             </div>
-          </div>
-        </ng-container> 
-      </div>
-    </section>
-    <section>
-      <div class="games">  
-        <img class="center" src="../../assets/wow-images/warcraft-movie-banner-01-copy.jpg" style="width: 130vh;"/>
-        <ng-container *ngFor="let data of reputationFactionsData">
-          <div class="game">
-            <div class="game-description">
-              <p class="game-name">{{ data.name }}</p>
+          </mdb-tab>
+
+          <mdb-tab title="Talents">
+            <div class="row">
+              <ng-container *ngFor="let data of classTalentsData">
+                <div class="col-sm-6 col-md-3">
+                  <div class="card mb-3 hover-zoom" mdbRipple rippleColor="light" style="background-color: purple; width:300px">
+                    <div class="card-body">
+                      <h4 class="card-title" style="color: aliceblue;">{{
+                        data.name }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
             </div>
-          </div>
-        </ng-container> 
-      </div>
-    </section>
+          </mdb-tab>
+
+        </mdb-tabs>
+      </section>
+
+      <section>
+        <img class="center" src="../../assets/wow-images/982478.jpg" style="width: 130vh;" />
+        <div class="games">
+          <ng-container *ngFor="let data of professionsData">
+            <div class="game">
+              <div class="game-description">
+                <p class="game-name" style="color: aliceblue;">{{ data.name }}</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </section>
+      <section>
+        <img class="center" src="../../assets/wow-images/banner.jpg" style="width: 130vh;" />
+        <div class="games">
+          <ng-container *ngFor="let data of connectedRealmsData">
+            <div class="game">
+              <div class="game-description">
+                <p class="game-name" style="color: aliceblue;">{{ data.name }}</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </section>
+      <section>
+        <div class="games">
+          <img class="center" src="../../assets/wow-images/warcraft-movie-banner-01-copy.jpg" style="width: 130vh;" />
+          <ng-container *ngFor="let data of reputationFactionsData">
+            <div class="game">
+              <div class="game-description">
+                <p class="game-name" style="color: aliceblue;">{{ data.name }}</p>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </section>
+    </div>
   </div>
+  <h2></h2>
 </div>
-
-<h2></h2>
-

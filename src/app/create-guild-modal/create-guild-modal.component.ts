@@ -6,7 +6,6 @@ import { Guild, GuildRecruitment } from 'src/model/guild';
 import { GuildService } from '../_services/guild.service';
 import { GuildRecruitmentService } from '../_services/guild-recruitment.service';
 import { UserService } from '../_services/user.service';
-import { User } from 'src/model/user';
 
 @Component({
   selector: 'app-create-guild-modal',
@@ -108,7 +107,7 @@ export class CreateGuildModalComponent implements OnInit {
       canFirstAid: this.guildRecruitment.canFirstAid,
     };
 
-    this.guildRecruitmentService.create(this.guildRecruitment)
+    this.guildRecruitmentService.create(data)
       .subscribe({
         next: (res) => {
           console.log(res);

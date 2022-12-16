@@ -54,7 +54,7 @@
       <!-- Left links -->
 
       <div class="d-flex align-items-center" *ngIf="!isLoggedIn">
-        <a href="/register"><button type="button" class="btn btn-link px-3 me-2" style="color: rgb(103, 39, 133)">
+        <a href="/register"><button type="button" class="btn btn-link px-3 me-2" style="color: white;">
           Sign up
         </button></a>
         <a href="/login"><button type="button" class="btn btn-primary me-3">
@@ -71,7 +71,7 @@
             <!-- Left links -->
 
             <div class="d-flex align-items-center" *ngIf="isLoggedIn">
-              <a href="/user-profile"><button type="button" class="btn btn-link px-3 me-2" style="color: rgb(103, 39, 133);">
+              <a href="/user-profile"><button onclick="window.location.replace('user-profile');" type="button" class="btn btn-link px-3 me-2" style="color: white;">
                 My Profile
               </button></a>
               <button (click)="logout()" type="submit" class="btn btn-secondary me-3">

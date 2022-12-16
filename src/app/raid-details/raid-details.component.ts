@@ -3,6 +3,10 @@ import { Raid } from 'src/model/raids';
 import { RaidsService } from '../_services/raids.service';
 import { ActivatedRoute } from '@angular/router';
 import { RaidRequirement, Equipment, Guild, GuildRecruitment, PlayableCharacter, Preferences, User } from 'src/model/raids';
+import { UserService } from '../_services/user.service';
+import { StorageService } from '../_services/storage.service';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { ApplyToRaidModalComponent } from '../apply-to-raid-modal/apply-to-raid-modal.component';
 
 @Component({
   selector: 'app-raid-details',
@@ -11,6 +15,9 @@ import { RaidRequirement, Equipment, Guild, GuildRecruitment, PlayableCharacter,
 })
 export class RaidDetailsComponent implements OnInit {
 raids? : Raid[];
+currentUser: any;
+modalRef: MdbModalRef<ApplyToRaidModalComponent> | null = null;
+users?: User[];
 
 @Input() selectedGuildRecruitment: GuildRecruitment ={
   minIlevel: null,
@@ -135,11 +142,23 @@ raids? : Raid[];
 
 id: number = this.route.snapshot.params.id
 
-  constructor(private route: ActivatedRoute, private raidService: RaidsService) { }
+  constructor(private route: ActivatedRoute, 
+    private raidService: RaidsService,
+    private userService: UserService,
+    private modalService: MdbModalService,
+    private storageService: StorageService) { }
+
+    openModal() {
+      this.modalRef = this.modalService.open(ApplyToRaidModalComponent)
+      this.id = this.raidService.id;
+      this.getRaid(this.id)
+    }
 
   ngOnInit(): void {
     this.id = this.raidService.id;
     this.getRaid(this.id)
+    this.currentUser = this.storageService.getUser();
+    this.retrieveUsers();
   }
 
   getRaid(id: number): void {
@@ -147,6 +166,16 @@ id: number = this.route.snapshot.params.id
       .subscribe({
         next: (data) => {
           this.selectedRaid = data;
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  retrieveUsers(): void {
+    this.userService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.users = data;
         },
         error: (e) => console.error(e)
       });

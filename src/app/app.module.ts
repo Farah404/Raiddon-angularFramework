@@ -53,6 +53,18 @@ import { DressingRoomComponent } from './dressing-room/dressing-room.component';
 import { CreateGuildModalComponent } from './create-guild-modal/create-guild-modal.component';
 import { RaidDetailsComponent } from './raid-details/raid-details.component';
 import { UpdatePlayableCharacterModalComponent } from './update-playable-character-modal/update-playable-character-modal.component';
+import { HumanModalComponent } from './_wiki/human-modal/human-modal.component';
+import { OrcModalComponent } from './_wiki/orc-modal/orc-modal.component';
+import { DwarfModalComponent } from './_wiki/dwarf-modal/dwarf-modal.component';
+import { NightElfModalComponent } from './_wiki/night-elf-modal/night-elf-modal.component';
+import { BloodElfModalComponent } from './_wiki/blood-elf-modal/blood-elf-modal.component';
+import { UndeadModalComponent } from './_wiki/undead-modal/undead-modal.component';
+import { TaurenModalComponent } from './_wiki/tauren-modal/tauren-modal.component';
+import { GnomeModalComponent } from './_wiki/gnome-modal/gnome-modal.component';
+import { TrollModalComponent } from './_wiki/troll-modal/troll-modal.component';
+import { DraeneiModalComponent } from './_wiki/draenei-modal/draenei-modal.component';
+import { ClassesModalComponent } from './_wiki/classes-modal/classes-modal.component';
+import { ApplyToRaidModalComponent } from './apply-to-raid-modal/apply-to-raid-modal.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +96,19 @@ import { UpdatePlayableCharacterModalComponent } from './update-playable-charact
     CreateGuildModalComponent,
     RaidDetailsComponent,
     MaxPipe,
-    UpdatePlayableCharacterModalComponent
+    UpdatePlayableCharacterModalComponent,
+    HumanModalComponent,
+    OrcModalComponent,
+    DwarfModalComponent,
+    NightElfModalComponent,
+    BloodElfModalComponent,
+    UndeadModalComponent,
+    TaurenModalComponent,
+    GnomeModalComponent,
+    TrollModalComponent,
+    DraeneiModalComponent,
+    ClassesModalComponent,
+    ApplyToRaidModalComponent
   ],
   imports: [
     BrowserModule,

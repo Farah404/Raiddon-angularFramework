@@ -54,7 +54,7 @@ body h1 {
   font-family: "Montserrat";
   font-weight: bold;
   font-size: 18px;
-  color: #428BFF;
+  color: #282828;
 }
 .tabs ul {
   list-style-type: none;
@@ -75,7 +75,7 @@ body h1 {
 }
 .tabs ul li label {
   transition: all 0.3s ease-in-out;
-  color: #929daf;
+  color: #282828;
   padding: 5px auto;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -93,7 +93,7 @@ body h1 {
   display: none;
 }
 .tabs ul li label svg {
-  fill: #929daf;
+  fill: #282828;
   height: 1.2em;
   vertical-align: bottom;
   margin-right: 0.2em;
@@ -101,10 +101,10 @@ body h1 {
 }
 .tabs ul li label:hover, .tabs ul li label:focus, .tabs ul li label:active {
   outline: 0;
-  color: #bec5cf;
+  color: #282828;
 }
 .tabs ul li label:hover svg, .tabs ul li label:focus svg, .tabs ul li label:active svg {
-  fill: #bec5cf;
+  fill: #282828;
 }
 .tabs .slider {
   position: relative;
@@ -117,7 +117,7 @@ body h1 {
   max-width: 100%;
   margin: 0 auto;
   height: 4px;
-  background: #428BFF;
+  background: #282828;
   border-radius: 1px;
 }
 .tabs .content {
@@ -138,7 +138,7 @@ body h1 {
   line-height: 1.4;
 }
 .tabs .content section h2 {
-  color: #428BFF;
+  color: #282828;
   display: none;
 }
 .tabs .content section h2::after {
@@ -153,10 +153,10 @@ body h1 {
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
   cursor: default;
-  color: #428BFF;
+  color: #282828;
 }
 .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
-  fill: #428BFF;
+  fill: #282828;
 }
 @media (max-width: 600px) {
   .tabs input[name=tab-control]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
@@ -171,10 +171,10 @@ body h1 {
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
   cursor: default;
-  color: #428BFF;
+  color: #282828;
 }
 .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
-  fill: #428BFF;
+  fill: #282828;
 }
 @media (max-width: 600px) {
   .tabs input[name=tab-control]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
@@ -189,10 +189,10 @@ body h1 {
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
   cursor: default;
-  color: #428BFF;
+  color: #282828;
 }
 .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
-  fill: #428BFF;
+  fill: #282828;
 }
 @media (max-width: 600px) {
   .tabs input[name=tab-control]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
@@ -207,10 +207,10 @@ body h1 {
 }
 .tabs input[name=tab-control]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
   cursor: default;
-  color: #428BFF;
+  color: #282828;
 }
 .tabs input[name=tab-control]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label svg {
-  fill: #428BFF;
+  fill: #282828;
 }
 @media (max-width: 600px) {
   .tabs input[name=tab-control]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
@@ -281,7 +281,7 @@ body h1 {
 
 ::ng-deep {
   .mat-form-field-infix {
-    background-color: #3f51b5;
+    background-color: #282828;
   }
 
   .mat-select-value,
@@ -328,6 +328,7 @@ margin: 10px;
 height: auto;
 overflow: hidden;
 border-radius: 5px;
+color: #efefef;
 background-color: #202020;
 box-shadow: 4px 3px 8px 0px rgb(200 152 44 / 22%);
 transition-duration: 0.3s;
@@ -342,7 +343,7 @@ cursor: pointer;
   background-color: #000;
   position: relative;
   height: 172px;
-  color: #fff;
+  color: #282828;
   text-align: center;
 }
 
@@ -364,7 +365,7 @@ cursor: pointer;
 }
 
 &-name {
-  color: #fff;
+  color: #282828;
   font-weight: 700;
   font-size: 22px;
   margin-bottom: 20px;
@@ -404,4 +405,15 @@ cursor: pointer;
   animation: 
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
+}
+
+
+.T4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td, th {
+    vertical-align: middle;
+  }
 }
