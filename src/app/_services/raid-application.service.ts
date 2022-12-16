@@ -22,4 +22,8 @@ export class RaidApplicationService {
     return this.http.get<RaidApplication>(`${baseUrl}/${id}`);
   }
 
+  getAll(): Observable<RaidApplication[]> {
+    return this.http.get<RaidApplication[]>(baseUrl);
+  }
+
 }

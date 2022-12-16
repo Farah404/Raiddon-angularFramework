@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { AuthService } from '../_services/auth.service';
 import { StorageService } from '../_services/storage.service';
 import { EventBusService } from '../_shared/event-bus.service';
+import { MessagingModalComponent } from '../messaging-modal/messaging-modal.component';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 
 @Component({
   selector: 'app-navbar',
@@ -14,10 +16,11 @@ export class NavbarComponent {
   isLoggedIn = false;
   username?: string;
   eventBusSub?: Subscription;
-  
+  modalRef: MdbModalRef<MessagingModalComponent> | null = null;
   constructor(private storageService: StorageService,
     private authService: AuthService,
-    private eventBusService: EventBusService) { }
+    private eventBusService: EventBusService,
+    private modalService: MdbModalService,) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
@@ -47,6 +50,12 @@ export class NavbarComponent {
         console.log(err);
       }
     });
+  }
+
+  openModal() {
+    this.modalRef = this.modalService.open(MessagingModalComponent, {
+      modalClass: 'modal-xl'
+    })
   }
 
 }

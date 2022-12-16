@@ -22,4 +22,8 @@ export class GuildApplicationService {
     return this.http.get<GuildApplication>(`${baseUrl}/${id}`);
   }
 
+  getAll(): Observable<GuildApplication[]> {
+    return this.http.get<GuildApplication[]>(baseUrl);
+  }
+
 }

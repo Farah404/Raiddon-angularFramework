@@ -64,10 +64,10 @@
                         Cooking
                       </ng-container>
                       <ng-container *ngIf="connectedUser.playableCharacter.canFish == true">
-                      / Fishing
+                        / Fishing
                       </ng-container>
                       <ng-container *ngIf="connectedUser.playableCharacter.canFirstAid == true">
-                      / First Aid
+                        / First Aid
                       </ng-container>
                     </p>
                   </div>
@@ -94,9 +94,13 @@
                     <a (click)="setSelectedPreferences(preferences)" style="cursor: pointer; color: blue"><i
                         class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check
                       Preferences</a><br />
-                      <a (click)="setSelectedPlayableCharacter(playableCharacter)" style="cursor: pointer; color: blue"><i class="fa-sharp fa-solid fa-gamepad"></i>&nbsp;&nbsp;&nbsp;Update Playable Character</a><br />
+                    <a (click)="setSelectedPlayableCharacter(playableCharacter)" style="cursor: pointer; color: blue"><i
+                        class="fa-sharp fa-solid fa-gamepad"></i>&nbsp;&nbsp;&nbsp;Update Playable Character</a><br />
+                        <a (click)="openPendingModal()" style="cursor: pointer; color: blue"><i
+                          class="fa-solid fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;Pending Applications</a><br />
                     <a href="dressing-room" style="cursor: pointer; color: blue">&nbsp;<i
                         class="fa-solid fa-person-dress"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Equipment</a>
+
                   </div>
                 </div>
               </div>
@@ -346,7 +350,8 @@
                       </div>
                       <div class="hero-btn">
                         <a routerLink="raid-details/{{ raid.id }}" class="btn btn-secondary mb-1"
-                          (click)="setSelectedRaid(raid)">Recruiting {{raid.raidRequirements.mainSpec}} {{raid.raidRequirements.mainClass}}</a>
+                          (click)="setSelectedRaid(raid)">Recruiting {{raid.raidRequirements.mainSpec}}
+                          {{raid.raidRequirements.mainClass}}</a>
                       </div>
                     </div>
                   </div>

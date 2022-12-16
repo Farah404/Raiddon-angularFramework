@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Your Inbox</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col" style="text-align: justify;
+    text-justify: inter-word;">
+            <div class="card" style="height: 200px;">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img style="height: 200px; width:200px;"
+                            src="https://acidinkdesigns.com/wp-content/uploads/2022/02/Warrior-class-icon.jpg"
+                            alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Sender</h4>
+                        <p class="card-text">Subject</p>
+                        <button type="button" class="btn btn-secondary"> Reply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+        Cancel
+    </button>
+</div>
