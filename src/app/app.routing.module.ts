@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { DressingRoomComponent } from './dressing-room/dressing-room.component';
 import { AuthGuardService } from './_services/auth-guard.service';
 import { RaidDetailsComponent } from './raid-details/raid-details.component';
+import { GuildManagementComponent } from './guild-management/guild-management.component';
 
 const routes: Routes = [
   {
@@ -117,6 +118,11 @@ const routes: Routes = [
   {
     path:'dressing-room',
     component: DressingRoomComponent,
+    canActivate:[AuthGuardService]
+  },
+  {
+    path:'guild-management',
+    component: GuildManagementComponent,
     canActivate:[AuthGuardService]
   },
 ];

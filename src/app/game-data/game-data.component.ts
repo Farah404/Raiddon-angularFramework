@@ -12,6 +12,22 @@ import { TaurenModalComponent } from '../_wiki/tauren-modal/tauren-modal.compone
 import { TrollModalComponent } from '../_wiki/troll-modal/troll-modal.component';
 import { UndeadModalComponent } from '../_wiki/undead-modal/undead-modal.component';
 import { ClassesModalComponent } from '../_wiki/classes-modal/classes-modal.component';
+import { TalentsModalComponent } from '../_wiki/talents-modal/talents-modal.component';
+import { AlchemyModalComponent } from '../_wiki/alchemy-modal/alchemy-modal.component';
+import { BlacksmithingModalComponent } from '../_wiki/blacksmithing-modal/blacksmithing-modal.component';
+import { CookingModalComponent } from '../_wiki/cooking-modal/cooking-modal.component';
+import { EnchantingModalComponent } from '../_wiki/enchanting-modal/enchanting-modal.component';
+import { EngineeringModalComponent } from '../_wiki/engineering-modal/engineering-modal.component';
+import { FishingModalComponent } from '../_wiki/fishing-modal/fishing-modal.component';
+import { HerbalismModalComponent } from '../_wiki/herbalism-modal/herbalism-modal.component';
+import { InscriptionModalComponent } from '../_wiki/inscription-modal/inscription-modal.component';
+import { JewelCraftingModalComponent } from '../_wiki/jewel-crafting-modal/jewel-crafting-modal.component';
+import { LeatherWorkingModalComponent } from '../_wiki/leather-working-modal/leather-working-modal.component';
+import { MiningModalComponent } from '../_wiki/mining-modal/mining-modal.component';
+import { SkinningModalComponent } from '../_wiki/skinning-modal/skinning-modal.component';
+import { TailoringgModalComponent } from '../_wiki/tailoringg-modal/tailoringg-modal.component';
+
+
 
 @Component({
   selector: 'app-game-data',
@@ -30,7 +46,6 @@ export class GameDataComponent implements OnInit {
   constructor(private api: ApiService, private modalService: MdbModalService,) { }
 
   ngOnInit() {
-
 
     this.api.getPlayableRaces().subscribe((data) => {
       this.playableRacesData = data;
@@ -122,6 +137,90 @@ export class GameDataComponent implements OnInit {
   openClassesModal() {
     this.modalRef = this.modalService.open(ClassesModalComponent, {
       modalClass: 'modal-xl'
+    })
+  }
+
+  openTalentsModal() {
+    this.modalRef = this.modalService.open(TalentsModalComponent, {
+      modalClass: 'modal-xl'
+    })
+  }
+
+  openAlchemyModal() {
+    this.modalRef = this.modalService.open(AlchemyModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openBlacksmithingModal() {
+    this.modalRef = this.modalService.open(BlacksmithingModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openCookingModal() {
+    this.modalRef = this.modalService.open(CookingModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openEnchantingModal() {
+    this.modalRef = this.modalService.open(EnchantingModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openEngineeringModal() {
+    this.modalRef = this.modalService.open(EngineeringModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openFishingModal() {
+    this.modalRef = this.modalService.open(FishingModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openHerbalismModal() {
+    this.modalRef = this.modalService.open(HerbalismModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openInscriptionModal() {
+    this.modalRef = this.modalService.open(InscriptionModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openJewelCraftingModal() {
+    this.modalRef = this.modalService.open(JewelCraftingModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openLeatherWorkingModal() {
+    this.modalRef = this.modalService.open(LeatherWorkingModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openMiningModal() {
+    this.modalRef = this.modalService.open(MiningModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openSkiningModal() {
+    this.modalRef = this.modalService.open(SkinningModalComponent, {
+      modalClass: 'modal-gl'
+    })
+  }
+
+  openTailoringModal() {
+    this.modalRef = this.modalService.open(TailoringgModalComponent, {
+      modalClass: 'modal-gl'
     })
   }
 

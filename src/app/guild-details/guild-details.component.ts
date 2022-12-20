@@ -100,4 +100,8 @@ export class GuildDetailsComponent implements OnInit {
       });
   }
 
+  setSelectedUser(user: User): void {
+    this.userService.id = user.id;
+  }
+
 }

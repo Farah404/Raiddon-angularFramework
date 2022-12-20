@@ -1,0 +1,139 @@
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<div class="main" style="background-color: #282828;">
+<div class="main bg-image grayscale" style="
+    background-image: url('https://guildtag.com/images/landing/world-of-warcraft-banner-1.jpg');
+    height: 30vh;
+  ">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <div class="text-white">
+      <h1 class="mb-3 typewriter">Want to manage your guild efficiently ?</h1>
+      <h5 class="mb-4">
+        By using our guild management tool it will be an easy task !
+      </h5>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="second-main" style="background-color:  	#282828;">
+
+  <div class="container mt-5 mb-5">
+    <div class="row no-gutters">
+        <div class="col-md-4 col-lg-4"><img src="{{currentUser.playableCharacter.guild.guildEmblem}}"></div>
+        <div class="col-md-8 col-lg-8">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row text-white">
+                    <div class="p-4 bg-primary text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.realm}}</h4>
+                        <h6> Server</h6>
+                    </div>
+                    <div class="p-3 bg-success text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.lootSystems}}</h4>
+                        <h6> Loot system</h6>
+                    </div>
+                    <div class="p-3 bg-warning text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.totalPlayers}}</h4>
+                        <h6> Members</h6>
+                    </div>
+                    <div class="p-3 bg-danger text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.objectives}}</h4>
+                        <h6>Objectives </h6>
+                    </div>
+                </div>
+                <div class="p-3 bg-black text-white">
+                    <h6><i class="fa-solid fa-link"></i><a target="_blank" href="{{currentUser.playableCharacter.guild.wowLogLink}}">Warcraft Logs page</a></h6>
+                </div>
+                <div class="d-flex flex-row text-white">
+                    <div class="p-4 bg-primary text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.rank}}</h4>
+                        <h6> Rank</h6>
+                    </div>
+                    <div class="p-3 bg-success text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.guildRecruitment.bulk}}</h4>
+                        <h6> Recruitment Bulk</h6>
+                    </div>
+                    <div class="p-3 bg-warning text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.raidsPerWeek}}</h4>
+                        <h6> Raids/Week</h6>
+                    </div>
+                    <div class="p-3 bg-danger text-center skill-block">
+                        <h4>{{currentUser.playableCharacter.guild.activities}}</h4>
+                        <h6>Activities </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <div class="caption">
+      <div class="container tilte mb-1">Guild Members</div>
+      <table class=" table" style="width: 80%; margin: 0 auto;">
+          <thead class="bg-light table-dark">
+              <tr>
+                  <th>Username</th>
+                  <th>Class</th>
+                  <th>Main Spec</th>
+                  <th>Second Spec</th>
+                  <th>Guild Rank</th>
+                  <th>Uprank</th>
+                  <th>Downrank</th>
+              </tr>
+          </thead>
+          <ng-container *ngFor="let members of filteredUsers">
+          <tbody style="opacity:0.6; background-color:aliceblue">
+              <tr>
+                  <td>{{members.playableCharacter.name}}</td>
+                  <td>{{members.playableCharacter.playableClass}}</td>
+                  <td>{{members.playableCharacter.mainSpec}}</td>
+                  <td>{{members.playableCharacter.secondarySpec}}</td>
+                  <td>{{members.guildRank}}</td>
+                  <td style="cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                  </svg></td>
+                  <td style="cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                  </svg></td>
+              </tr>
+          </tbody>
+      </ng-container>
+      </table>
+  </div>
+  <h2></h2>
+  <div class="caption">
+      <div class="container tilte mb-1">Active Recruitments</div>
+      <table class=" table align-middle" style="width: 80%; margin: 0 auto; text-align:center">
+          <thead class="bg-light table-dark">
+              <tr>
+                  <th>Class</th>
+                  <th>Main Spec</th>
+                  <th>Second Spec</th>
+                  <th>Main Role</th>
+                  <th>Second Role</th>
+                  <th>Minimum iLevel</th>
+                  <th>Bulk</th>
+                  <th>Quantity</th>
+                  <th>Professions</th>
+              </tr>
+          </thead>
+          <ng-container>
+          <tbody style="opacity:0.6; background-color:aliceblue">
+              <tr>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.playableCharacter}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.mainSpec}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.secondarySpec}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.mainRole}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.secondaryRole}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.minIlevel}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.bulk}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.quantity}}</td>
+                  <td>{{currentUser.playableCharacter.guild.guildRecruitment.firstProfession}}/{{currentUser.playableCharacter.guild.guildRecruitment.secondProfession}}</td>
+              </tr> 
+          </tbody>
+      </ng-container>
+      </table>
+  </div>
+  <h2></h2>
+</div>
+</div>
