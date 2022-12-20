@@ -67,6 +67,21 @@ import { ClassesModalComponent } from './_wiki/classes-modal/classes-modal.compo
 import { ApplyToRaidModalComponent } from './apply-to-raid-modal/apply-to-raid-modal.component';
 import { PendingApplicationsModalComponent } from './pending-applications-modal/pending-applications-modal.component';
 import { MessagingModalComponent } from './messaging-modal/messaging-modal.component';
+import { TalentsModalComponent } from './_wiki/talents-modal/talents-modal.component';
+import { EngineeringModalComponent } from './_wiki/engineering-modal/engineering-modal.component';
+import { SkinningModalComponent } from './_wiki/skinning-modal/skinning-modal.component';
+import { BlacksmithingModalComponent } from './_wiki/blacksmithing-modal/blacksmithing-modal.component';
+import { EnchantingModalComponent } from './_wiki/enchanting-modal/enchanting-modal.component';
+import { HerbalismModalComponent } from './_wiki/herbalism-modal/herbalism-modal.component';
+import { MiningModalComponent } from './_wiki/mining-modal/mining-modal.component';
+import { TailoringgModalComponent } from './_wiki/tailoringg-modal/tailoringg-modal.component';
+import { InscriptionModalComponent } from './_wiki/inscription-modal/inscription-modal.component';
+import { CookingModalComponent } from './_wiki/cooking-modal/cooking-modal.component';
+import { FishingModalComponent } from './_wiki/fishing-modal/fishing-modal.component';
+import { LeatherWorkingModalComponent } from './_wiki/leather-working-modal/leather-working-modal.component';
+import { AlchemyModalComponent } from './_wiki/alchemy-modal/alchemy-modal.component';
+import { JewelCraftingModalComponent } from './_wiki/jewel-crafting-modal/jewel-crafting-modal.component';
+import { GuildManagementComponent } from './guild-management/guild-management.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +127,22 @@ import { MessagingModalComponent } from './messaging-modal/messaging-modal.compo
     ClassesModalComponent,
     ApplyToRaidModalComponent,
     PendingApplicationsModalComponent,
-    MessagingModalComponent
+    MessagingModalComponent,
+    TalentsModalComponent,
+    EngineeringModalComponent,
+    SkinningModalComponent,
+    BlacksmithingModalComponent,
+    EnchantingModalComponent,
+    HerbalismModalComponent,
+    MiningModalComponent,
+    TailoringgModalComponent,
+    InscriptionModalComponent,
+    CookingModalComponent,
+    FishingModalComponent,
+    LeatherWorkingModalComponent,
+    AlchemyModalComponent,
+    JewelCraftingModalComponent,
+    GuildManagementComponent,
   ],
   imports: [
     BrowserModule,

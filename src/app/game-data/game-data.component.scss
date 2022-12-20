@@ -417,3 +417,79 @@ cursor: pointer;
     vertical-align: middle;
   }
 }
+
+.card{
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+  border-radius: 40px;
+}
+.card-img-top{
+  filter: grayscale(30%)
+}
+
+.cards-list-talents {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card-talents {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card-talents .card_image-talents {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card-talents .card_image-talents img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card-talents .card_title-talents {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.card-talents:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white-talents {
+  color: white;
+  text-shadow: 2px 0 rgba(0,0,0,0.22), -2px 0 rgba(0,0,0,0.22), 0 2px rgba(0,0,0,0.22), 0 -2px rgba(0,0,0,0.22),
+               1px 1px rgba(0,0,0,0.22), -1px -1px rgba(0,0,0,0.22), 1px -1px rgba(0,0,0,0.22), -1px 1px rgba(0,0,0,0.22);
+
+}
+
+@media all and (max-width: 500px) {
+  .card-list-talents {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}

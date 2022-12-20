@@ -98,6 +98,7 @@ export class ApplyToGuildComponent implements OnInit {
     this.id = this.guildService.id;
     this.guild = await this.guildService.get(this.id).toPromise();
       this.currentUser = this.storageService.getUser();
+    
       
     const data = {
       id: null,
@@ -110,6 +111,7 @@ export class ApplyToGuildComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.submitted = true;
+        this.modalRef.close()
       },
       error: (e) => console.error(e)
     });

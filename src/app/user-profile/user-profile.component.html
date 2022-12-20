@@ -72,10 +72,6 @@
                     </p>
                   </div>
                   <div class="media">
-                    <label>Other</label>
-                    <p>{{ connectedUser.playableCharacter.level }}</p>
-                  </div>
-                  <div class="media">
                     <label>Guild</label>
                     <p>{{ connectedUser.playableCharacter.guild.guildName }}</p>
                   </div>
@@ -89,18 +85,24 @@
                   </div>
                   <div class="media">
                     <label>Actions</label><br />
-                    <a (click)="openUpdateModal()" style="cursor: pointer; color: blue"><i
-                        class="fa-solid fa-pen-to-square"></i>&nbsp;&nbsp;&nbsp;&nbsp;Update Profile</a><br />
-                    <a (click)="setSelectedPreferences(preferences)" style="cursor: pointer; color: blue"><i
-                        class="fa-solid fa-star"></i>&nbsp;&nbsp;&nbsp;Check
-                      Preferences</a><br />
-                    <a (click)="setSelectedPlayableCharacter(playableCharacter)" style="cursor: pointer; color: blue"><i
-                        class="fa-sharp fa-solid fa-gamepad"></i>&nbsp;&nbsp;&nbsp;Update Playable Character</a><br />
-                        <a (click)="openPendingModal()" style="cursor: pointer; color: blue"><i
-                          class="fa-solid fa-spinner"></i>&nbsp;&nbsp;&nbsp;&nbsp;Pending Applications</a><br />
-                    <a href="dressing-room" style="cursor: pointer; color: blue">&nbsp;<i
-                        class="fa-solid fa-person-dress"></i>&nbsp;&nbsp;&nbsp;&nbsp;Manage Equipment</a>
-
+                    <a (click)="openUpdateModal()" style="cursor: pointer; color: blue">
+                      <i class="fa-solid fa-pen-to-square" style="float: left;"></i>
+                      &nbsp;Update Profile</a><br />
+                    <a (click)="setSelectedPreferences(preferences)" style="cursor: pointer; color: blue">
+                      <i class="fa-solid fa-star" style="float: left;"></i>
+                      &nbsp;Update Preferences</a><br />
+                    <a (click)="setSelectedPlayableCharacter(playableCharacter)" style="cursor: pointer; color: blue">
+                      <i class="fa-sharp fa-solid fa-gamepad" style="float: left;"></i>
+                      &nbsp;Update Playable Character</a><br />
+                    <a (click)="openPendingModal()" style="cursor: pointer; color: blue">
+                      <i class="fa-solid fa-spinner" style="float: left;"></i>
+                      &nbsp; Pending Applications</a><br />
+                    <a href="dressing-room" style="cursor: pointer; color: blue">
+                      <i class="fa-solid fa-person-dress" style="float: left;"></i>
+                      &nbsp;&nbsp; &nbsp;Manage Equipment</a><br />
+                    <a *ngIf="currentUser.guildRank == 'Guild Master'" href="guild-management" style="cursor: pointer; color: blue">
+                      <i class="fa-solid fa-list-check" style="float: left;"></i>
+                      &nbsp; Manage Guild</a>
                   </div>
                 </div>
               </div>

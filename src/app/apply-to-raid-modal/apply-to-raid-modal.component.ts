@@ -97,6 +97,7 @@ export class ApplyToRaidModalComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.submitted = true;
+          this.modalRef.close()
         },
         error: (e) => console.error(e)
       });
