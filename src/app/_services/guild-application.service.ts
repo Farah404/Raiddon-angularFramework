@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { GuildApplication } from 'src/model/guildapplication';
+import { GuildApplication } from 'src/model/guildApplication';
 
 const baseUrlAdd = 'https://raiddon-spring-server.herokuapp.com/api/guildApplication/add';
 const baseUrl = 'https://raiddon-spring-server.herokuapp.com/api/guildApplication';
