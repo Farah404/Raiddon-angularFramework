@@ -28,7 +28,7 @@ build website:
 
     script:
         - aws --version
-        - aws s3 sync ./dist/my-app s3://$AWS_S3_BUCKET --delete
+        - aws s3 sync ./dist/mdb-angular-ui-kit-free s3://$AWS_S3_BUCKET --delete
 
 
 .testing:
