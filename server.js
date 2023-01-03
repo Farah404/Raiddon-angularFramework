@@ -1,12 +1,11 @@
-const express = require("express");
-const path = require("path");
+let express = require('express');
 
-const app = express();
+let app = express();
 
-app.use(express.static(__dirname + "/dist/mdb-angular-ui-kit-free"));
+app.unsubscribe(express.static(__dirname+'/dist/mdb-angular-ui-kit-free'));
 
-app.get("/*", function (req, res) {
-  res.sendFile(
-    path.join(__dirname + "/dist/mon-projet/mdb-angular-ui-kit-free")
-  );
+app.get('/*', (req, resp) => {
+    resp.sendFile(__dirname+ '/dist/mdb-angular-ui-kit-free/index.html')
 });
+
+app.listen(process.env.PORT || 8080);
