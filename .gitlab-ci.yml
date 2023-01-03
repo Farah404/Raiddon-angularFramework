@@ -4,7 +4,6 @@ stages:
     - build
     - deploy staging
     - test staging
-    - deploy production
 
 
 build website:
@@ -47,7 +46,7 @@ staging tests:
     environment: staging
     extends: .testing
 
-deploy to production:
+.deploy to production:
     stage: deploy production
     when: manual
     environment: production
