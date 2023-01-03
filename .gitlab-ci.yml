@@ -38,7 +38,7 @@ build website:
 
 deploy to staging:
     stage: deploy staging
-    environment: staging
+    environment: staging1
     extends: .deploy
 
 staging tests:
