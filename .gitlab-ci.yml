@@ -1,0 +1,54 @@
+image: node:16-alpine
+
+stages:
+    - build
+    - deploy staging
+    - test staging
+    - deploy production
+
+
+build website:
+    stage: build
+    before_script:
+        - npm install --force
+
+    script:
+        - npm run build
+    artifacts:
+        paths:
+            - dist/
+    
+
+.deploy:
+    image: 
+        name: amazon/aws-cli:2.9.1
+        entrypoint: [""]
+    rules:
+        - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+
+    script:
+        - aws --version
+        - aws s3 sync ./dist/my-app s3://$AWS_S3_BUCKET --delete
+
+
+.testing:
+    rules:
+        - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+    script:
+        - wget $CI_ENVIRONMENT_URL
+
+deploy to staging:
+    stage: deploy staging
+    environment: staging
+    extends: .deploy
+
+staging tests:
+    stage: test staging
+    environment: staging
+    extends: .testing
+
+deploy to production:
+    stage: deploy production
+    when: manual
+    environment: production
+    extends: .deploy
