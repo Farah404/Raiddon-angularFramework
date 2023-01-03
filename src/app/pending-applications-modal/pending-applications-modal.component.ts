@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
-import { GuildApplication } from 'src/model/guildapplication';
+import { GuildApplication } from 'src/model/guildApplication';
 import { GuildApplicationService } from '../_services/guild-application.service';
 import { RaidApplication } from 'src/model/raidApplication copy';
 import { RaidApplicationService } from '../_services/raid-application.service';

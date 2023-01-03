@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { StorageService } from '../_services/storage.service';
-import { GuildApplication } from 'src/model/guildapplication';
+import { GuildApplication } from 'src/model/guildApplication';
 import { GuildApplicationService } from '../_services/guild-application.service';
 import { ActivatedRoute } from '@angular/router';
 import { Guild, GuildRecruitment } from 'src/model/guild';
