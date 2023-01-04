@@ -110,15 +110,15 @@ export class ApiService {
   }
 
   getReports() {
-    return this.http.get(this.wclogURL + 'api/reports');
+    return this.http.get(this.wclogURL + 'api/reports', {responseType: 'text'});
   }
 
   getEncounters() {
-    return this.http.get(this.wclogURL + 'api/encounters');
+    return this.http.get(this.wclogURL + 'api/encounters', {responseType: 'text'});
   }
 
   getPlayersRankings() {
-    return this.http.get(this.wclogURL + 'api/playersRankings');
+    return this.http.get(this.wclogURL + 'api/playersRankings', {responseType: 'text'});
   }
 }
 
